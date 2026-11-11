@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OknoNieWieje: regulacja i uszczelnianie okien Warszawa</title>
+<meta name="description" content="Wieje z okna? Regulacja, smarowanie i wymiana uszczelek w oknach PCV i drewnianych. Warszawa i okolice. Cenę podajemy przed pracą.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+[hidden]{display:none!important}
+:root{--r:12px;--ink:#0F2A43;--mut:#4C6072;--line:#DCE5EC;--soft:#F2F6FA;--warm:#FFF1E6;--acc:#C94A0A;--acc2:#A83C07;--blue:#1F6FB2}
+body{margin:0;background:#FFFFFF}
+a{color:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+.root{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:#FFFFFF;font-size:17px;line-height:1.6;font-weight:500}
+.root *{box-sizing:border-box}
+h1,h2,h3{font-weight:800;line-height:1.15;letter-spacing:-.02em;margin:0;overflow-wrap:break-word}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.08}
+h2{font-size:clamp(28px,3.8vw,40px)}
+h3{font-size:20px;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:20px;padding-right:20px}
+.sec{padding-top:clamp(52px,7vw,84px);padding-bottom:clamp(52px,7vw,84px)}
+.soft{background:var(--soft)}
+.mut{color:var(--mut)}
+.eyebrow{display:inline-block;margin-bottom:12px;padding:5px 12px;border-radius:var(--r);background:var(--warm);color:var(--acc2);font-size:14px;font-weight:700}
+.lead{margin-top:12px;max-width:44em;color:var(--mut)}
+.grid{display:grid;gap:18px;margin-top:32px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
+.card{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:0 2px 10px rgba(15,42,67,.05);transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(15,42,67,.1)}
+.card h3{margin-bottom:6px}
+.ic{width:48px;height:48px;border-radius:var(--r);background:var(--warm);color:var(--acc);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.art{display:block;width:100%;height:120px;border-radius:var(--r);background:var(--soft);margin-bottom:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:var(--r);font-weight:700;font-size:17px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:background .15s ease,transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.pri{background:var(--acc);color:#FFFFFF}
+.pri:hover{background:var(--acc2)}
+.ghost{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,.45)}
+.ghost:hover{background:rgba(255,255,255,.1)}
+.sec2{background:#FFFFFF;color:var(--ink);border-color:var(--line)}
+.sec2:hover{background:var(--soft)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.ticks{list-style:none;margin:12px 0 0;padding:0}
+.ticks li{position:relative;padding-left:26px;margin-top:6px;color:var(--mut)}
+.ticks li::before{content:"";position:absolute;left:4px;top:7px;width:8px;height:13px;border:solid var(--acc);border-width:0 3px 3px 0;transform:rotate(40deg)}
+.hero{background:var(--ink);color:#FFFFFF;border-radius:var(--r);padding:clamp(24px,4vw,48px)}
+.hero .mut,.hero .ticks li{color:#D5E0EA}
+.hero .ticks li::before{border-color:#F5B27D}
+.tiles{display:grid;gap:12px;margin-top:32px;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}
+.tile{background:rgba(255,255,255,.08);border-radius:var(--r);padding:16px}
+.tile strong{display:block;font-weight:800}
+.tile span{color:#D5E0EA;font-size:15px}
+.thermal{background:#0A1E30;border-radius:var(--r);padding:14px}
+.seg{display:flex;gap:6px;margin-bottom:12px}
+.segb{flex:1;min-height:46px;padding:0 10px;border:0;border-radius:var(--r);background:rgba(255,255,255,.1);color:#FFFFFF;font:inherit;font-weight:700;cursor:pointer}
+.segb.on{background:#FFFFFF;color:var(--ink)}
+.legend{height:8px;border-radius:var(--r);background:linear-gradient(90deg,#2B7FD0,#35B7C4,#F2C14E,#E8590C);margin-top:12px}
+.legt{display:flex;justify-content:space-between;font-size:14px;color:#D5E0EA;margin-top:6px}
+.chips{display:flex;flex-direction:column;gap:8px}
+.chip{min-height:52px;padding:10px 16px;border:1px solid var(--line);border-radius:var(--r);background:#FFFFFF;color:var(--ink);font:inherit;font-weight:700;text-align:left;cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#FFFFFF}
+.res{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);padding:26px;box-shadow:0 2px 10px rgba(15,42,67,.05)}
+.lab{font-size:14px;font-weight:600;color:var(--mut);margin-top:14px}
+.val{font-size:19px;font-weight:700}
+.price{font-weight:800;font-size:30px;line-height:1.1;margin-top:14px;color:var(--acc2)}
+.num{width:42px;height:42px;border-radius:var(--r);background:var(--acc);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:12px}
+.band{background:var(--acc);color:#FFFFFF;border-radius:var(--r);padding:26px clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.stars{color:#E2A400;letter-spacing:2px;font-size:18px}
+.quick{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 10px 26px rgba(15,42,67,.08);padding:22px;display:grid;gap:12px 14px;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));align-items:end;margin-top:18px}
+label{display:flex;flex-direction:column;gap:5px;font-weight:700}
+input{min-height:50px;padding:0 14px;border:1px solid #8A9CAB;border-radius:var(--r);font:inherit;background:#FFFFFF;color:var(--ink);width:100%}
+.bigform{background:#FFFFFF;color:var(--ink);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px}
+details{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);padding:14px 18px;margin-top:10px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:32px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:26px;line-height:1;color:var(--acc)}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:var(--mut)}
+table{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-size:clamp(14px,2.4vw,17px);overflow-wrap:anywhere}
+th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child th,tr:last-child td{border-bottom:0}
+.hdr{position:sticky;top:0;z-index:10;background:#FFFFFF;border-bottom:1px solid var(--line)}
+.ov{position:fixed;inset:0;z-index:50;background:rgba(10,30,48,.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:16px}
+.modal{position:relative;width:100%;max-width:480px;max-height:calc(100vh - 32px);overflow:auto;background:#FFFFFF;border-radius:var(--r);padding:28px;box-shadow:0 24px 60px rgba(10,30,48,.3)}
+.mx{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:var(--r);border:1px solid var(--line);background:#FFFFFF;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.mx:hover{background:var(--soft)}
+.copt{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--soft);text-decoration:none;margin-top:12px;transition:border-color .15s ease}
+.copt:hover,.ctile:hover{border-color:var(--ink)}
+.cico{width:44px;height:44px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex:none}
+.ckind{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+.cval{font-size:18px;font-weight:800;overflow-wrap:anywhere}
+.ctwo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.ctile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:96px;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--soft);text-decoration:none;font-weight:700;transition:border-color .15s ease}
+.promo{position:fixed;right:20px;bottom:20px;z-index:40;width:min(390px,calc(100vw - 24px));background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 18px 44px rgba(10,30,48,.25);padding:20px;animation:pin .35s ease}
+@keyframes pin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.pcall{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;margin-top:14px;padding:0 18px;border-radius:var(--r);background:var(--acc);color:#FFFFFF;font-weight:800;font-size:19px;text-decoration:none}
+.pcall:hover{background:var(--acc2)}
+.pbtn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:46px;border:1px solid var(--line);border-radius:var(--r);background:var(--soft);font-weight:700;text-decoration:none}
+.pbtn:hover{border-color:var(--ink)}
+.burg{display:none;width:46px;height:46px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:var(--r);background:#FFFFFF;color:var(--ink);cursor:pointer}
+.burg:hover{background:var(--soft)}
+.mpanel{display:flex;flex-direction:column;max-width:1180px;margin:0 auto;padding:6px 20px 18px;border-top:1px solid var(--line);background:#FFFFFF}
+.mlink{display:flex;align-items:center;justify-content:space-between;min-height:52px;border-bottom:1px solid var(--line);font-weight:700;font-size:17px;text-decoration:none}
+.mlink span{color:var(--acc)}
+@media (max-width:980px){.burg{display:inline-flex}}
+@media (min-width:981px){.mpanel{display:none}}
+.mbar{display:none}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #F0A04B;outline-offset:2px}
+@media (max-width:980px){.dnav{display:none!important}}
+@media (max-width:700px){
+.dcall{display:none!important}
+.cta .btn{width:100%}
+.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:8px;padding:8px 12px;background:#FFFFFF;box-shadow:0 -3px 12px rgba(15,42,67,.16)}
+.mspace{padding-bottom:84px}
+html{scroll-padding-top:72px}
+}
+@media (max-width:700px){.promo{left:12px;right:12px;width:auto;bottom:76px}}
+@media (max-width:700px){
+.root{font-size:15px;line-height:1.5}
+.wrap{padding-left:14px;padding-right:14px}
+.sec{padding-top:34px;padding-bottom:34px}
+h1{font-size:30px}
+h2{font-size:24px}
+h3{font-size:16px}
+.eyebrow{font-size:12px;padding:3px 10px;margin-bottom:8px}
+.lead{margin-top:8px;font-size:15px}
+.grid{gap:10px;margin-top:18px}
+.hero{padding:18px}
+.hero p.mut{font-size:15px!important;margin-top:10px!important}
+.cta{margin-top:16px;gap:8px}
+.btn{min-height:48px;font-size:16px}
+.thermal{padding:10px}
+.thermal svg{max-height:190px}
+.segb{min-height:40px;font-size:14px}
+.legt{font-size:12px}
+.tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
+.tile{padding:10px 12px}
+.tile strong{font-size:14px;line-height:1.3}
+.tile span{font-size:12px;line-height:1.35;display:block;margin-top:2px}
+.quick{padding:14px;gap:10px;margin-top:12px}
+.quick p{font-size:17px!important}
+.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3.svc{grid-template-columns:1fr}
+.card{padding:14px}
+.card p,.ticks li{font-size:14px}
+.ic{width:38px;height:38px;margin-bottom:8px}
+.art{height:70px;margin-bottom:8px}
+.price{font-size:24px;margin-top:8px}
+.num{width:34px;height:34px;margin-bottom:8px}
+.chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.chip{min-height:46px;padding:8px 10px;font-size:14px;line-height:1.3}
+.res{padding:16px}
+.val{font-size:16px}
+.lab{margin-top:10px}
+.band{padding:16px}
+details{padding:10px 14px;margin-top:8px}
+summary{font-size:15px}
+.bigform{padding:16px;gap:10px}
+input{min-height:46px}
+}
+@media (max-width:359px){.g3,.g4,.chips{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.promo{animation:none}html{scroll-behavior:auto}.card,.btn{transition:none}.card:hover,.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="root">
+
+<header class="hdr">
+<div class="wrap" style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between">
+<a href="#start" aria-label="OknoNieWieje, strona główna" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none">
+<svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true" fill="none"><path d="M2 16h8M0 24h10M2 32h8" stroke="#C94A0A" stroke-width="4" stroke-linecap="round"></path><rect x="15" y="6" width="28" height="36" rx="4" stroke="#0F2A43" stroke-width="4"></rect><path d="M29 6v36" stroke="#0F2A43" stroke-width="3"></path></svg>
+<span style="font-weight: 800; font-size: 22px; letter-spacing: -0.02em">Okno<span style="color: #C94A0A">NieWieje</span></span>
+</a>
+<nav class="dnav" aria-label="Menu" style="display: flex; flex-wrap: wrap; gap: 6px 22px; font-weight: 700; font-size: 16px">
+<a href="#diagnoza" style="text-decoration: none">Diagnoza</a>
+<a href="#uslugi" style="text-decoration: none">Usługi i ceny</a>
+<a href="#uszczelki" style="text-decoration: none">Uszczelki</a>
+<a href="#opinie" style="text-decoration: none">Opinie</a>
+<a href="#pytania" style="text-decoration: none">Pytania</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 10px">
+<a class="btn pri dcall" href="tel:+48579289539" style="min-height: 46px; font-size: 16px; padding: 0 18px">Zadzwoń: +48 579 289 539</a>
+<button type="button" class="burg" aria-label="Menu" aria-expanded="false" id="burg" data-act="toggleMenu">
+<div data-if="menu" hidden><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+<div data-if="menuClosed"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"></path></svg></div>
+</button>
+</div>
+</div>
+<div data-if="menu" hidden>
+<nav class="mpanel" aria-label="Menu mobilne">
+<a class="mlink" href="#diagnoza" data-act="closeMenu">Diagnoza<span aria-hidden="true">→</span></a>
+<a class="mlink" href="#uslugi" data-act="closeMenu">Usługi i ceny<span aria-hidden="true">→</span></a>
+<a class="mlink" href="#uszczelki" data-act="closeMenu">Uszczelki<span aria-hidden="true">→</span></a>
+<a class="mlink" href="#drewno" data-act="closeMenu">Okna drewniane<span aria-hidden="true">→</span></a>
+<a class="mlink" href="#opinie" data-act="closeMenu">Opinie<span aria-hidden="true">→</span></a>
+<a class="mlink" href="#pytania" data-act="closeMenu">Pytania<span aria-hidden="true">→</span></a>
+<div class="ctwo" style="margin-top: 14px">
+<a class="btn pri" href="tel:+48579289539" style="padding: 0 10px">Zadzwoń</a>
+<button type="button" class="btn sec2" data-act="openModal" style="padding: 0 10px">Kontakt</button>
+</div>
+</nav>
+</div>
+</header>
+
+<section id="start" style="padding-top: 18px">
+<div class="wrap">
+<div class="hero">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 36px; align-items: center">
+<div>
+<p style="margin-bottom: 12px; font-weight: 700; color: #F5B27D">Warszawa i okolice · okna PCV i drewniane</p>
+<h1>Wieje z okna? Uszczelnimy je bez wymiany.</h1>
+<p class="mut" style="margin-top: 18px; font-size: clamp(17px, 2vw, 20px); max-width: 32em">Zima zostaje za szybą, a ciepło w domu. Wyregulujemy okna, ustawimy docisk i wymienimy zużyte uszczelki, bez kucia i bez remontu.</p>
+<div class="cta">
+<a class="btn pri" href="tel:+48579289539">Zadzwoń teraz</a>
+<button type="button" class="btn ghost" data-act="openModal">Kontakt</button>
+</div>
+</div>
+<div class="thermal">
+<div class="seg" role="group" aria-label="Porównanie okna">
+<button type="button" class="segb on" data-seg="before" data-act="showBefore">Teraz wieje</button>
+<button type="button" class="segb" data-seg="after" data-act="showAfter">Po uszczelnieniu</button>
+</div>
+<div data-if="before">
+<svg viewBox="0 0 440 320" style="display: block; width: 100%; border-radius: 12px" role="img" aria-label="Ilustracja: zimne powietrze wchodzi przy krawędziach skrzydeł" fill="none">
+<defs><filter id="cb" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="13"></feGaussianBlur></filter></defs>
+<rect width="440" height="320" fill="#E8590C"></rect>
+<rect x="60" y="16" width="320" height="288" fill="#F2A23B"></rect>
+<rect x="84" y="40" width="130" height="240" fill="#F2C14E"></rect>
+<rect x="226" y="40" width="130" height="240" fill="#F2C14E"></rect>
+<g filter="url(#cb)"><rect x="80" y="36" width="138" height="248" stroke="#1D74C9" stroke-width="20"></rect><rect x="222" y="36" width="138" height="248" stroke="#1D74C9" stroke-width="20"></rect></g>
+<rect x="60" y="16" width="320" height="288" stroke="#0A1E30" stroke-width="4"></rect>
+<rect x="84" y="40" width="130" height="240" stroke="#0A1E30" stroke-width="2"></rect>
+<rect x="226" y="40" width="130" height="240" stroke="#0A1E30" stroke-width="2"></rect>
+</svg>
+</div>
+<div data-if="after" hidden>
+<svg viewBox="0 0 440 320" style="display: block; width: 100%; border-radius: 12px" role="img" aria-label="Ilustracja: po uszczelnieniu krawędzie skrzydeł są ciepłe" fill="none">
+<rect width="440" height="320" fill="#E8590C"></rect>
+<rect x="60" y="16" width="320" height="288" fill="#EE8A2E"></rect>
+<rect x="84" y="40" width="130" height="240" fill="#F2C14E"></rect>
+<rect x="226" y="40" width="130" height="240" fill="#F2C14E"></rect>
+<rect x="60" y="16" width="320" height="288" stroke="#0A1E30" stroke-width="4"></rect>
+<rect x="84" y="40" width="130" height="240" stroke="#0A1E30" stroke-width="2"></rect>
+<rect x="226" y="40" width="130" height="240" stroke="#0A1E30" stroke-width="2"></rect>
+</svg>
+</div>
+<div class="legend" aria-hidden="true"></div>
+<div class="legt"><span>zimno</span><span>Ilustracja poglądowa</span><span>ciepło</span></div>
+</div>
+</div>
+<div class="tiles">
+<div class="tile"><strong>Dojazd w cenie zlecenia</strong><span>Na terenie Warszawy</span></div>
+<div class="tile"><strong>Gwarancja do 5 lat</strong><span>Na wykonaną pracę</span></div>
+<div class="tile"><strong>Wizyta nawet w 24 h</strong><span>Także w soboty</span></div>
+<div class="tile"><strong>Płacisz po wykonaniu</strong><span>Bez zaliczek i ukrytych kosztów</span></div>
+</div>
+</div>
+<form class="quick" aria-label="Szybka wycena">
+<p style="font-weight: 800; font-size: 21px; line-height: 1.2">Oddzwonimy z wyceną i terminem</p>
+<label>Telefon<input name="telefon" type="tel" autocomplete="tel" required="required"></label>
+<label>Liczba okien<input name="okna" type="text" inputmode="numeric" placeholder="np. 4"></label>
+<button class="btn pri" type="submit">Poproś o telefon</button>
+</form>
+</div>
+</section>
+
+<section id="diagnoza" class="sec">
+<div class="wrap">
+<span class="eyebrow">Diagnoza online</span>
+<h2>Co dzieje się z Twoim oknem?</h2>
+<p class="lead">Zimne powietrze najczęściej wchodzi przez styk skrzydła z ramą, a nie przez samą szybę. Wybierz objaw, a pokażemy prawdopodobną przyczynę i rozwiązanie.</p>
+<div class="grid g2">
+<div class="chips" role="group" aria-label="Wybierz objaw">
+
+</div>
+<div class="res" aria-live="polite">
+<p class="lab" style="margin-top: 0">Prawdopodobna przyczyna</p>
+<p class="val"><span data-res="cause"></span></p>
+<p class="lab">Co zrobimy</p>
+<p class="val"><span data-res="fix"></span></p>
+<p class="lab">Cena</p>
+<p class="val" style="color: #A83C07"><span data-res="price"></span></p>
+<div class="cta" style="margin-top: 20px"><a class="btn pri" href="#formularz">Zamów wizytę</a></div>
+<p class="mut" style="margin-top: 14px; font-size: 15px">To wskazówka. Przyczynę potwierdzimy na miejscu.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="uslugi" class="sec soft">
+<div class="wrap">
+<span class="eyebrow">Usługi i ceny</span>
+<h2>Robimy jedno: zatrzymujemy przeciąg</h2>
+<p class="lead">Krótka lista usług i jasne ceny. Dokładnie wiesz, za co płacisz.</p>
+<div class="grid g3 svc">
+<div class="card">
+<div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M12 3v18M9 11v3"></path></svg></div>
+<h3>Regulacja okien i drzwi balkonowych</h3>
+<p class="mut">Ustawiamy skrzydło, poprawiamy docisk i przełączamy okno na tryb zimowy, jeśli ma taką funkcję.</p>
+<ul class="ticks"><li>okno domyka się lekko</li><li>skrzydło przestaje ocierać</li><li>równy docisk na obwodzie</li></ul>
+<p class="price">od 60 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ skrzydło</span></p>
+</div>
+<div class="card">
+<div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg></div>
+<h3>Wymiana uszczelek</h3>
+<p class="mut">Zdejmujemy starą uszczelkę, czyścimy rowek i zakładamy nową, dobraną do profilu okna.</p>
+<ul class="ticks"><li>koniec z przeciągiem</li><li>mniej hałasu z ulicy</li><li>okno znów trzyma szczelność</li></ul>
+<p class="price">od 29 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ mb</span></p>
+</div>
+<div class="card">
+<div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.500 6 11a6 6 0 0 1-12 0c0-4.500 6-11 6-11z"></path></svg></div>
+<h3>Smarowanie i przegląd</h3>
+<p class="mut">Czyścimy i smarujemy okucia, konserwujemy uszczelki i sprawdzamy każde okno.</p>
+<ul class="ticks"><li>klamka chodzi płynnie</li><li>uszczelki dłużej pracują</li><li>znasz stan swoich okien</li></ul>
+<p class="price">od 40 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ okno</span></p>
+</div>
+</div>
+<p class="mut" style="margin-top: 20px">Minimalna wartość zlecenia z dojazdem na terenie Warszawy: 250 zł. Ostateczną cenę podajemy po obejrzeniu okien, zanim zaczniemy pracę.</p>
+</div>
+</section>
+
+<section id="uszczelki" class="sec">
+<div class="wrap">
+<span class="eyebrow">Wszystko o uszczelkach</span>
+<h2>Mały element, który decyduje o cieple</h2>
+<div class="grid g2" style="align-items: center">
+<div>
+<p class="mut">Uszczelka wypełnia szczelinę między skrzydłem a ramą. Gdy jest elastyczna, skrzydło dociska ją na całym obwodzie i powietrze nie ma którędy przejść.</p>
+<p class="mut" style="margin-top: 12px">Z czasem materiał twardnieje, a szczelina wraca. Dlatego okno może wiać, chociaż szyby i rama są w dobrym stanie.</p>
+<p class="mut" style="margin-top: 12px">O wymianie decyduje stan uszczelki, a nie sam wiek okna. Sprawdzamy ją na miejscu i dobieramy zamiennik do profilu.</p>
+</div>
+<svg viewBox="0 0 460 280" style="width: 100%; border-radius: 12px; background: #F2F6FA" role="img" aria-label="Przekrój okna: rama, skrzydło, szyba i uszczelka" fill="none">
+<rect x="40" y="170" width="250" height="70" rx="6" fill="#C9D7E3"></rect>
+<rect x="40" y="96" width="60" height="110" rx="6" fill="#C9D7E3"></rect>
+<rect x="120" y="60" width="150" height="96" rx="6" fill="#0F2A43"></rect>
+<rect x="180" y="20" width="26" height="60" fill="#BFE0F2"></rect>
+<circle cx="110" cy="138" r="9" fill="#C94A0A"></circle>
+<circle cx="150" cy="163" r="9" fill="#C94A0A"></circle>
+<path d="M300 200h52" stroke="#0F2A43" stroke-width="1.500"></path><path d="M270 120h82" stroke="#0F2A43" stroke-width="1.500"></path><path d="M206 44h146" stroke="#0F2A43" stroke-width="1.500"></path><path d="M159 163c60 66 130 66 193 52" stroke="#C94A0A" stroke-width="1.500"></path>
+<text x="358" y="49" fill="#0F2A43" font-family="Manrope, sans-serif" font-size="16" font-weight="700">Szyba</text>
+<text x="358" y="125" fill="#0F2A43" font-family="Manrope, sans-serif" font-size="16" font-weight="700">Skrzydło</text>
+<text x="358" y="205" fill="#0F2A43" font-family="Manrope, sans-serif" font-size="16" font-weight="700">Rama</text>
+<text x="358" y="240" fill="#A83C07" font-family="Manrope, sans-serif" font-size="16" font-weight="700">Uszczelki</text>
+</svg>
+</div>
+
+<h3 style="margin-top: 44px; font-size: 24px">Po czym poznać zużytą uszczelkę</h3>
+<div class="grid g4" style="margin-top: 18px">
+<div class="card">
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="48" width="180" height="26" rx="13" fill="#0F2A43"></rect><path d="M112 40l10 14-8 10 12 16" stroke="#F2F6FA" stroke-width="6"></path></svg>
+<h3>Pęknięcia</h3><p class="mut">Widoczne szczeliny w materiale, zwykle w narożnikach.</p>
+</div>
+<div class="card">
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="56" width="180" height="10" rx="5" fill="#0F2A43"></rect><path d="M120 20v26M108 36l12 12 12-12" stroke="#C94A0A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<h3>Spłaszczenie</h3><p class="mut">Uszczelka nie wraca do kształtu po otwarciu okna.</p>
+</div>
+<div class="card">
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="48" width="180" height="26" rx="4" fill="#0F2A43"></rect><path d="M58 48v26M92 48v26M126 48v26M160 48v26M190 48v26" stroke="#F2F6FA" stroke-width="3"></path></svg>
+<h3>Twardość</h3><p class="mut">Guma nie ugina się pod palcem i kruszy się.</p>
+</div>
+<div class="card">
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><path d="M30 80h60v-10h60v10h60" stroke="#8A9CAB" stroke-width="6"></path><path d="M60 60c40 0 60-34 120-30" stroke="#0F2A43" stroke-width="14" stroke-linecap="round"></path></svg>
+<h3>Wypadanie z rowka</h3><p class="mut">Uszczelka odstaje lub wysuwa się przy zamykaniu.</p>
+</div>
+</div>
+
+<h3 style="margin-top: 44px; font-size: 24px">Z jakich materiałów są uszczelki</h3>
+<div class="grid g3" style="margin-top: 18px">
+<div class="card"><h3>EPDM</h3><p class="mut">Guma często stosowana w oknach PCV i aluminiowych. Odporna na mróz, wilgoć i promieniowanie UV.</p></div>
+<div class="card"><h3>TPE</h3><p class="mut">Elastyczne tworzywo, popularne w nowszych oknach. Zwykle w kolorze szarym lub brązowym.</p></div>
+<div class="card"><h3>Pianka poliuretanowa</h3><p class="mut">Miękka uszczelka, która dobrze wraca do kształtu. Sprawdza się także w oknach drewnianych.</p></div>
+</div>
+
+<div class="res" style="margin-top: 24px; background: #FFF1E6; border-color: #F6DCC6">
+<h3>Jak dbać o uszczelki</h3>
+<ul class="ticks"><li>myj je łagodnym środkiem, bez rozpuszczalników</li><li>raz w roku zabezpiecz je preparatem do uszczelek</li><li>nie maluj uszczelek razem z ramą</li><li>przed sezonem grzewczym sprawdź je testem kartki</li></ul>
+</div>
+</div>
+</section>
+
+<section class="sec soft">
+<div class="wrap">
+<span class="eyebrow">Tryb zimowy</span>
+<h2>Trzy ustawienia docisku</h2>
+<p class="lead">Wiele okien ma regulowane rolki w okuciach. Ich pozycja decyduje o tym, jak mocno skrzydło przylega do ramy. Nie każde okno ma tę funkcję, ale sprawdzimy to na miejscu.</p>
+<div class="grid g3">
+<div class="card">
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="50" y="16" width="44" height="88" rx="6" fill="#0F2A43"></rect><rect x="150" y="16" width="44" height="88" rx="6" fill="#C9D7E3"></rect><circle cx="122" cy="60" r="11" stroke="#1F6FB2" stroke-width="4"></circle></svg>
+<h3>Lato</h3><p class="mut">Najsłabszy docisk i lekkie przewietrzanie. Na zimę to za mało.</p>
+</div>
+<div class="card">
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="62" y="16" width="44" height="88" rx="6" fill="#0F2A43"></rect><rect x="138" y="16" width="44" height="88" rx="6" fill="#C9D7E3"></rect><circle cx="122" cy="60" r="11" stroke="#8A9CAB" stroke-width="4"></circle></svg>
+<h3>Standard</h3><p class="mut">Ustawienie pośrednie, zwykle zostawiane po montażu okna.</p>
+</div>
+<div class="card">
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="74" y="16" width="44" height="88" rx="6" fill="#0F2A43"></rect><rect x="122" y="16" width="44" height="88" rx="6" fill="#C9D7E3"></rect><circle cx="120" cy="60" r="10" fill="#C94A0A"></circle></svg>
+<h3>Zima</h3><p class="mut">Najmocniejszy docisk. Zatrzymuje przeciąg, jeśli uszczelka jest sprawna.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+<span class="eyebrow">Zrób to sam</span>
+<h2>Sprawdź okno w 30 sekund</h2>
+<div class="grid g2">
+<div class="card">
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="14" width="26" height="92" rx="4" fill="#0F2A43"></rect><rect x="70" y="14" width="26" height="92" rx="4" fill="#C9D7E3"></rect><path d="M68 46l110-10 12 52-122 8z" fill="#FFFFFF" stroke="#8A9CAB" stroke-width="2"></path></svg>
+<h3>Test kartki</h3><p class="mut">Włóż kartkę między skrzydło a ramę i zamknij okno. Jeśli łatwo ją wyciągnąć, docisk jest za słaby.</p>
+</div>
+<div class="card">
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="10" width="26" height="100" rx="4" fill="#0F2A43"></rect><path d="M150 54c-16-6-26-16-44-14 8 10 2 16 14 26 12 8 26 2 30-12z" fill="#E8890C"></path><rect x="142" y="62" width="18" height="46" rx="3" fill="#C9D7E3"></rect></svg>
+<h3>Test płomienia</h3><p class="mut">Zbliż świeczkę do styku skrzydła i ramy, z dala od firan. Jeśli płomień się odchyla, tamtędy wchodzi powietrze.</p>
+</div>
+</div>
+<div class="band" style="margin-top: 24px">
+<p style="font-weight: 800; font-size: clamp(20px, 2.6vw, 26px); line-height: 1.2">Test wypadł źle? Wyślij nam zdjęcie okna.</p>
+<a class="btn sec2" href="https://wa.me/48579289539">Wyślij na WhatsApp</a>
+</div>
+</div>
+</section>
+
+<section class="sec soft">
+<div class="wrap">
+<span class="eyebrow">Korzyści</span>
+<h2>Co zyskujesz</h2>
+<div class="grid g3">
+<div class="card"><h3>Cieplej przy oknie</h3><p class="mut">Przestaje ciągnąć po nogach i plecach, a pokój znów jest przytulny.</p></div>
+<div class="card"><h3>Mniej ciepła ucieka</h3><p class="mut">Szczelne okno nie wypuszcza ogrzanego powietrza przez szpary przy ramie.</p></div>
+<div class="card"><h3>Ciszej w domu</h3><p class="mut">Dobra uszczelka i właściwy docisk zatrzymują też część hałasu z ulicy.</p></div>
+<div class="card"><h3>Okna działają lekko</h3><p class="mut">Skrzydło nie ociera, a klamka nie wymaga siły.</p></div>
+<div class="card"><h3>Bez remontu</h3><p class="mut">Nie kujemy, nie ruszamy tynku i nie zostawiamy po sobie gruzu.</p></div>
+<div class="card"><h3>Pieniądze zostają u Ciebie</h3><p class="mut">Płacisz za usunięcie przyczyny, a nie za okna, których możesz jeszcze nie potrzebować.</p></div>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap" style="max-width: 900px">
+<h2>Uszczelnienie czy nowe okna?</h2>
+<table style="margin-top: 24px">
+<thead><tr><th scope="col"></th><th scope="col">Uszczelnienie</th><th scope="col">Wymiana okien</th></tr></thead>
+<tbody>
+<tr><th scope="row">Czas</th><td>jedna wizyta</td><td>zamówienie, oczekiwanie, montaż</td></tr>
+<tr><th scope="row">Bałagan</th><td>praktycznie żaden</td><td>demontaż, pył, poprawki przy ościeżach</td></tr>
+<tr><th scope="row">Kiedy ma sens</th><td>rama i szyby są w dobrym stanie</td><td>okno jest zniszczone lub zgniłe</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="drewno" class="sec soft">
+<div class="wrap">
+<div class="hero" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 32px; align-items: center">
+<div>
+<h2>Masz stare okna drewniane? Znamy je od podszewki.</h2>
+<p class="mut" style="margin-top: 14px">Na co dzień zajmujemy się renowacją okien drewnianych. Wiemy, jak uszczelnić stare okno i nie zniszczyć ramy. Pomożemy także przy oknach skrzynkowych w kamienicach.</p>
+<p class="mut" style="margin-top: 12px">Jeśli okno wymaga czegoś więcej niż uszczelnienia, powiemy o tym wprost i pokażemy, co można zrobić wiosną.</p>
+</div>
+<div class="tile" style="padding: 24px">
+<h3>Co sprawdzamy w drewnianym oknie</h3>
+<ul class="ticks"><li>stan uszczelki i rowka w ramie</li><li>przyleganie skrzydeł na obwodzie</li><li>stan drewna przy dolnej części ramy</li><li>działanie zawiasów i zamknięć</li><li>kit i listwy przy szybach</li></ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap">
+<span class="eyebrow">Krok po kroku</span>
+<h2>Jak to wygląda</h2>
+<div class="grid g4">
+<div class="card"><p class="num">1</p><h3>Dzwonisz lub piszesz</h3><p class="mut">Podajesz liczbę okien i dzielnicę. Możesz wysłać zdjęcie.</p></div>
+<div class="card"><p class="num">2</p><h3>Sprawdzamy okna</h3><p class="mut">Na miejscu szukamy przyczyny przeciągu i podajemy cenę.</p></div>
+<div class="card"><p class="num">3</p><h3>Uszczelniamy</h3><p class="mut">Regulujemy, smarujemy i wymieniamy uszczelki.</p></div>
+<div class="card"><p class="num">4</p><h3>Testujemy razem</h3><p class="mut">Sprawdzamy z Tobą docisk i szczelność każdego okna.</p></div>
+</div>
+</div>
+</section>
+
+<section id="opinie" class="sec soft">
+<div class="wrap">
+<span class="eyebrow">Opinie</span>
+<h2>Co mówią klienci</h2>
+<div class="grid g3">
+<div class="card"><p style="font-weight: 800">[IMIĘ KLIENTA]</p><p class="mut" style="font-size: 14px">[DATA OPINII] · Google</p><p class="stars" aria-hidden="true">[OCENA]</p><p class="mut" style="margin-top: 6px">[TREŚĆ PRAWDZIWEJ OPINII]</p></div>
+<div class="card"><p style="font-weight: 800">[IMIĘ KLIENTA]</p><p class="mut" style="font-size: 14px">[DATA OPINII] · Google</p><p class="stars" aria-hidden="true">[OCENA]</p><p class="mut" style="margin-top: 6px">[TREŚĆ PRAWDZIWEJ OPINII]</p></div>
+<div class="card"><p style="font-weight: 800">[IMIĘ KLIENTA]</p><p class="mut" style="font-size: 14px">[DATA OPINII] · Google</p><p class="stars" aria-hidden="true">[OCENA]</p><p class="mut" style="margin-top: 6px">[TREŚĆ PRAWDZIWEJ OPINII]</p></div>
+</div>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 40px">
+<div>
+<h2 style="font-size: clamp(26px, 3.2vw, 34px)">Dla kogo pracujemy</h2>
+<ul class="ticks"><li>mieszkania w blokach i apartamentowcach</li><li>kamienice ze starymi oknami</li><li>domy jednorodzinne</li><li>wynajmujący, którym lokatorzy zgłaszają przeciągi</li><li>wspólnoty, biura, hotele i szkoły</li></ul>
+</div>
+<div>
+<h2 style="font-size: clamp(26px, 3.2vw, 34px)">Gdzie dojeżdżamy</h2>
+<p class="mut" style="margin-top: 14px">Cała Warszawa: Bemowo, Białołęka, Bielany, Mokotów, Ochota, Praga-Południe, Praga-Północ, Rembertów, Śródmieście, Targówek, Ursus, Ursynów, Wawer, Wesoła, Wilanów, Włochy, Wola, Żoliborz.</p>
+<p class="mut" style="margin-top: 12px">Okolice: Piaseczno, Konstancin-Jeziorna, Pruszków, Piastów, Łomianki, Legionowo, Marki, Ząbki, Otwock.</p>
+</div>
+</div>
+</section>
+
+<section id="pytania" class="sec soft">
+<div class="wrap" style="max-width: 860px">
+<h2 style="margin-bottom: 14px">Częste pytania</h2>
+<details><summary>Czy muszę wymieniać okna, jeśli wieje?</summary><p>Często nie. Przyczyną bywa słaby docisk albo zużyta uszczelka. Sprawdzimy to na miejscu i powiemy, czy uszczelnienie ma sens.</p></details>
+<details><summary>Ile trwa praca?</summary><p>Zwykle od 30 minut do godziny na okno. Dokładny czas zależy od liczby okien i ich stanu.</p></details>
+<details><summary>Czy można to zrobić zimą?</summary><p>Tak. Okno otwieramy tylko na czas pracy przy danym skrzydle, a mieszkanie pozostaje ogrzewane.</p></details>
+<details><summary>Czy każde okno ma tryb zimowy?</summary><p>Nie każde. Tryb zimowy zależy od okuć. Sprawdzimy to na miejscu i ustawimy docisk tak, jak pozwala Twoje okno.</p></details>
+<details><summary>Czy szczelne okno nie pogorszy wentylacji?</summary><p>Szczelne okno wpuszcza mniej powietrza, dlatego trzeba pamiętać o regularnym wietrzeniu. Podpowiemy, jak to pogodzić w Twoim mieszkaniu.</p></details>
+<details><summary>Jak często regulować okna?</summary><p>Najlepiej raz w roku, zwłaszcza przed sezonem grzewczym. Dzięki temu okucia i uszczelki pracują dłużej.</p></details>
+<details><summary>Skąd mam wiedzieć, czy wystarczy regulacja?</summary><p>Jeśli uszczelka jest miękka i cała, zwykle wystarczy regulacja. Gdy jest twarda lub popękana, trzeba ją wymienić.</p></details>
+<details><summary>Czy pomożecie, jeśli wieje spod parapetu lub przy murze?</summary><p>Sprawdzimy, skąd dokładnie idzie powietrze. Jeśli problem leży w montażu okna, powiemy to wprost.</p></details>
+<details><summary>Czy naprawiacie zepsute okucia lub wymieniacie szyby?</summary><p>Nie. Zajmujemy się regulacją, smarowaniem i uszczelkami. Jeśli zobaczymy uszkodzone okucie, powiemy o tym od razu.</p></details>
+</div>
+</section>
+
+<section id="formularz" class="sec">
+<div class="wrap">
+<div class="hero" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 36px">
+<div>
+<h2>Niech w domu znów będzie ciepło</h2>
+<p class="mut" style="margin: 14px 0 22px">Napisz, ile masz okien, a oddzwonimy z wyceną i terminem. Wolisz porozmawiać? Zadzwoń.</p>
+<a class="btn pri" href="tel:+48579289539">Zadzwoń: +48 579 289 539</a>
+</div>
+<form class="bigform">
+<label>Imię<input name="imie" type="text" autocomplete="given-name"></label>
+<label>Telefon<input name="telefon" type="tel" autocomplete="tel" required="required"></label>
+<label>Dzielnica lub miejscowość<input name="lokalizacja" type="text"></label>
+<label>Liczba i rodzaj okien<input name="okna" type="text" placeholder="np. 4 okna PCV"></label>
+<button class="btn pri" type="submit">Poproś o wycenę</button>
+</form>
+</div>
+</div>
+</section>
+
+<div data-if="modal" hidden>
+<div class="ov" data-act="closeModal">
+<div class="modal" role="dialog" aria-modal="true" aria-labelledby="kontakt-tytul" data-act="stop">
+<button type="button" class="mx" aria-label="Zamknij" data-act="closeModal"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<h2 id="kontakt-tytul" style="font-size: 28px; padding-right: 52px">Skontaktuj się z nami</h2>
+<p class="mut" style="margin-top: 8px; margin-bottom: 8px">Wybierz najwygodniejszy sposób kontaktu. Odpowiadamy szybko.</p>
+<a class="copt" href="tel:+48579289539"><span class="cico" style="background: #FFF1E6; color: #C94A0A"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span><span><span class="ckind" style="display: block">Zadzwoń teraz</span><span class="cval">+48 579 289 539</span></span></a>
+<a class="copt" href="mailto:[E-MAIL]"><span class="cico" style="background: #E3EEF8; color: #1F6FB2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span><span><span class="ckind" style="display: block">Napisz e-mail</span><span class="cval">[E-MAIL]</span></span></a>
+<div class="ctwo">
+<a class="ctile" href="https://wa.me/48579289539"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="#1E8E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.400-4A8 8 0 1 1 8 18.600z"></path></svg>WhatsApp</a>
+<a class="ctile" href="#formularz" data-act="closeModal"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg>Formularz</a>
+</div>
+<div style="display: flex; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid #DCE5EC">
+<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#4C6072" stroke-width="2" stroke-linecap="round" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+<div><p style="font-weight: 800">Godziny pracy</p><p class="mut">[GODZINY PRACY, np. pon.–sob. 9:00–19:00]</p></div>
+</div>
+</div>
+</div>
+</div>
+
+<div data-if="promo" hidden>
+<div class="promo" role="dialog" aria-labelledby="promo-tytul">
+<button type="button" class="mx" aria-label="Zamknij" data-act="closePromo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<div style="display: flex; gap: 14px; align-items: flex-start; padding-right: 48px">
+<span class="cico" style="background: #FFF1E6; color: #C94A0A"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span>
+<div><p class="ckind">Wieje z okna?</p><p id="promo-tytul" style="font-weight: 800; font-size: 19px; line-height: 1.25">Dojazd w cenie zlecenia na terenie Warszawy</p></div>
+</div>
+<p class="mut" style="margin-top: 8px; font-size: 15px">Zadzwoń, a ustalimy termin. Wizyta nawet w 24 h.</p>
+<a class="pcall" href="tel:+48579289539">+48 579 289 539<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></a>
+<div class="ctwo" style="margin-top: 10px">
+<a class="pbtn" href="https://wa.me/48579289539" style="color: #1E7A45"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.400-4A8 8 0 1 1 8 18.600z"></path></svg>WhatsApp</a>
+<a class="pbtn" href="#formularz" data-act="closePromo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg>Formularz</a>
+</div>
+<p class="mut" style="margin-top: 12px; font-size: 14px">[GODZINY PRACY, np. pon.–sob. 9:00–19:00]</p>
+</div>
+</div>
+
+<div class="mbar">
+<a class="btn pri" href="tel:+48579289539" style="flex: 1; min-height: 48px; padding: 0 8px">Zadzwoń</a>
+<a class="btn sec2" href="#formularz" style="flex: 1; min-height: 48px; padding: 0 8px">Wycena</a>
+</div>
+
+<footer class="mspace" style="background: #0A1E30; color: #D5E0EA">
+<div class="wrap" style="padding-top: 22px; padding-bottom: 22px; display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between; font-size: 15px">
+<span>OknoNieWieje · oknoniewieje.pl · NIP [NIP]</span>
+<span>Regulacja, smarowanie i uszczelnianie okien · Warszawa i okolice</span>
+</div>
+</footer>
+
+</div>
+<script>
+(function(){
+var data=[
+      { label: 'Wieje przy ramie', cause: 'Za słaby docisk lub zużyta uszczelka', fix: 'Sprawdzamy uszczelkę i ustawiamy docisk na całym obwodzie', price: 'od 60 zł za skrzydło' },
+      { label: 'Uszczelka jest twarda lub popękana', cause: 'Uszczelka straciła sprężystość', fix: 'Zakładamy nową uszczelkę, dobraną do profilu okna', price: 'od 29 zł za metr' },
+      { label: 'Okno ciężko się zamyka', cause: 'Rozregulowane skrzydło lub suche okucia', fix: 'Regulujemy skrzydło, czyścimy i smarujemy okucia', price: 'od 60 zł za skrzydło' },
+      { label: 'Skrzydło ociera o ramę', cause: 'Skrzydło opadło na zawiasach', fix: 'Ustawiamy skrzydło z powrotem w ramie', price: 'od 60 zł za skrzydło' },
+      { label: 'Słychać ulicę bardziej niż kiedyś', cause: 'Nieszczelny styk skrzydła z ramą', fix: 'Poprawiamy docisk i w razie potrzeby wymieniamy uszczelkę', price: 'od 60 zł za skrzydło' },
+      { label: 'Mam stare okno drewniane', cause: 'Brak uszczelki lub wypaczone skrzydło', fix: 'Dobieramy sposób uszczelnienia do konstrukcji okna', price: 'wycena po zdjęciu lub oględzinach' }
+    ];
+var st={view:'before',sym:0,modal:false,promo:false,promoDone:false,menu:false};
+function show(k,v){document.querySelectorAll('[data-if="'+k+'"]').forEach(function(e){e.hidden=!v;});}
+function render(){
+ show('before',st.view==='before');show('after',st.view==='after');
+ document.querySelectorAll('[data-seg]').forEach(function(b){b.classList.toggle('on',b.dataset.seg===st.view);b.setAttribute('aria-pressed',b.dataset.seg===st.view);});
+ show('menu',st.menu);show('menuClosed',!st.menu);
+ var bg=document.getElementById('burg');if(bg)bg.setAttribute('aria-expanded',st.menu?'true':'false');
+ show('modal',st.modal);show('promo',st.promo);
+ var r=data[st.sym];document.querySelectorAll('[data-res]').forEach(function(e){e.textContent=r[e.dataset.res];});
+ document.querySelectorAll('.chips .chip').forEach(function(c,i){c.classList.toggle('on',i===st.sym);c.setAttribute('aria-pressed',i===st.sym);});
+}
+function set(p){for(var k in p)st[k]=p[k];render();}
+var chips=document.querySelector('.chips');
+data.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=d.label;b.addEventListener('click',function(){set({sym:i});});chips.appendChild(b);});
+var acts={showBefore:function(){set({view:'before'});},showAfter:function(){set({view:'after'});},
+ toggleMenu:function(){set({menu:!st.menu});},closeMenu:function(){set({menu:false});},
+ openModal:function(){set({modal:true,promo:false,promoDone:true,menu:false});},closeModal:function(){set({modal:false});},
+ closePromo:function(){set({promo:false,promoDone:true});},stop:function(){}};
+document.addEventListener('click',function(e){var t=e.target.closest('[data-act]');if(t&&acts[t.dataset.act])acts[t.dataset.act]();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(st.modal)set({modal:false});else if(st.menu)set({menu:false});}});
+setTimeout(function(){if(!st.modal&&!st.promoDone)set({promo:true});},20000);
+document.querySelectorAll('form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();
+ var m=f.querySelector('.fmsg');if(!m){m=document.createElement('p');m.className='fmsg';m.setAttribute('role','status');m.style.cssText='font-weight:700;color:#A83C07';f.appendChild(m);}
+ m.textContent='Formularz nie jest jeszcze podłączony. Zadzwoń: +48 579 289 539';});});
+render();
+})();
+</script>
+</body>
+</html>
