@@ -3,191 +3,429 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OknoNieWieje: regulacja i uszczelnianie okien Warszawa</title>
-<meta name="description" content="Wieje z okna? Regulacja, smarowanie i wymiana uszczelek w oknach PCV i drewnianych. Warszawa i okolice. Cenę podajemy przed pracą.">
+<title>OknoNieWieje: wymiana uszczelek i regulacja okien Warszawa</title>
+<meta name="description" content="Ciągnie zimnem od okna? Wymiana uszczelek i regulacja okien PCV i drewnianych bez wymiany okien. Warszawa i okolice. Cenę podajemy przed pracą.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet">
 <style>
 [hidden]{display:none!important}
-:root{--r:12px;--ink:#0F2A43;--mut:#4C6072;--line:#DCE5EC;--soft:#F2F6FA;--warm:#FFF1E6;--acc:#C94A0A;--acc2:#A83C07;--blue:#1F6FB2}
+:root{--r:2px;--ink:#0E1A22;--mut:#46565F;--line:#C9D5DB;--frost:#E8EEF0;--heat:#D9701E;--heat2:#A9530F;--cold:#7FA7BA;--cold2:#3E6E86}
 body{margin:0;background:#FFFFFF}
 a{color:inherit}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
-.root{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:#FFFFFF;font-size:17px;line-height:1.6;font-weight:500}
+.root{font-family:Archivo,system-ui,sans-serif;color:var(--ink);background:#FFFFFF;font-size:17px;line-height:1.6;font-weight:400}
 .root *{box-sizing:border-box}
-h1,h2,h3{font-weight:800;line-height:1.15;letter-spacing:-.02em;margin:0;overflow-wrap:break-word}
-h1{font-size:clamp(36px,5vw,58px);line-height:1.08}
-h2{font-size:clamp(28px,3.8vw,40px)}
-h3{font-size:20px;letter-spacing:-.01em}
+h1,h2{font-family:"Archivo Narrow",Archivo,sans-serif;font-weight:700;text-transform:uppercase;line-height:.98;letter-spacing:-.005em;margin:0;overflow-wrap:break-word}
+h3{font-family:Archivo,sans-serif;font-weight:800;font-size:20px;line-height:1.2;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(40px,5.6vw,72px)}
+h2{font-size:clamp(32px,4.2vw,52px)}
 p{margin:0}
 .wrap{max-width:1180px;margin:0 auto;padding-left:20px;padding-right:20px}
-.sec{padding-top:clamp(52px,7vw,84px);padding-bottom:clamp(52px,7vw,84px)}
-.soft{background:var(--soft)}
+.sec{padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(56px,7vw,96px)}
+.soft{background:var(--frost)}
 .mut{color:var(--mut)}
-.eyebrow{display:inline-block;margin-bottom:12px;padding:5px 12px;border-radius:var(--r);background:var(--warm);color:var(--acc2);font-size:14px;font-weight:700}
-.lead{margin-top:12px;max-width:44em;color:var(--mut)}
-.grid{display:grid;gap:18px;margin-top:32px}
+.eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--heat2)}
+.eyebrow::before{content:"";width:28px;height:3px;background:var(--heat)}
+.lead{margin-top:16px;max-width:44em;color:var(--mut);font-size:18px}
+.grid{display:grid;gap:28px 32px;margin-top:40px}
 .g2{grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))}
 .g3{grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr))}
 .g4{grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
-.card{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);padding:24px;box-shadow:0 2px 10px rgba(15,42,67,.05);transition:transform .15s ease,box-shadow .15s ease}
-.card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(15,42,67,.1)}
-.card h3{margin-bottom:6px}
-.ic{width:48px;height:48px;border-radius:var(--r);background:var(--warm);color:var(--acc);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.art{display:block;width:100%;height:120px;border-radius:var(--r);background:var(--soft);margin-bottom:14px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:var(--r);font-weight:700;font-size:17px;text-decoration:none;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:background .15s ease,transform .15s ease}
-.btn:hover{transform:translateY(-1px)}
-.pri{background:var(--acc);color:#FFFFFF}
-.pri:hover{background:var(--acc2)}
-.ghost{background:transparent;color:#FFFFFF;border-color:rgba(255,255,255,.45)}
-.ghost:hover{background:rgba(255,255,255,.1)}
-.sec2{background:#FFFFFF;color:var(--ink);border-color:var(--line)}
-.sec2:hover{background:var(--soft)}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.ticks{list-style:none;margin:12px 0 0;padding:0}
-.ticks li{position:relative;padding-left:26px;margin-top:6px;color:var(--mut)}
-.ticks li::before{content:"";position:absolute;left:4px;top:7px;width:8px;height:13px;border:solid var(--acc);border-width:0 3px 3px 0;transform:rotate(40deg)}
-.hero{background:var(--ink);color:#FFFFFF;border-radius:var(--r);padding:clamp(24px,4vw,48px)}
-.hero .mut,.hero .ticks li{color:#D5E0EA}
-.hero .ticks li::before{border-color:#F5B27D}
-.tiles{display:grid;gap:12px;margin-top:32px;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}
-.tile{background:rgba(255,255,255,.08);border-radius:var(--r);padding:16px}
-.tile strong{display:block;font-weight:800}
-.tile span{color:#D5E0EA;font-size:15px}
-.thermal{background:#0A1E30;border-radius:var(--r);padding:14px}
-.seg{display:flex;gap:6px;margin-bottom:12px}
-.segb{flex:1;min-height:46px;padding:0 10px;border:0;border-radius:var(--r);background:rgba(255,255,255,.1);color:#FFFFFF;font:inherit;font-weight:700;cursor:pointer}
-.segb.on{background:#FFFFFF;color:var(--ink)}
-.legend{height:8px;border-radius:var(--r);background:linear-gradient(90deg,#2B7FD0,#35B7C4,#F2C14E,#E8590C);margin-top:12px}
-.legt{display:flex;justify-content:space-between;font-size:14px;color:#D5E0EA;margin-top:6px}
-.chips{display:flex;flex-direction:column;gap:8px}
-.chip{min-height:52px;padding:10px 16px;border:1px solid var(--line);border-radius:var(--r);background:#FFFFFF;color:var(--ink);font:inherit;font-weight:700;text-align:left;cursor:pointer}
-.chip:hover{border-color:var(--ink)}
-.chip.on{background:var(--ink);border-color:var(--ink);color:#FFFFFF}
-.res{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);padding:26px;box-shadow:0 2px 10px rgba(15,42,67,.05)}
-.lab{font-size:14px;font-weight:600;color:var(--mut);margin-top:14px}
-.val{font-size:19px;font-weight:700}
-.price{font-weight:800;font-size:30px;line-height:1.1;margin-top:14px;color:var(--acc2)}
-.num{width:42px;height:42px;border-radius:var(--r);background:var(--acc);color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:12px}
-.band{background:var(--acc);color:#FFFFFF;border-radius:var(--r);padding:26px clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
-.stars{color:#E2A400;letter-spacing:2px;font-size:18px}
-.quick{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 10px 26px rgba(15,42,67,.08);padding:22px;display:grid;gap:12px 14px;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));align-items:end;margin-top:18px}
-label{display:flex;flex-direction:column;gap:5px;font-weight:700}
-input{min-height:50px;padding:0 14px;border:1px solid #8A9CAB;border-radius:var(--r);font:inherit;background:#FFFFFF;color:var(--ink);width:100%}
-.bigform{background:#FFFFFF;color:var(--ink);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px}
-details{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);padding:14px 18px;margin-top:10px}
-summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:32px}
+.card{border-top:2px solid var(--ink);padding-top:18px}
+.card h3{margin-bottom:8px}
+.svc{gap:0}
+.svc .card{border-top:0;border-left:1px solid var(--line);padding:4px 28px 6px}
+.svc .card:first-child{border-left:0;padding-left:0}
+.svc .card{display:flex;flex-direction:column}
+.svc .price{margin-top:auto;padding-top:20px}
+.no{font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:20px;color:var(--heat2);margin-bottom:10px;letter-spacing:.04em}
+.art{display:block;width:100%;height:120px;background:var(--frost);margin-bottom:16px}
+.soft .art{background:#FFFFFF}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 26px;border-radius:var(--r);font-family:Archivo,sans-serif;font-weight:800;font-size:17px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .15s ease}
+.pri{background:var(--heat);color:var(--ink)}
+.pri:hover{background:#E8823A}
+.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.ghost:hover{background:var(--frost)}
+.sec2{background:#FFFFFF;color:var(--ink);border-color:var(--ink)}
+.sec2:hover{background:var(--frost)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.ticks{list-style:none;margin:14px 0 0;padding:0}
+.ticks li{position:relative;padding-left:24px;margin-top:6px;color:var(--mut)}
+.ticks li::before{content:"";position:absolute;left:0;top:12px;width:12px;height:3px;background:var(--heat)}
+.hero{background:var(--ink);color:#FFFFFF;padding:clamp(26px,4vw,52px)}
+.hero .mut,.hero .ticks li{color:#C9D5DB}
+.hero h2{color:#FFFFFF}
+.hero .ghost{color:#FFFFFF;border-color:#FFFFFF}
+.hero .ghost:hover{background:rgba(255,255,255,.1)}
+.split{position:relative;display:grid;grid-template-columns:1fr 1fr;height:clamp(240px,34vw,440px);overflow:hidden;background:var(--ink)}
+.half{position:relative;margin:0;overflow:hidden}
+.half img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 72%}
+.half.cold img{filter:saturate(.7) brightness(.92)}
+.half::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,26,34,.55),rgba(14,26,34,0) 45%)}
+.seam{position:absolute;left:50%;top:0;bottom:0;width:6px;margin-left:-3px;background:var(--heat);z-index:2}
+.hlab{position:absolute;top:16px;z-index:2;padding:6px 12px;font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.03em}
+.cold .hlab{left:16px;background:var(--ink);color:#FFFFFF}
+.warm .hlab{right:16px;background:var(--heat);color:var(--ink)}
+.temp{position:absolute;bottom:10px;z-index:2;font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:clamp(56px,8.5vw,112px);line-height:1;color:#FFFFFF}
+.cold .temp{left:18px;color:#DCEBF2}
+.warm .temp{right:18px;color:#FFE2C2}
+.tcap{margin-top:10px;font-size:14px;color:var(--mut)}
+.hgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:20px 48px;align-items:end;margin-top:30px}
+.kick{font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:16px;letter-spacing:.08em;text-transform:uppercase;color:var(--cold2);margin-bottom:12px}
+.hlead{font-size:clamp(17px,1.6vw,19px);color:var(--mut)}
+.tiles{display:grid;margin-top:40px;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+.tile{padding:16px 20px 18px;border-left:1px solid var(--line)}
+.tile:first-child{border-left:0;padding-left:0}
+.tile strong{display:block;font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:21px;text-transform:uppercase;line-height:1.1}
+.tile span{display:block;margin-top:4px;color:var(--mut);font-size:15px}
+.chips{display:flex;flex-direction:column;gap:0;border-top:2px solid var(--ink)}
+.chip{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:56px;padding:10px 4px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;color:var(--ink);font:inherit;font-weight:600;text-align:left;cursor:pointer}
+.chip::after{content:"→";color:var(--heat2);font-weight:700}
+.chip:hover{background:var(--frost)}
+.chip.on{background:var(--ink);color:#FFFFFF;padding-left:14px;padding-right:14px}
+.chip.on::after{color:var(--heat)}
+.res{background:var(--frost);border-left:6px solid var(--heat);padding:28px}
+.lab{font-family:"Archivo Narrow",sans-serif;font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cold2);margin-top:16px}
+.val{font-size:19px;font-weight:600}
+.price{font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:44px;line-height:1;margin-top:18px}
+.price .mut{font-family:Archivo,sans-serif}
+.num{font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:56px;line-height:1;color:var(--heat2);margin-bottom:12px}
+.band{background:var(--heat);color:var(--ink);padding:28px clamp(20px,4vw,40px);display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.band p{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase}
+.stars{color:var(--heat2);letter-spacing:2px;font-size:18px}
+.quick{background:var(--frost);border-top:4px solid var(--ink);padding:22px;display:grid;gap:12px 16px;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));align-items:end;margin-top:28px}
+.quick p{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase}
+label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:15px}
+input{min-height:52px;padding:0 14px;border:1px solid var(--ink);border-radius:var(--r);font:inherit;background:#FFFFFF;color:var(--ink);width:100%}
+.bigform{background:#FFFFFF;color:var(--ink);padding:28px;display:flex;flex-direction:column;gap:14px;border-top:6px solid var(--heat)}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+details:first-of-type{border-top:2px solid var(--ink)}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px;min-height:32px;align-items:center}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:26px;line-height:1;color:var(--acc)}
-details[open] summary::after{content:"–"}
-details p{margin-top:10px;color:var(--mut)}
-table{width:100%;table-layout:fixed;border-collapse:separate;border-spacing:0;background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;font-size:clamp(14px,2.4vw,17px);overflow-wrap:anywhere}
-th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top}
-tr:last-child th,tr:last-child td{border-bottom:0}
+summary::after{content:"+";font-family:"Archivo Narrow",sans-serif;font-size:30px;line-height:1;color:var(--heat2)}
+details[open] summary::after{content:"−"}
+details p{margin-top:10px;color:var(--mut);max-width:40em}
+table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:clamp(14px,2.4vw,17px);overflow-wrap:anywhere;border-top:2px solid var(--ink)}
+thead th{font-family:"Archivo Narrow",sans-serif;text-transform:uppercase;font-size:18px;letter-spacing:.03em}
+thead th:nth-child(2){color:var(--heat2)}
+th,td{text-align:left;padding:16px 14px 16px 0;border-bottom:1px solid var(--line);vertical-align:top}
 .hdr{position:sticky;top:0;z-index:10;background:#FFFFFF;border-bottom:1px solid var(--line)}
-.ov{position:fixed;inset:0;z-index:50;background:rgba(10,30,48,.55);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:16px}
-.modal{position:relative;width:100%;max-width:480px;max-height:calc(100vh - 32px);overflow:auto;background:#FFFFFF;border-radius:var(--r);padding:28px;box-shadow:0 24px 60px rgba(10,30,48,.3)}
-.mx{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:var(--r);border:1px solid var(--line);background:#FFFFFF;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center}
-.mx:hover{background:var(--soft)}
-.copt{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r);background:var(--soft);text-decoration:none;margin-top:12px;transition:border-color .15s ease}
-.copt:hover,.ctile:hover{border-color:var(--ink)}
-.cico{width:44px;height:44px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex:none}
-.ckind{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+.logo{font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:26px;letter-spacing:-.01em;line-height:1}
+.logo span{color:var(--heat2)}
+.dnav a{font-weight:600}
+.dnav a:hover{color:var(--heat2)}
+.ov{position:fixed;inset:0;z-index:50;background:rgba(14,26,34,.6);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:16px}
+.modal{position:relative;width:100%;max-width:480px;max-height:calc(100vh - 32px);overflow:auto;background:#FFFFFF;border-top:6px solid var(--heat);padding:28px}
+.modal h2{font-size:34px!important}
+.mx{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:var(--r);border:1px solid var(--ink);background:#FFFFFF;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.mx:hover{background:var(--frost)}
+.copt{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);background:#FFFFFF;text-decoration:none;margin-top:12px}
+.copt:hover,.ctile:hover{border-color:var(--ink);background:var(--frost)}
+.cico{width:44px;height:44px;display:flex;align-items:center;justify-content:center;flex:none}
+.ckind{font-family:"Archivo Narrow",sans-serif;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
 .cval{font-size:18px;font-weight:800;overflow-wrap:anywhere}
 .ctwo{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.ctile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:96px;padding:16px;border:1px solid var(--line);border-radius:var(--r);background:var(--soft);text-decoration:none;font-weight:700;transition:border-color .15s ease}
-.promo{position:fixed;right:20px;bottom:20px;z-index:40;width:min(390px,calc(100vw - 24px));background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);box-shadow:0 18px 44px rgba(10,30,48,.25);padding:20px;animation:pin .35s ease}
+.ctile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:96px;padding:16px;border:1px solid var(--line);background:#FFFFFF;text-decoration:none;font-weight:700}
+.promo{position:fixed;right:20px;bottom:20px;z-index:40;width:min(390px,calc(100vw - 24px));background:#FFFFFF;border:1px solid var(--ink);border-top:6px solid var(--heat);box-shadow:8px 8px 0 rgba(14,26,34,.18);padding:20px;animation:pin .35s ease}
 @keyframes pin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.pcall{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;margin-top:14px;padding:0 18px;border-radius:var(--r);background:var(--acc);color:#FFFFFF;font-weight:800;font-size:19px;text-decoration:none}
-.pcall:hover{background:var(--acc2)}
-.pbtn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:46px;border:1px solid var(--line);border-radius:var(--r);background:var(--soft);font-weight:700;text-decoration:none}
-.pbtn:hover{border-color:var(--ink)}
-.burg{display:none;width:46px;height:46px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:var(--r);background:#FFFFFF;color:var(--ink);cursor:pointer}
-.burg:hover{background:var(--soft)}
+.pcall{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;margin-top:14px;padding:0 18px;background:var(--heat);color:var(--ink);font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:24px;text-decoration:none}
+.pcall:hover{background:#E8823A}
+.pbtn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:46px;border:1px solid var(--ink);background:#FFFFFF;font-weight:700;text-decoration:none}
+.pbtn:hover{background:var(--frost)}
+.burg{display:none;width:46px;height:46px;align-items:center;justify-content:center;border:1px solid var(--ink);border-radius:var(--r);background:#FFFFFF;color:var(--ink);cursor:pointer}
+.burg:hover{background:var(--frost)}
 .mpanel{display:flex;flex-direction:column;max-width:1180px;margin:0 auto;padding:6px 20px 18px;border-top:1px solid var(--line);background:#FFFFFF}
-.mlink{display:flex;align-items:center;justify-content:space-between;min-height:52px;border-bottom:1px solid var(--line);font-weight:700;font-size:17px;text-decoration:none}
-.mlink span{color:var(--acc)}
-@media (max-width:980px){.burg{display:inline-flex}}
-@media (min-width:981px){.mpanel{display:none}}
+.mlink{display:flex;align-items:center;justify-content:space-between;min-height:54px;border-bottom:1px solid var(--line);font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:20px;text-transform:uppercase;text-decoration:none}
+.mlink span{color:var(--heat2)}
 .mbar{display:none}
-a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #F0A04B;outline-offset:2px}
-@media (max-width:980px){.dnav{display:none!important}}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--cold2);outline-offset:2px}
+@media (max-width:980px){.burg{display:inline-flex}.dnav{display:none!important}.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}.tile:nth-child(3){border-left:0;padding-left:0}.tile:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (min-width:981px){.mpanel{display:none}}
+@media (max-width:860px){.svc .card,.svc .card:first-child{border-left:0;padding:18px 0 4px;border-top:2px solid var(--ink)}.svc{gap:28px}}
 @media (max-width:700px){
 .dcall{display:none!important}
 .cta .btn{width:100%}
-.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:8px;padding:8px 12px;background:#FFFFFF;box-shadow:0 -3px 12px rgba(15,42,67,.16)}
+.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:8px;padding:8px 12px;background:#FFFFFF;border-top:1px solid var(--ink)}
 .mspace{padding-bottom:84px}
 html{scroll-padding-top:72px}
-}
-@media (max-width:700px){.promo{left:12px;right:12px;width:auto;bottom:76px}}
-@media (max-width:700px){
+.promo{left:12px;right:12px;width:auto;bottom:76px}
 .root{font-size:15px;line-height:1.5}
 .wrap{padding-left:14px;padding-right:14px}
-.sec{padding-top:34px;padding-bottom:34px}
-h1{font-size:30px}
-h2{font-size:24px}
-h3{font-size:16px}
-.eyebrow{font-size:12px;padding:3px 10px;margin-bottom:8px}
-.lead{margin-top:8px;font-size:15px}
-.grid{gap:10px;margin-top:18px}
-.hero{padding:18px}
-.hero p.mut{font-size:15px!important;margin-top:10px!important}
+.sec{padding-top:40px;padding-bottom:40px}
+h1{font-size:40px}
+h2{font-size:32px}
+h3{font-size:17px}
+.eyebrow{font-size:14px;margin-bottom:10px}
+.lead{font-size:15px;margin-top:10px}
+.grid{gap:20px 14px;margin-top:22px}
+.hero{padding:20px}
+.split{height:230px}
+.hlab{top:8px;font-size:13px;padding:4px 8px}
+.cold .hlab{left:8px}.warm .hlab{right:8px}
+.temp{font-size:48px;bottom:6px}
+.cold .temp{left:10px}.warm .temp{right:10px}
+.hgrid{margin-top:18px;gap:12px}
+.kick{font-size:14px;margin-bottom:8px}
 .cta{margin-top:16px;gap:8px}
-.btn{min-height:48px;font-size:16px}
-.thermal{padding:10px}
-.thermal svg{max-height:190px}
-.segb{min-height:40px;font-size:14px}
-.legt{font-size:12px}
-.tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:16px}
-.tile{padding:10px 12px}
-.tile strong{font-size:14px;line-height:1.3}
-.tile span{font-size:12px;line-height:1.35;display:block;margin-top:2px}
-.quick{padding:14px;gap:10px;margin-top:12px}
-.quick p{font-size:17px!important}
+.btn{min-height:50px;font-size:16px}
+.tiles{margin-top:22px}
+.tile{padding:12px 12px 12px}
+.tile strong{font-size:17px}
+.tile span{font-size:13px;line-height:1.35}
+.quick{padding:14px;gap:10px;margin-top:16px}
 .g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
 .g3.svc{grid-template-columns:1fr}
-.card{padding:14px}
+.card{padding-top:12px}
 .card p,.ticks li{font-size:14px}
-.ic{width:38px;height:38px;margin-bottom:8px}
-.art{height:70px;margin-bottom:8px}
-.price{font-size:24px;margin-top:8px}
-.num{width:34px;height:34px;margin-bottom:8px}
-.chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.chip{min-height:46px;padding:8px 10px;font-size:14px;line-height:1.3}
-.res{padding:16px}
+.art{height:70px;margin-bottom:10px}
+.card p.price{font-size:36px;margin-top:12px}
+.num{font-size:40px;margin-bottom:6px}
+.res{padding:18px}
 .val{font-size:16px}
-.lab{margin-top:10px}
-.band{padding:16px}
-details{padding:10px 14px;margin-top:8px}
+.lab{margin-top:12px;font-size:13px}
+.band{padding:18px}
 summary{font-size:15px}
-.bigform{padding:16px;gap:10px}
-input{min-height:46px}
+.bigform{padding:18px;gap:10px}
+input{min-height:48px}
 }
-@media (max-width:359px){.g3,.g4,.chips{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.promo{animation:none}html{scroll-behavior:auto}.card,.btn{transition:none}.card:hover,.btn:hover{transform:none}}
+@media (max-width:359px){.g3,.g4{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.promo{animation:none}html{scroll-behavior:auto}}
+
+/* v4: jasny, lekki układ z formularzem w pierwszym ekranie */
+:root{--r:10px}
+h1,h2{font-family:Archivo,sans-serif;font-weight:800;text-transform:none;letter-spacing:-.028em;line-height:1.08}
+h1{font-size:clamp(34px,4.2vw,54px)}
+h2{font-size:clamp(28px,3.2vw,42px)}
+html{scroll-padding-top:104px}
+.hdr{background:transparent;border-bottom:0;padding:10px 12px 0;pointer-events:none}
+.hcard{pointer-events:auto;max-width:1180px;margin:0 auto;background:#FFFFFF;border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(14,26,34,.10)}
+.htop{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;padding:10px 16px}
+.htag{font-size:13px;line-height:1.3;color:var(--mut);border-left:1px solid var(--line);padding-left:14px;max-width:150px}
+.hphone{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:18px;text-decoration:none;white-space:nowrap}
+.hwa{width:38px;height:38px;border-radius:10px;background:#1E8E4E;color:#FFFFFF;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.mpanel{border-radius:0 0 14px 14px;padding:6px 16px 16px}
+.btn{border-radius:var(--r);box-shadow:inset 0 -3px 0 rgba(14,26,34,.16)}
+.ghost,.sec2{box-shadow:none}
+input{border-radius:var(--r);border-color:#AEBDC5}
+.hero2{background:var(--frost);margin-top:-78px;padding:118px 0 0}
+.h2grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);grid-template-areas:"head photo" "act photo";gap:0 48px;align-items:start}
+.hhead{grid-area:head}
+.hact{grid-area:act}
+.hphoto{grid-area:photo}
+.split{border-radius:14px;height:clamp(260px,33vw,470px);box-shadow:0 18px 40px rgba(14,26,34,.18)}
+.hlab{border-radius:6px}
+.temp{font-size:clamp(48px,6vw,84px)}
+.kick{display:inline-flex;align-items:center;gap:10px;background:#FFFFFF;border-radius:8px;padding:7px 12px;color:var(--ink);font-size:14px;margin-bottom:18px}
+.kick::before{content:"";width:6px;height:18px;background:var(--heat);border-radius:2px}
+.hlead{margin-top:18px}
+.hpts{list-style:none;margin:16px 0 0;padding:0}
+.hpts li{position:relative;padding-left:34px;margin-top:6px;font-weight:600}
+.hpts li::before{content:"";position:absolute;left:0;top:12px;width:22px;height:3px;background:var(--heat)}
+.hform{margin-top:26px}
+.hform>p{font-weight:700;font-size:18px;margin-bottom:10px}
+.hform>p b{color:var(--heat2);text-transform:uppercase}
+.hrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+.hrow input{min-height:56px;border:1px solid #FFFFFF;box-shadow:0 2px 0 rgba(14,26,34,.06)}
+.hrow .btn{min-height:56px;text-transform:uppercase;font-size:15px;letter-spacing:.02em}
+.hact .cta{margin-top:14px}
+.tiles{background:#FFFFFF;border:1px solid var(--line);border-radius:14px;box-shadow:0 14px 34px rgba(14,26,34,.10);margin-top:40px;transform:translateY(34px);margin-bottom:0}
+.tile{padding:20px 22px}
+.tile:first-child{padding-left:22px}
+.tile strong{font-family:Archivo,sans-serif;font-weight:800;font-size:17px;text-transform:none;letter-spacing:-.01em}
+.tile strong::before{content:"";display:block;width:26px;height:4px;background:var(--heat);margin-bottom:10px}
+#diagnoza{padding-top:calc(clamp(56px,7vw,96px) + 34px)}
+.card{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.soft .card{border-color:transparent;box-shadow:0 2px 0 rgba(14,26,34,.05)}
+.svc{gap:20px}
+.svc .card,.svc .card:first-child{border:1px solid transparent;padding:26px}
+.svc .price{color:var(--ink)}
+.svc .price small{display:block;font-family:Archivo,sans-serif;font-size:14px;font-weight:600;color:var(--mut);margin-bottom:4px}
+.svc .btn{width:100%;margin-top:18px}
+.art{border-radius:8px}
+.chips{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.chip{padding:10px 16px}
+.chip:last-child{border-bottom:0}
+.res{border-radius:var(--r)}
+.hero{border-radius:16px}
+.band{border-radius:14px}
+.bigform{border-radius:12px}
+details,details:first-of-type{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);padding:16px 20px;margin-bottom:10px}
+details[open]{border-color:var(--ink)}
+.modal{border-radius:14px}
+.mx,.burg,.copt,.ctile,.pbtn,.pcall{border-radius:var(--r)}
+.cico{border-radius:8px}
+.promo{border-radius:14px;border:1px solid var(--line);border-top:6px solid var(--heat);box-shadow:0 18px 44px rgba(14,26,34,.22)}
+
+@media (max-width:980px){.h2grid{grid-template-columns:1fr;grid-template-areas:"head" "photo" "act";gap:18px}.hphone{display:none}.tile:nth-child(3){padding-left:22px}}
+@media (max-width:700px){
+html{scroll-padding-top:84px}
+.hdr{padding:8px 8px 0}
+.htop{padding:8px 10px}
+.hero2{margin-top:-66px;padding-top:88px}
+h1{font-size:32px}
+h2{font-size:27px}
+.split{height:220px}
+.temp{font-size:44px}
+.kick{font-size:12px;margin-bottom:12px}
+.hrow{grid-template-columns:1fr}
+.hpts{display:none}
+.hform{margin-top:6px}
+.hform>p{font-size:16px}
+.tiles{margin-top:20px;transform:translateY(22px)}
+.tile,.tile:first-child,.tile:nth-child(3){padding:14px}
+.tile strong{font-size:15px}
+#diagnoza{padding-top:66px}
+.card{padding:14px}
+.svc .card,.svc .card:first-child{padding:18px;border-top:1px solid transparent}
+details,details:first-of-type{padding:12px 14px}
+}
+
+/* v5 */
+.lgtxt{display:flex;align-items:center;gap:14px}
+h1{font-size:clamp(32px,3.7vw,48px)}
+.hcallm{display:none;width:46px;height:46px;border-radius:var(--r);background:var(--heat);color:var(--ink);align-items:center;justify-content:center;flex:none;box-shadow:inset 0 -3px 0 rgba(14,26,34,.16)}
+.temp{font-size:clamp(30px,4.2vw,58px);text-transform:uppercase;letter-spacing:.01em;bottom:16px}
+.card .no{font-size:15px;text-transform:uppercase;letter-spacing:.06em}
+.shot{margin:0}
+.slot{aspect-ratio:4/3;border:2px dashed #AEBDC5;border-radius:var(--r);background:var(--frost);display:flex;align-items:center;justify-content:center;text-align:center;padding:18px;font-size:14px;color:var(--mut)}
+.shot img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r)}
+.shot figcaption{margin-top:10px;font-weight:700}
+.pulse{position:relative}
+.pulse::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:0 0 0 0 rgba(30,142,78,.55);animation:pulse 1.8s ease-out infinite}
+@keyframes pulse{to{box-shadow:0 0 0 16px rgba(30,142,78,0)}}
+.wafab{position:fixed;left:20px;bottom:20px;z-index:30;width:58px;height:58px;border-radius:50%;background:#1E8E4E;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(14,26,34,.25)}
+.mwa{width:48px;height:48px;border-radius:var(--r);background:#1E8E4E;color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex:none}
+.mbar .btn{flex:1}
+@media (max-width:980px){.lgtxt{flex-direction:column;align-items:flex-start;gap:3px}.htag{display:block;border-left:0;padding-left:0;max-width:none;font-size:11.5px;line-height:1.2}.hcallm{display:inline-flex}}
+@media (min-width:981px) and (max-width:1180px){.htag{display:none}}
+@media (max-width:700px){.wafab{display:none}.temp{font-size:26px;bottom:10px}.logo{font-size:22px}.htop{gap:8px}.slot{font-size:12px;padding:10px}.shot figcaption{font-size:14px}.card .no{font-size:13px}}
+@media (max-width:359px){.htag{display:none}}
+@media (prefers-reduced-motion:reduce){.pulse::after{animation:none}}
+
+/* v7: diagnoza jak quiz */
+.hact .cta{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.hact .cta .btn{width:100%;padding:0 10px}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px;border:0;border-radius:0;background:transparent;overflow:visible}
+.chip,.chip:last-child{justify-content:flex-start;gap:14px;min-height:66px;padding:10px 24px 10px 12px;border:2px solid var(--ink);border-radius:999px;background:#FFFFFF;font-weight:700;font-size:17px;line-height:1.25;transition:background .15s ease,transform .15s ease}
+.chip::after{content:none}
+.chip:hover{background:var(--frost);transform:translateY(-1px)}
+.ql{width:42px;height:42px;border-radius:50%;background:var(--ink);color:#FFFFFF;display:flex;align-items:center;justify-content:center;flex:none;font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:21px}
+.chip.on,.chip.on:hover{background:var(--heat);border-color:var(--heat);color:var(--ink);padding:10px 24px 10px 12px}
+.qhint{margin-top:18px;text-align:center;color:var(--mut)}
+.res{margin-top:18px;background:#FFFFFF;border:2px solid var(--ink);border-left:2px solid var(--ink);border-top:6px solid var(--heat);border-radius:16px;padding:26px 28px;animation:qpop .32s ease}
+@keyframes qpop{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.qpick{font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--heat2)}
+.resg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 28px;margin-top:6px}
+.resg .lab{margin-top:10px}
+.qcta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:22px}
+@media (max-width:700px){
+.chips{grid-template-columns:1fr;gap:8px;margin-top:20px}
+.chip,.chip:last-child,.chip.on,.chip.on:hover{min-height:54px;padding:7px 16px 7px 8px;font-size:15px;gap:10px}
+.ql{width:36px;height:36px;font-size:18px}
+.res{padding:18px;display:block}
+.resg{grid-template-columns:1fr}
+.qcta .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){.res{animation:none}.chip:hover{transform:none}}
+
+/* v8 */
+.pri,.pcall,.hcallm{background:#BD570B;color:#FFFFFF}
+.pri:hover,.pcall:hover{background:#A9530F}
+.chip.on,.chip.on:hover{background:#BD570B;border-color:#BD570B;color:#FFFFFF}
+@media (max-width:700px){.tests{grid-template-columns:1fr 1fr}}
+
+/* v9 */
+.seals .slot{aspect-ratio:16/9;margin-bottom:16px}
+.seals .card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;margin-bottom:16px}
+.hcallm{background:#FFFFFF;color:#1E8E4E;border:1px solid var(--ink);box-shadow:none}
+@media (max-width:700px){.seals{grid-template-columns:1fr 1fr}.seals .slot{aspect-ratio:4/3;margin-bottom:10px}}
+
+/* v10 */
+.hcallm{background:#BD570B;border:0;box-shadow:inset 0 -3px 0 rgba(14,26,34,.16);color:#1E8E4E}
+.hcallm svg{background:#FFFFFF;border-radius:50%;padding:5px;width:32px;height:32px}
+.wabtn{background:#1E8E4E;color:#FFFFFF}
+.wabtn:hover{background:#187C42}
+.warm .hlab{background:#BD570B;color:#FFFFFF}
+@media (max-width:700px){
+.chips{grid-template-columns:1fr 1fr;gap:8px}
+.chip,.chip:last-child,.chip.on,.chip.on:hover{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:8px;min-height:104px;padding:10px 12px 12px;border-radius:14px;font-size:14px;line-height:1.25}
+.ql{width:30px;height:30px;font-size:16px}
+}
+
+/* v11 */
+.hcallm{background:var(--heat);color:var(--ink)}
+.hcallm svg{background:transparent;border-radius:0;padding:0;width:22px;height:22px}
+.promo{background:var(--frost)}
+
+/* v12 */
+.tile strong::before{content:none}
+.temp{white-space:nowrap}
+.tic{display:block;color:var(--heat2);margin-bottom:10px}
+@media (max-width:700px){
+.tic{width:26px;height:26px;margin-bottom:6px}
+.g3.svc{gap:10px}
+.svc .card,.svc .card:first-child{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"no price" "h3 price" "desc desc" "ticks ticks" "btn btn";gap:2px 12px;padding:14px;align-items:start}
+.svc .no{grid-area:no;margin:0;font-size:14px}
+.svc h3{grid-area:h3;margin:0;font-size:17px}
+.svc .card>.mut{grid-area:desc;margin-top:8px;font-size:14px;line-height:1.4}
+.svc .ticks{grid-area:ticks;display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px}
+.svc .ticks li{margin:0;padding-left:16px;font-size:13px}
+.svc .ticks li::before{width:9px;top:9px}
+.svc .card p.price{grid-area:price;margin:0;padding:0;font-size:28px;text-align:right;white-space:nowrap}
+.svc .price small{font-size:12px;margin-bottom:0}
+.svc .price .mut{display:block;font-size:12px!important;margin-top:2px}
+.svc .btn{grid-area:btn;margin-top:12px;min-height:44px;font-size:15px}
+}
+
+/* v13 */
+@media (min-width:1101px){.g3.svc{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.svc .card,.svc .card:first-child{padding:22px}.svc .price{font-size:38px}}
+@media (min-width:701px) and (max-width:1100px){.g3.svc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* v14: ceny 2x2 na telefonie */
+@media (max-width:700px){
+.g3.svc{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.svc .card,.svc .card:first-child{display:flex;flex-direction:column;padding:12px;gap:0;min-width:0}
+.svc .no{font-size:13px;margin:0 0 4px}
+.svc h3{font-size:15px;line-height:1.2;min-height:36px}
+.svc .card>.mut{margin-top:6px;font-size:13px;line-height:1.38}
+.svc .ticks{display:block;margin-top:8px}
+.svc .ticks li{margin-top:3px;padding-left:15px;font-size:12.5px;line-height:1.35}
+.svc .ticks li::before{width:8px;top:8px}
+.svc .card p.price{margin-top:auto;padding-top:12px;font-size:26px;text-align:left;white-space:normal}
+.svc .price small{font-size:12px}
+.svc .price .mut{display:inline-block;font-size:12px!important;margin:0;white-space:nowrap}
+.svc .btn{margin-top:10px;min-height:42px;font-size:14px;padding:0 6px}
+}
+@media (max-width:359px){.g3.svc{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="root">
 
 <header class="hdr">
-<div class="wrap" style="padding-top: 10px; padding-bottom: 10px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between">
+<div class="hcard">
+<div class="htop">
+<div style="display: flex; align-items: center; gap: 14px">
 <a href="#start" aria-label="OknoNieWieje, strona główna" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none">
-<svg viewBox="0 0 48 48" width="36" height="36" aria-hidden="true" fill="none"><path d="M2 16h8M0 24h10M2 32h8" stroke="#C94A0A" stroke-width="4" stroke-linecap="round"></path><rect x="15" y="6" width="28" height="36" rx="4" stroke="#0F2A43" stroke-width="4"></rect><path d="M29 6v36" stroke="#0F2A43" stroke-width="3"></path></svg>
-<span style="font-weight: 800; font-size: 22px; letter-spacing: -0.02em">Okno<span style="color: #C94A0A">NieWieje</span></span>
+<svg viewBox="0 0 30 30" width="30" height="30" aria-hidden="true"><rect x="0" y="0" width="13" height="30" rx="2" fill="#0E1A22"></rect><rect x="17" y="0" width="13" height="30" rx="2" fill="#D9701E"></rect></svg>
+<span class="lgtxt"><span class="logo">Okno<span>NieWieje</span></span><span class="htag">Wymiana uszczelek i regulacja okien</span></span>
 </a>
-<nav class="dnav" aria-label="Menu" style="display: flex; flex-wrap: wrap; gap: 6px 22px; font-weight: 700; font-size: 16px">
+</div>
+<nav class="dnav" aria-label="Menu" style="display: flex; flex-wrap: wrap; gap: 6px 22px; font-size: 16px">
 <a href="#diagnoza" style="text-decoration: none">Diagnoza</a>
 <a href="#uslugi" style="text-decoration: none">Usługi i ceny</a>
 <a href="#uszczelki" style="text-decoration: none">Uszczelki</a>
 <a href="#opinie" style="text-decoration: none">Opinie</a>
 <a href="#pytania" style="text-decoration: none">Pytania</a>
 </nav>
-<div style="display: flex; align-items: center; gap: 10px">
-<a class="btn pri dcall" href="tel:+48579289539" style="min-height: 46px; font-size: 16px; padding: 0 18px">Zadzwoń: +48 579 289 539</a>
+<div style="display: flex; align-items: center; gap: 12px">
+<a class="hwa dcall" href="https://wa.me/48579289539" aria-label="Napisz na WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M12 3a9 9 0 0 0-7.800 13.500L3 21l4.600-1.200A9 9 0 1 0 12 3z"></path></svg></a>
+<a class="hphone" href="tel:+48579289539" aria-label="Zadzwoń: +48 579 289 539"><span>+48 579 289 539</span></a>
+<a class="hcallm" href="tel:+48579289539" aria-label="Zadzwoń: +48 579 289 539"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></a>
+<button type="button" class="btn pri dcall" data-act="openModal" style="min-height: 46px; font-size: 15px; padding: 0 18px; text-transform: uppercase">Kontakt</button>
 <button type="button" class="burg" aria-label="Menu" aria-expanded="false" id="burg" data-act="toggleMenu">
 <div data-if="menu" hidden><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
-<div data-if="menuClosed"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"></path></svg></div>
+<div data-if="menuClosed"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><rect x="3" y="5" width="18" height="3" rx="1.5"></rect><rect x="3" y="10.5" width="18" height="3" rx="1.5"></rect><rect x="3" y="16" width="11" height="3" rx="1.5"></rect></svg></div>
 </button>
 </div>
 </div>
@@ -196,7 +434,7 @@ input{min-height:46px}
 <a class="mlink" href="#diagnoza" data-act="closeMenu">Diagnoza<span aria-hidden="true">→</span></a>
 <a class="mlink" href="#uslugi" data-act="closeMenu">Usługi i ceny<span aria-hidden="true">→</span></a>
 <a class="mlink" href="#uszczelki" data-act="closeMenu">Uszczelki<span aria-hidden="true">→</span></a>
-<a class="mlink" href="#drewno" data-act="closeMenu">Okna drewniane<span aria-hidden="true">→</span></a>
+<a class="mlink" href="#realizacje" data-act="closeMenu">Realizacje<span aria-hidden="true">→</span></a>
 <a class="mlink" href="#opinie" data-act="closeMenu">Opinie<span aria-hidden="true">→</span></a>
 <a class="mlink" href="#pytania" data-act="closeMenu">Pytania<span aria-hidden="true">→</span></a>
 <div class="ctwo" style="margin-top: 14px">
@@ -205,88 +443,69 @@ input{min-height:46px}
 </div>
 </nav>
 </div>
+</div>
 </header>
 
-<section id="start" style="padding-top: 18px">
+<section id="start" class="hero2">
 <div class="wrap">
-<div class="hero">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 36px; align-items: center">
-<div>
-<p style="margin-bottom: 12px; font-weight: 700; color: #F5B27D">Warszawa i okolice · okna PCV i drewniane</p>
-<h1>Wieje z okna? Uszczelnimy je bez wymiany.</h1>
-<p class="mut" style="margin-top: 18px; font-size: clamp(17px, 2vw, 20px); max-width: 32em">Zima zostaje za szybą, a ciepło w domu. Wyregulujemy okna, ustawimy docisk i wymienimy zużyte uszczelki, bez kucia i bez remontu.</p>
+<div class="h2grid">
+<div class="hhead">
+<p class="kick">Wymiana uszczelek i regulacja okien · Warszawa</p>
+<h1>Ciągnie zimnem od okna? Wymienimy uszczelki, nie okna.</h1>
+<p class="hlead">Chłód po nogach, zimno przy łóżku, firanka rusza się przy zamkniętym oknie. To zwykle nie wina ogrzewania, tylko zużytych uszczelek. Wymienimy je i ustawimy docisk, żeby w domu znów było ciepło.</p>
+<ul class="hpts"><li>Okna PCV i drewniane, także w mieszkaniach od dewelopera</li><li>Cenę znasz, zanim zaczniemy pracę</li></ul>
+</div>
+<div class="hphoto">
+<div class="split">
+<figure class="half cold"><img src="img/pred.jpg" alt="Okno przed uszczelnieniem, kamera termowizyjna: przy ramach skrzydeł widać zimne, niebieskie pasy"><span class="hlab">Przed</span><span class="temp">Wieje</span></figure>
+<figure class="half warm"><img src="img/po.jpg" alt="To samo okno po uszczelnieniu, kamera termowizyjna: ramy skrzydeł są ciepłe, bez niebieskich pasów"><span class="hlab">Po wymianie uszczelek</span><span class="temp">Nie wieje</span></figure>
+<span class="seam" aria-hidden="true"></span>
+</div>
+<p class="tcap">Kamera termowizyjna pokazuje to, czego nie widać. Niebieskie pasy przy ramie to zimne powietrze z zewnątrz. Po wymianie uszczelek znikają.</p>
+</div>
+<div class="hact">
+<form class="hform" aria-label="Szybka wycena">
+<p>Zostaw numer, oddzwonimy <b>z wyceną i terminem</b></p>
+<div class="hrow">
+<input name="telefon" type="tel" autocomplete="tel" required="required" placeholder="Twój numer telefonu" aria-label="Twój numer telefonu">
+<button class="btn pri" type="submit">Poproś o wycenę</button>
+</div>
+</form>
 <div class="cta">
-<a class="btn pri" href="tel:+48579289539">Zadzwoń teraz</a>
+<a class="btn sec2" href="tel:+48579289539">Zadzwoń teraz</a>
 <button type="button" class="btn ghost" data-act="openModal">Kontakt</button>
 </div>
 </div>
-<div class="thermal">
-<div class="seg" role="group" aria-label="Porównanie okna">
-<button type="button" class="segb on" data-seg="before" data-act="showBefore">Teraz wieje</button>
-<button type="button" class="segb" data-seg="after" data-act="showAfter">Po uszczelnieniu</button>
-</div>
-<div data-if="before">
-<svg viewBox="0 0 440 320" style="display: block; width: 100%; border-radius: 12px" role="img" aria-label="Ilustracja: zimne powietrze wchodzi przy krawędziach skrzydeł" fill="none">
-<defs><filter id="cb" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="13"></feGaussianBlur></filter></defs>
-<rect width="440" height="320" fill="#E8590C"></rect>
-<rect x="60" y="16" width="320" height="288" fill="#F2A23B"></rect>
-<rect x="84" y="40" width="130" height="240" fill="#F2C14E"></rect>
-<rect x="226" y="40" width="130" height="240" fill="#F2C14E"></rect>
-<g filter="url(#cb)"><rect x="80" y="36" width="138" height="248" stroke="#1D74C9" stroke-width="20"></rect><rect x="222" y="36" width="138" height="248" stroke="#1D74C9" stroke-width="20"></rect></g>
-<rect x="60" y="16" width="320" height="288" stroke="#0A1E30" stroke-width="4"></rect>
-<rect x="84" y="40" width="130" height="240" stroke="#0A1E30" stroke-width="2"></rect>
-<rect x="226" y="40" width="130" height="240" stroke="#0A1E30" stroke-width="2"></rect>
-</svg>
-</div>
-<div data-if="after" hidden>
-<svg viewBox="0 0 440 320" style="display: block; width: 100%; border-radius: 12px" role="img" aria-label="Ilustracja: po uszczelnieniu krawędzie skrzydeł są ciepłe" fill="none">
-<rect width="440" height="320" fill="#E8590C"></rect>
-<rect x="60" y="16" width="320" height="288" fill="#EE8A2E"></rect>
-<rect x="84" y="40" width="130" height="240" fill="#F2C14E"></rect>
-<rect x="226" y="40" width="130" height="240" fill="#F2C14E"></rect>
-<rect x="60" y="16" width="320" height="288" stroke="#0A1E30" stroke-width="4"></rect>
-<rect x="84" y="40" width="130" height="240" stroke="#0A1E30" stroke-width="2"></rect>
-<rect x="226" y="40" width="130" height="240" stroke="#0A1E30" stroke-width="2"></rect>
-</svg>
-</div>
-<div class="legend" aria-hidden="true"></div>
-<div class="legt"><span>zimno</span><span>Ilustracja poglądowa</span><span>ciepło</span></div>
-</div>
 </div>
 <div class="tiles">
-<div class="tile"><strong>Dojazd w cenie zlecenia</strong><span>Na terenie Warszawy</span></div>
-<div class="tile"><strong>Gwarancja do 5 lat</strong><span>Na wykonaną pracę</span></div>
-<div class="tile"><strong>Wizyta nawet w 24 h</strong><span>Także w soboty</span></div>
-<div class="tile"><strong>Płacisz po wykonaniu</strong><span>Bez zaliczek i ukrytych kosztów</span></div>
+<div class="tile"><svg class="tic" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5v5h-3v-2H6v2H3z"></path><path d="M3 13h18"></path><circle cx="7.500" cy="15.500" r="1"></circle><circle cx="16.500" cy="15.500" r="1"></circle></svg><strong>Dojazd w cenie zlecenia</strong><span>Na terenie Warszawy</span></div>
+<div class="tile"><svg class="tic" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg><strong>Gwarancja do 5 lat</strong><span>Na wykonaną pracę</span></div>
+<div class="tile"><svg class="tic" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><strong>Wizyta nawet w 24 h</strong><span>Także w soboty</span></div>
+<div class="tile"><svg class="tic" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18"></path><path d="M14 15l1.500 1.500L18 14"></path></svg><strong>Płacisz po wykonaniu</strong><span>Bez zaliczek i ukrytych kosztów</span></div>
 </div>
-</div>
-<form class="quick" aria-label="Szybka wycena">
-<p style="font-weight: 800; font-size: 21px; line-height: 1.2">Oddzwonimy z wyceną i terminem</p>
-<label>Telefon<input name="telefon" type="tel" autocomplete="tel" required="required"></label>
-<label>Liczba okien<input name="okna" type="text" inputmode="numeric" placeholder="np. 4"></label>
-<button class="btn pri" type="submit">Poproś o telefon</button>
-</form>
 </div>
 </section>
 
 <section id="diagnoza" class="sec">
 <div class="wrap">
 <span class="eyebrow">Diagnoza online</span>
-<h2>Co dzieje się z Twoim oknem?</h2>
-<p class="lead">Zimne powietrze najczęściej wchodzi przez styk skrzydła z ramą, a nie przez samą szybę. Wybierz objaw, a pokażemy prawdopodobną przyczynę i rozwiązanie.</p>
-<div class="grid g2">
+<h2>Skąd ten chłód? Wybierz, co czujesz</h2>
+<p class="lead">Zimne powietrze najczęściej wchodzi przez styk skrzydła z ramą, a nie przez samą szybę. Wybierz odpowiedź, która pasuje do Twojego okna.</p>
 <div class="chips" role="group" aria-label="Wybierz objaw">
 
 </div>
+<div data-if="noRes">
+<p class="qhint">Wybierz odpowiedź, a pokażemy przyczynę, rozwiązanie i cenę.</p>
+</div>
+<div data-if="hasRes" hidden>
 <div class="res" aria-live="polite">
-<p class="lab" style="margin-top: 0">Prawdopodobna przyczyna</p>
-<p class="val"><span data-res="cause"></span></p>
-<p class="lab">Co zrobimy</p>
-<p class="val"><span data-res="fix"></span></p>
-<p class="lab">Cena</p>
-<p class="val" style="color: #A83C07"><span data-res="price"></span></p>
-<div class="cta" style="margin-top: 20px"><a class="btn pri" href="#formularz">Zamów wizytę</a></div>
-<p class="mut" style="margin-top: 14px; font-size: 15px">To wskazówka. Przyczynę potwierdzimy na miejscu.</p>
+<p class="qpick"><span data-res="label"></span></p>
+<div class="resg">
+<div><p class="lab">Prawdopodobna przyczyna</p><p class="val"><span data-res="cause"></span></p></div>
+<div><p class="lab">Co zrobimy</p><p class="val"><span data-res="fix"></span></p></div>
+<div><p class="lab">Cena</p><p class="val" style="color: #A9530F; font-weight: 800"><span data-res="price"></span></p></div>
+</div>
+<div class="qcta"><a class="btn pri" href="#formularz">Zamów wizytę</a><p class="mut" style="font-size: 15px">To wskazówka. Przyczynę potwierdzimy na miejscu.</p></div>
 </div>
 </div>
 </div>
@@ -295,29 +514,40 @@ input{min-height:46px}
 <section id="uslugi" class="sec soft">
 <div class="wrap">
 <span class="eyebrow">Usługi i ceny</span>
-<h2>Robimy jedno: zatrzymujemy przeciąg</h2>
-<p class="lead">Krótka lista usług i jasne ceny. Dokładnie wiesz, za co płacisz.</p>
+<h2>Uszczelki, docisk, parapet i konserwacja</h2>
+<p class="lead">Jasne ceny. Dokładnie wiesz, za co płacisz, zanim zaczniemy pracę.</p>
 <div class="grid g3 svc">
 <div class="card">
-<div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M12 3v18M9 11v3"></path></svg></div>
-<h3>Regulacja okien i drzwi balkonowych</h3>
-<p class="mut">Ustawiamy skrzydło, poprawiamy docisk i przełączamy okno na tryb zimowy, jeśli ma taką funkcję.</p>
-<ul class="ticks"><li>okno domyka się lekko</li><li>skrzydło przestaje ocierać</li><li>równy docisk na obwodzie</li></ul>
-<p class="price">od 60 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ skrzydło</span></p>
-</div>
-<div class="card">
-<div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"></rect><rect x="8" y="8" width="8" height="8" rx="1"></rect></svg></div>
+<p class="no">01</p>
 <h3>Wymiana uszczelek</h3>
 <p class="mut">Zdejmujemy starą uszczelkę, czyścimy rowek i zakładamy nową, dobraną do profilu okna.</p>
 <ul class="ticks"><li>koniec z przeciągiem</li><li>mniej hałasu z ulicy</li><li>okno znów trzyma szczelność</li></ul>
-<p class="price">od 29 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ mb</span></p>
+<p class="price"><small>Cena</small>od 29 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ mb</span></p>
+<button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
 </div>
 <div class="card">
-<div class="ic"><svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.500 6 11a6 6 0 0 1-12 0c0-4.500 6-11 6-11z"></path></svg></div>
+<p class="no">02</p>
+<h3>Regulacja i docisk skrzydeł</h3>
+<p class="mut">Ustawiamy skrzydło, poprawiamy docisk i przełączamy okno na tryb zimowy, jeśli ma taką funkcję.</p>
+<ul class="ticks"><li>okno domyka się lekko</li><li>skrzydło przestaje ocierać</li><li>równy docisk na obwodzie</li></ul>
+<p class="price"><small>Cena</small>od 59 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ skrzydło</span></p>
+<button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
+</div>
+<div class="card">
+<p class="no">03</p>
 <h3>Smarowanie i przegląd</h3>
 <p class="mut">Czyścimy i smarujemy okucia, konserwujemy uszczelki i sprawdzamy każde okno.</p>
 <ul class="ticks"><li>klamka chodzi płynnie</li><li>uszczelki dłużej pracują</li><li>znasz stan swoich okien</li></ul>
-<p class="price">od 40 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ okno</span></p>
+<p class="price"><small>Cena</small>od 39 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ skrzydło</span></p>
+<button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
+</div>
+<div class="card">
+<p class="no">04</p>
+<h3>Uszczelnienie parapetu</h3>
+<p class="mut">Zimno często wchodzi dołem, przez szczelinę między parapetem a ramą okna. Czyścimy ją i uszczelniamy.</p>
+<ul class="ticks"><li>nie wieje spod parapetu</li><li>równa, estetyczna fuga</li><li>robimy przy tej samej wizycie</li></ul>
+<p class="price"><small>Cena</small>65 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ mb</span></p>
+<button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
 </div>
 </div>
 <p class="mut" style="margin-top: 20px">Minimalna wartość zlecenia z dojazdem na terenie Warszawy: 250 zł. Ostateczną cenę podajemy po obejrzeniu okien, zanim zaczniemy pracę.</p>
@@ -334,73 +564,59 @@ input{min-height:46px}
 <p class="mut" style="margin-top: 12px">Z czasem materiał twardnieje, a szczelina wraca. Dlatego okno może wiać, chociaż szyby i rama są w dobrym stanie.</p>
 <p class="mut" style="margin-top: 12px">O wymianie decyduje stan uszczelki, a nie sam wiek okna. Sprawdzamy ją na miejscu i dobieramy zamiennik do profilu.</p>
 </div>
-<svg viewBox="0 0 460 280" style="width: 100%; border-radius: 12px; background: #F2F6FA" role="img" aria-label="Przekrój okna: rama, skrzydło, szyba i uszczelka" fill="none">
-<rect x="40" y="170" width="250" height="70" rx="6" fill="#C9D7E3"></rect>
-<rect x="40" y="96" width="60" height="110" rx="6" fill="#C9D7E3"></rect>
-<rect x="120" y="60" width="150" height="96" rx="6" fill="#0F2A43"></rect>
+<svg viewBox="0 0 460 280" style="width: 100%; background: #E8EEF0" role="img" aria-label="Przekrój okna: rama, skrzydło, szyba i uszczelka" fill="none">
+<rect x="40" y="170" width="250" height="70" rx="1" fill="#C9D5DB"></rect>
+<rect x="40" y="96" width="60" height="110" rx="1" fill="#C9D5DB"></rect>
+<rect x="120" y="60" width="150" height="96" rx="1" fill="#0E1A22"></rect>
 <rect x="180" y="20" width="26" height="60" fill="#BFE0F2"></rect>
-<circle cx="110" cy="138" r="9" fill="#C94A0A"></circle>
-<circle cx="150" cy="163" r="9" fill="#C94A0A"></circle>
-<path d="M300 200h52" stroke="#0F2A43" stroke-width="1.500"></path><path d="M270 120h82" stroke="#0F2A43" stroke-width="1.500"></path><path d="M206 44h146" stroke="#0F2A43" stroke-width="1.500"></path><path d="M159 163c60 66 130 66 193 52" stroke="#C94A0A" stroke-width="1.500"></path>
-<text x="358" y="49" fill="#0F2A43" font-family="Manrope, sans-serif" font-size="16" font-weight="700">Szyba</text>
-<text x="358" y="125" fill="#0F2A43" font-family="Manrope, sans-serif" font-size="16" font-weight="700">Skrzydło</text>
-<text x="358" y="205" fill="#0F2A43" font-family="Manrope, sans-serif" font-size="16" font-weight="700">Rama</text>
-<text x="358" y="240" fill="#A83C07" font-family="Manrope, sans-serif" font-size="16" font-weight="700">Uszczelki</text>
+<circle cx="110" cy="138" r="9" fill="#D9701E"></circle>
+<circle cx="150" cy="163" r="9" fill="#D9701E"></circle>
+<path d="M300 200h52" stroke="#0E1A22" stroke-width="1.500"></path><path d="M270 120h82" stroke="#0E1A22" stroke-width="1.500"></path><path d="M206 44h146" stroke="#0E1A22" stroke-width="1.500"></path><path d="M159 163c60 66 130 66 193 52" stroke="#D9701E" stroke-width="1.500"></path>
+<text x="358" y="49" fill="#0E1A22" font-family="Archivo, sans-serif" font-size="16" font-weight="700">Szyba</text>
+<text x="358" y="125" fill="#0E1A22" font-family="Archivo, sans-serif" font-size="16" font-weight="700">Skrzydło</text>
+<text x="358" y="205" fill="#0E1A22" font-family="Archivo, sans-serif" font-size="16" font-weight="700">Rama</text>
+<text x="358" y="240" fill="#A9530F" font-family="Archivo, sans-serif" font-size="16" font-weight="700">Uszczelki</text>
 </svg>
+</div>
+
+<h3 style="margin-top: 44px; font-size: 24px">Kiedy uszczelki przestają działać</h3>
+<p class="mut" style="margin-top: 8px; max-width: 44em">Nie ma jednej daty. Dużo zależy od materiału, słońca i tego, czy ktoś o uszczelki dbał. To sytuacje, z którymi przyjeżdżamy najczęściej.</p>
+<div class="grid g4" style="margin-top: 20px">
+<div class="card"><p class="no">Od dewelopera</p><h3>Nowe mieszkanie, a już wieje</h3><p class="mut">W nowych blokach montuje się zwykle ekonomiczne okna PCV z tańszą uszczelką. Po 5–8 latach potrafi stwardnieć, a okna od odbioru rzadko ktoś regulował.</p></div>
+<div class="card"><p class="no">PCV, 10 lat i więcej</p><h3>Okna dobre, uszczelki zmęczone</h3><p class="mut">Uszczelki EPDM wytrzymują zwykle kilkanaście lat. Od słońca i mrozu tracą jednak sprężystość, zwłaszcza od strony południowej.</p></div>
+<div class="card"><p class="no">Drewniane</p><h3>Drewno pracuje, docisk ucieka</h3><p class="mut">Uszczelka siedzi we wpuście skrzydła i bywa zamalowana lakierem, przez co twardnieje. Wymieniamy ją i ustawiamy skrzydła na nowo.</p></div>
+<div class="card"><p class="no">Rynek wtórny</p><h3>Pierwsza zima w nowym miejscu</h3><p class="mut">Poprzedni właściciel rzadko zostawia historię okien. Sprawdzimy wszystkie okna podczas jednej wizyty i powiemy, które uszczelki wymienić.</p></div>
 </div>
 
 <h3 style="margin-top: 44px; font-size: 24px">Po czym poznać zużytą uszczelkę</h3>
 <div class="grid g4" style="margin-top: 18px">
 <div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="48" width="180" height="26" rx="13" fill="#0F2A43"></rect><path d="M112 40l10 14-8 10 12 16" stroke="#F2F6FA" stroke-width="6"></path></svg>
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="48" width="180" height="26" rx="2" fill="#0E1A22"></rect><path d="M112 40l10 14-8 10 12 16" stroke="#E8EEF0" stroke-width="6"></path></svg>
 <h3>Pęknięcia</h3><p class="mut">Widoczne szczeliny w materiale, zwykle w narożnikach.</p>
 </div>
 <div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="56" width="180" height="10" rx="5" fill="#0F2A43"></rect><path d="M120 20v26M108 36l12 12 12-12" stroke="#C94A0A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="56" width="180" height="10" rx="5" fill="#0E1A22"></rect><path d="M120 20v26M108 36l12 12 12-12" stroke="#D9701E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 <h3>Spłaszczenie</h3><p class="mut">Uszczelka nie wraca do kształtu po otwarciu okna.</p>
 </div>
 <div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="48" width="180" height="26" rx="4" fill="#0F2A43"></rect><path d="M58 48v26M92 48v26M126 48v26M160 48v26M190 48v26" stroke="#F2F6FA" stroke-width="3"></path></svg>
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="48" width="180" height="26" rx="4" fill="#0E1A22"></rect><path d="M58 48v26M92 48v26M126 48v26M160 48v26M190 48v26" stroke="#E8EEF0" stroke-width="3"></path></svg>
 <h3>Twardość</h3><p class="mut">Guma nie ugina się pod palcem i kruszy się.</p>
 </div>
 <div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><path d="M30 80h60v-10h60v10h60" stroke="#8A9CAB" stroke-width="6"></path><path d="M60 60c40 0 60-34 120-30" stroke="#0F2A43" stroke-width="14" stroke-linecap="round"></path></svg>
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><path d="M30 80h60v-10h60v10h60" stroke="#7FA7BA" stroke-width="6"></path><path d="M60 60c40 0 60-34 120-30" stroke="#0E1A22" stroke-width="14" stroke-linecap="round"></path></svg>
 <h3>Wypadanie z rowka</h3><p class="mut">Uszczelka odstaje lub wysuwa się przy zamykaniu.</p>
 </div>
 </div>
 
-<h3 style="margin-top: 44px; font-size: 24px">Z jakich materiałów są uszczelki</h3>
-<div class="grid g3" style="margin-top: 18px">
-<div class="card"><h3>EPDM</h3><p class="mut">Guma często stosowana w oknach PCV i aluminiowych. Odporna na mróz, wilgoć i promieniowanie UV.</p></div>
-<div class="card"><h3>TPE</h3><p class="mut">Elastyczne tworzywo, popularne w nowszych oknach. Zwykle w kolorze szarym lub brązowym.</p></div>
-<div class="card"><h3>Pianka poliuretanowa</h3><p class="mut">Miękka uszczelka, która dobrze wraca do kształtu. Sprawdza się także w oknach drewnianych.</p></div>
+<h3 style="margin-top: 44px; font-size: 24px">Jakich uszczelek używamy</h3>
+<div class="grid g2 seals" style="margin-top: 18px">
+<div class="card"><div class="slot">[ZDJĘCIE: uszczelka EPDM, przekrój lub zbliżenie]</div><h3>EPDM</h3><p class="mut">Guma do okien PCV i aluminiowych. Odporna na mróz, wilgoć i słońce. Zwykle służy kilkanaście lat.</p></div>
+<div class="card"><div class="slot">[ZDJĘCIE: uszczelka z pianki poliuretanowej, zbliżenie]</div><h3>Pianka poliuretanowa</h3><p class="mut">Miękka uszczelka, która dobrze wraca do kształtu. Sprawdza się także w oknach drewnianych.</p></div>
 </div>
 
-<div class="res" style="margin-top: 24px; background: #FFF1E6; border-color: #F6DCC6">
+<div class="res" style="margin-top: 32px">
 <h3>Jak dbać o uszczelki</h3>
 <ul class="ticks"><li>myj je łagodnym środkiem, bez rozpuszczalników</li><li>raz w roku zabezpiecz je preparatem do uszczelek</li><li>nie maluj uszczelek razem z ramą</li><li>przed sezonem grzewczym sprawdź je testem kartki</li></ul>
-</div>
-</div>
-</section>
-
-<section class="sec soft">
-<div class="wrap">
-<span class="eyebrow">Tryb zimowy</span>
-<h2>Trzy ustawienia docisku</h2>
-<p class="lead">Wiele okien ma regulowane rolki w okuciach. Ich pozycja decyduje o tym, jak mocno skrzydło przylega do ramy. Nie każde okno ma tę funkcję, ale sprawdzimy to na miejscu.</p>
-<div class="grid g3">
-<div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="50" y="16" width="44" height="88" rx="6" fill="#0F2A43"></rect><rect x="150" y="16" width="44" height="88" rx="6" fill="#C9D7E3"></rect><circle cx="122" cy="60" r="11" stroke="#1F6FB2" stroke-width="4"></circle></svg>
-<h3>Lato</h3><p class="mut">Najsłabszy docisk i lekkie przewietrzanie. Na zimę to za mało.</p>
-</div>
-<div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="62" y="16" width="44" height="88" rx="6" fill="#0F2A43"></rect><rect x="138" y="16" width="44" height="88" rx="6" fill="#C9D7E3"></rect><circle cx="122" cy="60" r="11" stroke="#8A9CAB" stroke-width="4"></circle></svg>
-<h3>Standard</h3><p class="mut">Ustawienie pośrednie, zwykle zostawiane po montażu okna.</p>
-</div>
-<div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="74" y="16" width="44" height="88" rx="6" fill="#0F2A43"></rect><rect x="122" y="16" width="44" height="88" rx="6" fill="#C9D7E3"></rect><circle cx="120" cy="60" r="10" fill="#C94A0A"></circle></svg>
-<h3>Zima</h3><p class="mut">Najmocniejszy docisk. Zatrzymuje przeciąg, jeśli uszczelka jest sprawna.</p>
-</div>
 </div>
 </div>
 </section>
@@ -409,13 +625,13 @@ input{min-height:46px}
 <div class="wrap">
 <span class="eyebrow">Zrób to sam</span>
 <h2>Sprawdź okno w 30 sekund</h2>
-<div class="grid g2">
+<div class="grid g2 tests">
 <div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="14" width="26" height="92" rx="4" fill="#0F2A43"></rect><rect x="70" y="14" width="26" height="92" rx="4" fill="#C9D7E3"></rect><path d="M68 46l110-10 12 52-122 8z" fill="#FFFFFF" stroke="#8A9CAB" stroke-width="2"></path></svg>
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="14" width="26" height="92" rx="4" fill="#0E1A22"></rect><rect x="70" y="14" width="26" height="92" rx="4" fill="#C9D5DB"></rect><path d="M68 46l110-10 12 52-122 8z" fill="#FFFFFF" stroke="#7FA7BA" stroke-width="2"></path></svg>
 <h3>Test kartki</h3><p class="mut">Włóż kartkę między skrzydło a ramę i zamknij okno. Jeśli łatwo ją wyciągnąć, docisk jest za słaby.</p>
 </div>
 <div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="10" width="26" height="100" rx="4" fill="#0F2A43"></rect><path d="M150 54c-16-6-26-16-44-14 8 10 2 16 14 26 12 8 26 2 30-12z" fill="#E8890C"></path><rect x="142" y="62" width="18" height="46" rx="3" fill="#C9D7E3"></rect></svg>
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="10" width="26" height="100" rx="4" fill="#0E1A22"></rect><path d="M150 54c-16-6-26-16-44-14 8 10 2 16 14 26 12 8 26 2 30-12z" fill="#D9701E"></path><rect x="142" y="62" width="18" height="46" rx="3" fill="#C9D5DB"></rect></svg>
 <h3>Test płomienia</h3><p class="mut">Zbliż świeczkę do styku skrzydła i ramy, z dala od firan. Jeśli płomień się odchyla, tamtędy wchodzi powietrze.</p>
 </div>
 </div>
@@ -441,33 +657,34 @@ input{min-height:46px}
 </div>
 </section>
 
-<section class="sec">
-<div class="wrap" style="max-width: 900px">
-<h2>Uszczelnienie czy nowe okna?</h2>
-<table style="margin-top: 24px">
-<thead><tr><th scope="col"></th><th scope="col">Uszczelnienie</th><th scope="col">Wymiana okien</th></tr></thead>
-<tbody>
-<tr><th scope="row">Czas</th><td>jedna wizyta</td><td>zamówienie, oczekiwanie, montaż</td></tr>
-<tr><th scope="row">Bałagan</th><td>praktycznie żaden</td><td>demontaż, pył, poprawki przy ościeżach</td></tr>
-<tr><th scope="row">Kiedy ma sens</th><td>rama i szyby są w dobrym stanie</td><td>okno jest zniszczone lub zgniłe</td></tr>
-</tbody>
-</table>
+<section id="realizacje" class="sec">
+<div class="wrap">
+<span class="eyebrow">Z naszych zleceń</span>
+<h2>Tak wygląda wymiana uszczelek</h2>
+<p class="lead">Prawdziwe zdjęcia z mieszkań w Warszawie. Bez zdjęć ze stocka.</p>
+<div class="grid g3">
+<figure class="shot"><div class="slot">[ZDJĘCIE 1: spękana lub spłaszczona uszczelka w ramie, zbliżenie]</div><figcaption>Stara uszczelka z bliska</figcaption></figure>
+<figure class="shot"><div class="slot">[ZDJĘCIE 2: to samo miejsce po wymianie, ten sam kadr]</div><figcaption>Nowa uszczelka w tym samym oknie</figcaption></figure>
+<figure class="shot"><div class="slot">[ZDJĘCIE 3: ręce przy wciskaniu uszczelki w rowek]</div><figcaption>Wymiana w trakcie pracy</figcaption></figure>
+<figure class="shot"><div class="slot">[ZDJĘCIE 4: kartka trzymana przez zamknięte skrzydło]</div><figcaption>Test kartki po wymianie</figcaption></figure>
+<figure class="shot"><div class="slot">[ZDJĘCIE 5: ekran kamery skierowanej na okno]</div><figcaption>Kamera termowizyjna u klienta</figcaption></figure>
+<figure class="shot"><div class="slot">[ZDJĘCIE 6: mistrz z narzędziami, twarz widoczna]</div><figcaption>Kto do Ciebie przyjedzie</figcaption></figure>
+</div>
 </div>
 </section>
 
-<section id="drewno" class="sec soft">
-<div class="wrap">
-<div class="hero" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 32px; align-items: center">
-<div>
-<h2>Masz stare okna drewniane? Znamy je od podszewki.</h2>
-<p class="mut" style="margin-top: 14px">Na co dzień zajmujemy się renowacją okien drewnianych. Wiemy, jak uszczelnić stare okno i nie zniszczyć ramy. Pomożemy także przy oknach skrzynkowych w kamienicach.</p>
-<p class="mut" style="margin-top: 12px">Jeśli okno wymaga czegoś więcej niż uszczelnienia, powiemy o tym wprost i pokażemy, co można zrobić wiosną.</p>
-</div>
-<div class="tile" style="padding: 24px">
-<h3>Co sprawdzamy w drewnianym oknie</h3>
-<ul class="ticks"><li>stan uszczelki i rowka w ramie</li><li>przyleganie skrzydeł na obwodzie</li><li>stan drewna przy dolnej części ramy</li><li>działanie zawiasów i zamknięć</li><li>kit i listwy przy szybach</li></ul>
-</div>
-</div>
+<section class="sec soft">
+<div class="wrap" style="max-width: 900px">
+<h2>Regulacja czy nowa uszczelka?</h2>
+<table style="margin-top: 24px">
+<thead><tr><th scope="col"></th><th scope="col">Wystarczy regulacja</th><th scope="col">Potrzebna nowa uszczelka</th></tr></thead>
+<tbody>
+<tr><th scope="row">Uszczelka</th><td>miękka, cała, wraca do kształtu</td><td>twarda, spłaszczona lub popękana</td></tr>
+<tr><th scope="row">Test kartki</th><td>kartka trzyma po zwiększeniu docisku</td><td>kartka wysuwa się mimo docisku</td></tr>
+<tr><th scope="row">Kiedy najczęściej</th><td>okno ma kilka lat i nikt go nie regulował</td><td>okno ma 8–10 lat i więcej bez konserwacji</td></tr>
+</tbody>
+</table>
+<p class="mut" style="margin-top: 16px">Sprawdzamy to na miejscu i mówimy wprost, co jest potrzebne w każdym oknie.</p>
 </div>
 </section>
 
@@ -476,10 +693,10 @@ input{min-height:46px}
 <span class="eyebrow">Krok po kroku</span>
 <h2>Jak to wygląda</h2>
 <div class="grid g4">
-<div class="card"><p class="num">1</p><h3>Dzwonisz lub piszesz</h3><p class="mut">Podajesz liczbę okien i dzielnicę. Możesz wysłać zdjęcie.</p></div>
-<div class="card"><p class="num">2</p><h3>Sprawdzamy okna</h3><p class="mut">Na miejscu szukamy przyczyny przeciągu i podajemy cenę.</p></div>
-<div class="card"><p class="num">3</p><h3>Uszczelniamy</h3><p class="mut">Regulujemy, smarujemy i wymieniamy uszczelki.</p></div>
-<div class="card"><p class="num">4</p><h3>Testujemy razem</h3><p class="mut">Sprawdzamy z Tobą docisk i szczelność każdego okna.</p></div>
+<div class="card"><p class="num">01</p><h3>Dzwonisz lub piszesz</h3><p class="mut">Podajesz liczbę okien i dzielnicę. Możesz wysłać zdjęcie.</p></div>
+<div class="card"><p class="num">02</p><h3>Sprawdzamy okna</h3><p class="mut">Na miejscu szukamy przyczyny przeciągu i podajemy cenę.</p></div>
+<div class="card"><p class="num">03</p><h3>Uszczelniamy</h3><p class="mut">Wymieniamy uszczelki, ustawiamy docisk i smarujemy okucia.</p></div>
+<div class="card"><p class="num">04</p><h3>Testujemy razem</h3><p class="mut">Sprawdzamy z Tobą docisk i szczelność każdego okna.</p></div>
 </div>
 </div>
 </section>
@@ -520,8 +737,9 @@ input{min-height:46px}
 <details><summary>Czy szczelne okno nie pogorszy wentylacji?</summary><p>Szczelne okno wpuszcza mniej powietrza, dlatego trzeba pamiętać o regularnym wietrzeniu. Podpowiemy, jak to pogodzić w Twoim mieszkaniu.</p></details>
 <details><summary>Jak często regulować okna?</summary><p>Najlepiej raz w roku, zwłaszcza przed sezonem grzewczym. Dzięki temu okucia i uszczelki pracują dłużej.</p></details>
 <details><summary>Skąd mam wiedzieć, czy wystarczy regulacja?</summary><p>Jeśli uszczelka jest miękka i cała, zwykle wystarczy regulacja. Gdy jest twarda lub popękana, trzeba ją wymienić.</p></details>
-<details><summary>Czy pomożecie, jeśli wieje spod parapetu lub przy murze?</summary><p>Sprawdzimy, skąd dokładnie idzie powietrze. Jeśli problem leży w montażu okna, powiemy to wprost.</p></details>
-<details><summary>Czy naprawiacie zepsute okucia lub wymieniacie szyby?</summary><p>Nie. Zajmujemy się regulacją, smarowaniem i uszczelkami. Jeśli zobaczymy uszkodzone okucie, powiemy o tym od razu.</p></details>
+<details><summary>Czy pomożecie, jeśli wieje spod parapetu lub przy murze?</summary><p>Tak. Uszczelniamy szczelinę między parapetem a ramą okna, 65 zł za metr bieżący. Jeśli problem leży głębiej, w montażu okna, powiemy to wprost.</p></details>
+<details><summary>Po ilu latach wymienia się uszczelki?</summary><p>Zwykle po 8–15 latach, zależnie od materiału i pielęgnacji. W mieszkaniach od dewelopera bywa, że wcześniej. O wymianie decyduje stan uszczelki, a nie sama data.</p></details>
+<details><summary>Czy wymieniacie uszczelki w oknach drewnianych?</summary><p>Tak. Dobieramy uszczelkę do wpustu w skrzydle i po wymianie ustawiamy docisk.</details>
 </div>
 </section>
 
@@ -550,15 +768,15 @@ input{min-height:46px}
 <button type="button" class="mx" aria-label="Zamknij" data-act="closeModal"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
 <h2 id="kontakt-tytul" style="font-size: 28px; padding-right: 52px">Skontaktuj się z nami</h2>
 <p class="mut" style="margin-top: 8px; margin-bottom: 8px">Wybierz najwygodniejszy sposób kontaktu. Odpowiadamy szybko.</p>
-<a class="copt" href="tel:+48579289539"><span class="cico" style="background: #FFF1E6; color: #C94A0A"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span><span><span class="ckind" style="display: block">Zadzwoń teraz</span><span class="cval">+48 579 289 539</span></span></a>
-<a class="copt" href="mailto:[E-MAIL]"><span class="cico" style="background: #E3EEF8; color: #1F6FB2"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg></span><span><span class="ckind" style="display: block">Napisz e-mail</span><span class="cval">[E-MAIL]</span></span></a>
+<a class="copt" href="tel:+48579289539"><span class="cico" style="background: #D9701E; color: #0E1A22"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span><span><span class="ckind" style="display: block">Zadzwoń teraz</span><span class="cval">+48 579 289 539</span></span></a>
+<a class="copt" href="mailto:[E-MAIL]"><span class="cico" style="background: #0E1A22; color: #FFFFFF"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M4 5h16a2 2 0 0 1 2 2v.6l-10 6-10-6V7a2 2 0 0 1 2-2zm-2 4.9 10 6 10-6V17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"></path></svg></span><span><span class="ckind" style="display: block">Napisz e-mail</span><span class="cval">[E-MAIL]</span></span></a>
 <div class="ctwo">
-<a class="ctile" href="https://wa.me/48579289539"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="#1E8E4E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.400-4A8 8 0 1 1 8 18.600z"></path></svg>WhatsApp</a>
-<a class="ctile" href="#formularz" data-act="closeModal"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="none" stroke="#1F6FB2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg>Formularz</a>
+<a class="ctile" href="https://wa.me/48579289539"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="currentColor" style="color: #1E8E4E"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"></path></svg>WhatsApp</a>
+<a class="ctile" href="#formularz" data-act="closeModal"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="currentColor" style="color: #0E1A22"><path fill-rule="evenodd" d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm2 5v2h8V7zm0 4v2h8v-2zm0 4v2h5v-2z"></path></svg>Formularz</a>
 </div>
-<div style="display: flex; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid #DCE5EC">
-<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="#4C6072" stroke-width="2" stroke-linecap="round" style="flex: none; margin-top: 2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
-<div><p style="font-weight: 800">Godziny pracy</p><p class="mut">[GODZINY PRACY, np. pon.–sob. 9:00–19:00]</p></div>
+<div style="display: flex; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid #C9D5DB">
+<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor" style="flex: none; margin-top: 2px; color: #46565F"><path fill-rule="evenodd" d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm-1 5v6.3l4.6 2.7 1-1.7-3.6-2.1V7z"></path></svg>
+<div><p style="font-weight: 800">Godziny pracy</p><p class="mut">pon.–sob. 9:00–19:00</p></div>
 </div>
 </div>
 </div>
@@ -568,28 +786,31 @@ input{min-height:46px}
 <div class="promo" role="dialog" aria-labelledby="promo-tytul">
 <button type="button" class="mx" aria-label="Zamknij" data-act="closePromo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
 <div style="display: flex; gap: 14px; align-items: flex-start; padding-right: 48px">
-<span class="cico" style="background: #FFF1E6; color: #C94A0A"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span>
+<span class="cico" style="background: #D9701E; color: #0E1A22"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span>
 <div><p class="ckind">Wieje z okna?</p><p id="promo-tytul" style="font-weight: 800; font-size: 19px; line-height: 1.25">Dojazd w cenie zlecenia na terenie Warszawy</p></div>
 </div>
 <p class="mut" style="margin-top: 8px; font-size: 15px">Zadzwoń, a ustalimy termin. Wizyta nawet w 24 h.</p>
-<a class="pcall" href="tel:+48579289539">+48 579 289 539<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></a>
+<a class="pcall" href="tel:+48579289539">+48 579 289 539<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></a>
 <div class="ctwo" style="margin-top: 10px">
-<a class="pbtn" href="https://wa.me/48579289539" style="color: #1E7A45"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.400-4A8 8 0 1 1 8 18.600z"></path></svg>WhatsApp</a>
-<a class="pbtn" href="#formularz" data-act="closePromo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg>Formularz</a>
+<a class="pbtn" href="https://wa.me/48579289539" style="color: #1E7A45"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"></path></svg>WhatsApp</a>
+<a class="pbtn" href="#formularz" data-act="closePromo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="currentColor"><path fill-rule="evenodd" d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm2 5v2h8V7zm0 4v2h8v-2zm0 4v2h5v-2z"></path></svg>Formularz</a>
 </div>
-<p class="mut" style="margin-top: 12px; font-size: 14px">[GODZINY PRACY, np. pon.–sob. 9:00–19:00]</p>
+<p class="mut" style="margin-top: 12px; font-size: 14px">pon.–sob. 9:00–19:00</p>
 </div>
 </div>
 
+<a class="wafab pulse" href="https://wa.me/48579289539" aria-label="Napisz na WhatsApp"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M12 3a9 9 0 0 0-7.800 13.500L3 21l4.600-1.200A9 9 0 1 0 12 3z"></path></svg></a>
+
 <div class="mbar">
+<a class="mwa pulse" href="https://wa.me/48579289539" aria-label="Napisz na WhatsApp"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M12 3a9 9 0 0 0-7.800 13.500L3 21l4.600-1.200A9 9 0 1 0 12 3z"></path></svg></a>
 <a class="btn pri" href="tel:+48579289539" style="flex: 1; min-height: 48px; padding: 0 8px">Zadzwoń</a>
 <a class="btn sec2" href="#formularz" style="flex: 1; min-height: 48px; padding: 0 8px">Wycena</a>
 </div>
 
-<footer class="mspace" style="background: #0A1E30; color: #D5E0EA">
+<footer class="mspace" style="background: #0E1A22; color: #C9D5DB">
 <div class="wrap" style="padding-top: 22px; padding-bottom: 22px; display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between; font-size: 15px">
 <span>OknoNieWieje · oknoniewieje.pl · NIP [NIP]</span>
-<span>Regulacja, smarowanie i uszczelnianie okien · Warszawa i okolice</span>
+<span>Wymiana uszczelek, regulacja i konserwacja okien · Warszawa i okolice</span>
 </div>
 </footer>
 
@@ -597,14 +818,14 @@ input{min-height:46px}
 <script>
 (function(){
 var data=[
-      { label: 'Wieje przy ramie', cause: 'Za słaby docisk lub zużyta uszczelka', fix: 'Sprawdzamy uszczelkę i ustawiamy docisk na całym obwodzie', price: 'od 60 zł za skrzydło' },
+      { label: 'Ciągnie zimnem po nogach', cause: 'Zimne powietrze wchodzi dołem skrzydła przez zużytą uszczelkę', fix: 'Wymieniamy uszczelkę i ustawiamy docisk na całym obwodzie', price: 'uszczelka od 29 zł za metr' },
+      { label: 'Czuć chłód przy łóżku lub biurku', cause: 'Nieszczelny styk skrzydła z ramą', fix: 'Sprawdzamy uszczelki testem kartki i wymieniamy zużyte', price: 'uszczelka od 29 zł za metr' },
+      { label: 'Firanka rusza się przy zamkniętym oknie', cause: 'Szczelina przy ramie, przez którą wieje', fix: 'Zakładamy nową uszczelkę i zwiększamy docisk skrzydła', price: 'uszczelka od 29 zł za metr' },
       { label: 'Uszczelka jest twarda lub popękana', cause: 'Uszczelka straciła sprężystość', fix: 'Zakładamy nową uszczelkę, dobraną do profilu okna', price: 'od 29 zł za metr' },
-      { label: 'Okno ciężko się zamyka', cause: 'Rozregulowane skrzydło lub suche okucia', fix: 'Regulujemy skrzydło, czyścimy i smarujemy okucia', price: 'od 60 zł za skrzydło' },
-      { label: 'Skrzydło ociera o ramę', cause: 'Skrzydło opadło na zawiasach', fix: 'Ustawiamy skrzydło z powrotem w ramie', price: 'od 60 zł za skrzydło' },
-      { label: 'Słychać ulicę bardziej niż kiedyś', cause: 'Nieszczelny styk skrzydła z ramą', fix: 'Poprawiamy docisk i w razie potrzeby wymieniamy uszczelkę', price: 'od 60 zł za skrzydło' },
-      { label: 'Mam stare okno drewniane', cause: 'Brak uszczelki lub wypaczone skrzydło', fix: 'Dobieramy sposób uszczelnienia do konstrukcji okna', price: 'wycena po zdjęciu lub oględzinach' }
+      { label: 'Słychać ulicę bardziej niż kiedyś', cause: 'Uszczelka nie przylega już do ramy na całej długości', fix: 'Wymieniamy uszczelkę i poprawiamy docisk', price: 'uszczelka od 29 zł za metr' },
+      { label: 'Okno ciężko się zamyka lub ociera', cause: 'Rozregulowane skrzydło lub suche okucia', fix: 'Regulujemy skrzydło, czyścimy i smarujemy okucia', price: 'od 59 zł za skrzydło' }
     ];
-var st={view:'before',sym:0,modal:false,promo:false,promoDone:false,menu:false};
+var st={view:'before',sym:-1,modal:false,promo:false,promoDone:false,menu:false};
 function show(k,v){document.querySelectorAll('[data-if="'+k+'"]').forEach(function(e){e.hidden=!v;});}
 function render(){
  show('before',st.view==='before');show('after',st.view==='after');
@@ -612,12 +833,15 @@ function render(){
  show('menu',st.menu);show('menuClosed',!st.menu);
  var bg=document.getElementById('burg');if(bg)bg.setAttribute('aria-expanded',st.menu?'true':'false');
  show('modal',st.modal);show('promo',st.promo);
- var r=data[st.sym];document.querySelectorAll('[data-res]').forEach(function(e){e.textContent=r[e.dataset.res];});
+ show('hasRes',st.sym>=0);show('noRes',st.sym<0);
+ var r=data[st.sym]||data[0];document.querySelectorAll('[data-res]').forEach(function(e){e.textContent=r[e.dataset.res];});
  document.querySelectorAll('.chips .chip').forEach(function(c,i){c.classList.toggle('on',i===st.sym);c.setAttribute('aria-pressed',i===st.sym);});
 }
 function set(p){for(var k in p)st[k]=p[k];render();}
 var chips=document.querySelector('.chips');
-data.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=d.label;b.addEventListener('click',function(){set({sym:i});});chips.appendChild(b);});
+data.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.className='chip';
+ var q=document.createElement('span');q.className='ql';q.setAttribute('aria-hidden','true');q.textContent='ABCDEF'.charAt(i);var t=document.createElement('span');t.textContent=d.label;b.appendChild(q);b.appendChild(t);
+ b.addEventListener('click',function(){set({sym:i});var r=document.querySelector('.res');if(r){r.style.animation='none';r.offsetHeight;r.style.animation='';}});chips.appendChild(b);});
 var acts={showBefore:function(){set({view:'before'});},showAfter:function(){set({view:'after'});},
  toggleMenu:function(){set({menu:!st.menu});},closeMenu:function(){set({menu:false});},
  openModal:function(){set({modal:true,promo:false,promoDone:true,menu:false});},closeModal:function(){set({modal:false});},
