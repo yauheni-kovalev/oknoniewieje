@@ -397,6 +397,114 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 .svc .btn{margin-top:10px;min-height:42px;font-size:14px;padding:0 6px}
 }
 @media (max-width:359px){.g3.svc{grid-template-columns:1fr}}
+
+/* v15: rozmyta szapka na telefonie i tło pod okienkiem */
+.hdr{background:transparent;padding-bottom:0}
+.hdr::before,.hdr::after{content:"";position:absolute;left:0;right:0;top:0;pointer-events:none;z-index:-1}
+.hdr::before{bottom:-6px;background:linear-gradient(180deg,rgba(232,238,240,.85) 0%,rgba(232,238,240,.55) 55%,rgba(232,238,240,0) 100%);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);-webkit-mask-image:linear-gradient(180deg,#000 0%,#000 45%,transparent 92%);mask-image:linear-gradient(180deg,#000 0%,#000 45%,transparent 92%)}
+.hdr::after{bottom:-14px;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);-webkit-mask-image:linear-gradient(180deg,transparent 35%,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,transparent 35%,#000 62%,transparent 100%)}.pov{position:fixed;inset:0;z-index:39;background:rgba(14,26,34,.38);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);animation:pfade .3s ease}
+@keyframes pfade{from{opacity:0}to{opacity:1}}
+.promo{z-index:41}
+@media (prefers-reduced-motion:reduce){.pov{animation:none}}
+
+/* v17 */
+.simg{margin:-4px 0 14px}
+.simg .slot{aspect-ratio:4/3;font-size:13px;padding:10px}
+.simg img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+.steps{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;counter-reset:none}
+.steps li{display:flex;gap:14px;align-items:flex-start;background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.snum{flex:none;width:44px;height:44px;border-radius:50%;background:var(--frost);color:var(--heat2);display:flex;align-items:center;justify-content:center;font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:19px}
+.steps li:last-child .snum{background:#BD570B;color:#FFFFFF}
+.steps h3{font-size:17px;margin-bottom:4px}
+.steps p{font-size:15px;line-height:1.45}
+@media (max-width:980px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){
+.simg{margin:0 0 10px}
+.simg .slot{font-size:11px;padding:6px}
+.steps{grid-template-columns:1fr;gap:0;margin-top:20px;position:relative}
+.steps li{background:transparent;border:0;border-radius:0;padding:0 0 14px;position:relative}
+.steps li:not(:last-child)::before{content:"";position:absolute;left:17px;top:36px;bottom:0;width:2px;background:var(--line)}
+.snum{width:36px;height:36px;font-size:16px;background:#FFFFFF;border:1px solid var(--line)}
+.steps li:last-child .snum{border-color:#BD570B}
+.steps h3{font-size:16px;margin:6px 0 2px}
+.steps p{font-size:14px}
+}
+
+.dnav{flex-wrap:nowrap!important;white-space:nowrap;gap:6px 18px!important;font-size:15px!important}
+@media (min-width:981px) and (max-width:1240px){.htag{display:none}}
+@media (min-width:981px) and (max-width:1100px){.hphone{display:none}}
+
+/* v18 */
+.steps{display:none}
+.pgal{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pstep{background:#FFFFFF;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.pstep .slot,.pstep img{border:0;border-bottom:2px dashed #AEBDC5;border-radius:0;aspect-ratio:4/3;width:100%;display:flex;object-fit:cover;font-size:13px}
+.pstep img{display:block;border-bottom:0}
+.ptxt{display:flex;gap:12px;align-items:flex-start;padding:14px 16px 18px}
+.ptxt h3{font-size:17px;margin:4px 0 4px}
+.ptxt p{font-size:15px;line-height:1.45}
+.pstep:last-child .snum{background:#BD570B;color:#FFFFFF}
+.simg .slot,.simg img{aspect-ratio:auto;height:170px}
+.svc h3{min-height:2.4em}
+@media (min-width:701px){
+.promo{left:50%;top:50%;right:auto;bottom:auto;width:min(440px,calc(100vw - 40px));transform:translate(-50%,-50%);animation:pinc .3s ease}
+@keyframes pinc{from{opacity:0;transform:translate(-50%,-46%)}to{opacity:1;transform:translate(-50%,-50%)}}
+}
+@media (max-width:980px){.pgal{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){
+.pgal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:20px -14px 0;padding:0 14px 8px;scrollbar-width:none}
+.pgal::-webkit-scrollbar{display:none}
+.pstep{flex:0 0 78%;scroll-snap-align:start}
+.ptxt{padding:12px 14px 14px}
+.ptxt h3{font-size:16px}
+.ptxt p{font-size:14px}
+.simg .slot,.simg img{height:104px}
+.svc h3{min-height:2.5em}
+}
+
+@media (max-width:700px){
+.svc .price .mut{display:block!important;margin-top:2px!important}
+.pgal{scroll-padding-left:14px}
+.pghint{display:block}
+}
+.pghint{display:none;margin-top:6px;font-size:13px;color:var(--mut)}
+
+/* v19: dok, karuzela, mikroanimacje */
+.wafab{left:auto;right:20px;border:0;cursor:pointer}
+.promo.dock{left:auto;top:auto;right:20px;bottom:96px;transform:none;width:min(390px,calc(100vw - 40px));animation:pdock .38s cubic-bezier(.2,.8,.2,1)}
+@keyframes pdock{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.pgwrap{position:relative}
+.pgnext{display:none}
+.pgal{scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.btn,.chip,.wafab,.mwa,.hwa,.hcallm,.pcall,.pbtn,.copt,.ctile{transition:transform .18s ease,box-shadow .18s ease,background .18s ease,border-color .18s ease}
+.btn:active,.chip:active,.wafab:active,.mwa:active,.hcallm:active,.pcall:active,.pbtn:active{transform:scale(.97)}
+@media (hover:hover){
+.btn:hover{transform:translateY(-1px)}
+.svc .card,.pstep,.copt,.ctile{transition:transform .22s ease,box-shadow .22s ease}
+.svc .card:hover,.pstep:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(14,26,34,.10)}
+.wafab:hover{transform:scale(1.06)}
+}
+.res{animation:qpop2 .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes qpop2{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+.res .qpick,.resg>div,.qcta{animation:qitem .5s cubic-bezier(.2,.8,.2,1) both}
+.resg>div:nth-child(1){animation-delay:.06s}.resg>div:nth-child(2){animation-delay:.12s}.resg>div:nth-child(3){animation-delay:.18s}.qcta{animation-delay:.24s}
+@keyframes qitem{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.chip.on .ql{animation:qbump .35s ease}
+@keyframes qbump{50%{transform:scale(1.15)}}
+@media (max-width:700px){
+.simg .slot,.simg img{width:100%;height:120px;box-sizing:border-box}
+.pgwrap::after{content:"";position:absolute;top:0;right:-14px;bottom:8px;width:64px;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.9));-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);-webkit-mask-image:linear-gradient(90deg,transparent,#000 60%);mask-image:linear-gradient(90deg,transparent,#000 60%);transition:opacity .25s ease}
+.pgnext{display:flex;position:absolute;right:-2px;top:calc(50% - 26px);z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:#BD570B;color:#FFFFFF;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(14,26,34,.25);cursor:pointer;animation:nudge 1.6s ease-in-out infinite;transition:opacity .25s ease}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+.pgwrap.end::after,.pgwrap.end .pgnext{opacity:0;pointer-events:none}
+.pgwrap.moved .pgnext{animation:none}
+.pstep{flex:0 0 80%}
+}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.res,.res *,.pgnext,.chip.on .ql,.promo.dock{animation:none!important}.btn:hover,.svc .card:hover,.pstep:hover{transform:none}}
+
+.simg{align-self:stretch;width:100%}
+.simg .slot,.simg img{width:100%;box-sizing:border-box}
+@media (max-width:700px){.pstep{flex:0 0 min(80%,340px)}}
 </style>
 </head>
 <body>
@@ -518,6 +626,7 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 <p class="lead">Jasne ceny. Dokładnie wiesz, za co płacisz, zanim zaczniemy pracę.</p>
 <div class="grid g3 svc">
 <div class="card">
+<div class="simg"><div class="slot">[ZDJĘCIE: wymiana uszczelki]</div></div>
 <p class="no">01</p>
 <h3>Wymiana uszczelek</h3>
 <p class="mut">Zdejmujemy starą uszczelkę, czyścimy rowek i zakładamy nową, dobraną do profilu okna.</p>
@@ -526,6 +635,7 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 <button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
 </div>
 <div class="card">
+<div class="simg"><div class="slot">[ZDJĘCIE: regulacja skrzydła]</div></div>
 <p class="no">02</p>
 <h3>Regulacja i docisk skrzydeł</h3>
 <p class="mut">Ustawiamy skrzydło, poprawiamy docisk i przełączamy okno na tryb zimowy, jeśli ma taką funkcję.</p>
@@ -534,6 +644,7 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 <button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
 </div>
 <div class="card">
+<div class="simg"><div class="slot">[ZDJĘCIE: smarowanie okuć]</div></div>
 <p class="no">03</p>
 <h3>Smarowanie i przegląd</h3>
 <p class="mut">Czyścimy i smarujemy okucia, konserwujemy uszczelki i sprawdzamy każde okno.</p>
@@ -542,6 +653,7 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 <button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
 </div>
 <div class="card">
+<div class="simg"><div class="slot">[ZDJĘCIE: uszczelnienie parapetu]</div></div>
 <p class="no">04</p>
 <h3>Uszczelnienie parapetu</h3>
 <p class="mut">Zimno często wchodzi dołem, przez szczelinę między parapetem a ramą okna. Czyścimy ją i uszczelniamy.</p>
@@ -659,17 +771,24 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 
 <section id="realizacje" class="sec">
 <div class="wrap">
-<span class="eyebrow">Z naszych zleceń</span>
+<span class="eyebrow">Krok po kroku</span>
 <h2>Tak wygląda wymiana uszczelek</h2>
-<p class="lead">Prawdziwe zdjęcia z mieszkań w Warszawie. Bez zdjęć ze stocka.</p>
-<div class="grid g3">
-<figure class="shot"><div class="slot">[ZDJĘCIE 1: spękana lub spłaszczona uszczelka w ramie, zbliżenie]</div><figcaption>Stara uszczelka z bliska</figcaption></figure>
-<figure class="shot"><div class="slot">[ZDJĘCIE 2: to samo miejsce po wymianie, ten sam kadr]</div><figcaption>Nowa uszczelka w tym samym oknie</figcaption></figure>
-<figure class="shot"><div class="slot">[ZDJĘCIE 3: ręce przy wciskaniu uszczelki w rowek]</div><figcaption>Wymiana w trakcie pracy</figcaption></figure>
-<figure class="shot"><div class="slot">[ZDJĘCIE 4: kartka trzymana przez zamknięte skrzydło]</div><figcaption>Test kartki po wymianie</figcaption></figure>
-<figure class="shot"><div class="slot">[ZDJĘCIE 5: ekran kamery skierowanej na okno]</div><figcaption>Kamera termowizyjna u klienta</figcaption></figure>
-<figure class="shot"><div class="slot">[ZDJĘCIE 6: mistrz z narzędziami, twarz widoczna]</div><figcaption>Kto do Ciebie przyjedzie</figcaption></figure>
+<p class="lead">Zobacz, jak wygląda nasza praca przy oknie, od oględzin do kontroli końcowej.</p>
+<div class="pgwrap">
+<ol class="pgal">
+<li class="pstep"><div class="slot">[ZDJĘCIE 1: okno i dłoń sprawdzająca uszczelkę]</div><div class="ptxt"><span class="snum">01</span><div><h3>Oględziny okna</h3><p class="mut">Sprawdzamy, skąd wieje, i oceniamy stan uszczelek.</p></div></div></li>
+<li class="pstep"><div class="slot">[ZDJĘCIE 2: wyjmowanie starej uszczelki]</div><div class="ptxt"><span class="snum">02</span><div><h3>Stara uszczelka i czyszczenie</h3><p class="mut">Wyjmujemy zużytą uszczelkę i czyścimy rowki.</p></div></div></li>
+<li class="pstep"><div class="slot">[ZDJĘCIE 3: wciskanie nowej uszczelki w rowek]</div><div class="ptxt"><span class="snum">03</span><div><h3>Nowa uszczelka</h3><p class="mut">Zakładamy nową uszczelkę, dobraną do profilu okna.</p></div></div></li>
+<li class="pstep"><div class="slot">[ZDJĘCIE 4: smarowanie okuć]</div><div class="ptxt"><span class="snum">04</span><div><h3>Czyszczenie i smarowanie okuć</h3><p class="mut">Usuwamy brud i stary smar, smarujemy okucia.</p></div></div></li>
+<li class="pstep"><div class="slot">[ZDJĘCIE 5: klamka i smar]</div><div class="ptxt"><span class="snum">05</span><div><h3>Smarowanie klamki</h3><p class="mut">Klamka znowu chodzi lekko i płynnie.</p></div></div></li>
+<li class="pstep"><div class="slot">[ZDJĘCIE 6: klucz imbusowy przy zawiasie]</div><div class="ptxt"><span class="snum">06</span><div><h3>Regulacja okna</h3><p class="mut">Ustawiamy skrzydło, żeby nie ocierało i łatwo się domykało.</p></div></div></li>
+<li class="pstep"><div class="slot">[ZDJĘCIE 7: regulacja czopa docisku]</div><div class="ptxt"><span class="snum">07</span><div><h3>Regulacja docisku</h3><p class="mut">Ustawiamy docisk tak, by skrzydło szczelnie przylegało do ramy.</p></div></div></li>
+<li class="pstep"><div class="slot">[ZDJĘCIE 8: szczelina przy parapecie]</div><div class="ptxt"><span class="snum">08</span><div><h3>Uszczelnienie parapetu</h3><p class="mut">Jeśli trzeba, uszczelniamy szczelinę przy parapecie.</p></div></div></li>
+<li class="pstep"><div class="slot">[ZDJĘCIE 9: test kartki lub zamykanie okna]</div><div class="ptxt"><span class="snum">09</span><div><h3>Kontrola końcowa</h3><p class="mut">Sprawdzamy razem z Tobą zamykanie i szczelność każdego okna.</p></div></div></li>
+</ol>
+<button type="button" class="pgnext" aria-label="Następny krok" data-act="nextStep"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
 </div>
+<p class="pghint">Przesuń w bok, aby zobaczyć kolejne kroki →</p>
 </div>
 </section>
 
@@ -730,7 +849,6 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 <section id="pytania" class="sec soft">
 <div class="wrap" style="max-width: 860px">
 <h2 style="margin-bottom: 14px">Częste pytania</h2>
-<details><summary>Czy muszę wymieniać okna, jeśli wieje?</summary><p>Często nie. Przyczyną bywa słaby docisk albo zużyta uszczelka. Sprawdzimy to na miejscu i powiemy, czy uszczelnienie ma sens.</p></details>
 <details><summary>Ile trwa praca?</summary><p>Zwykle od 30 minut do godziny na okno. Dokładny czas zależy od liczby okien i ich stanu.</p></details>
 <details><summary>Czy można to zrobić zimą?</summary><p>Tak. Okno otwieramy tylko na czas pracy przy danym skrzydle, a mieszkanie pozostaje ogrzewane.</p></details>
 <details><summary>Czy każde okno ma tryb zimowy?</summary><p>Nie każde. Tryb zimowy zależy od okuć. Sprawdzimy to na miejscu i ustawimy docisk tak, jak pozwala Twoje okno.</p></details>
@@ -782,6 +900,9 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 </div>
 </div>
 
+<div data-if="promoBlur" hidden>
+<div class="pov" aria-hidden="true" data-act="closePromo"></div>
+</div>
 <div data-if="promo" hidden>
 <div class="promo" role="dialog" aria-labelledby="promo-tytul">
 <button type="button" class="mx" aria-label="Zamknij" data-act="closePromo"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
@@ -799,7 +920,7 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 </div>
 </div>
 
-<a class="wafab pulse" href="https://wa.me/48579289539" aria-label="Napisz na WhatsApp"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M12 3a9 9 0 0 0-7.800 13.500L3 21l4.600-1.200A9 9 0 1 0 12 3z"></path></svg></a>
+<button type="button" class="wafab pulse" aria-label="Kontakt: telefon, WhatsApp, formularz" data-act="toggleDock"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M12 3a9 9 0 0 0-7.800 13.500L3 21l4.600-1.200A9 9 0 1 0 12 3z"></path></svg></button>
 
 <div class="mbar">
 <a class="mwa pulse" href="https://wa.me/48579289539" aria-label="Napisz na WhatsApp"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M12 3a9 9 0 0 0-7.800 13.500L3 21l4.600-1.200A9 9 0 1 0 12 3z"></path></svg></a>
@@ -816,6 +937,14 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 
 </div>
 <script>
+window.oknoFx=function(){
+ if(window.__oknoFx)return;window.__oknoFx=1;
+ var red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+ var g=document.querySelector('.pgal'),w=g&&g.closest('.pgwrap');
+ if(g&&w){var u=function(){var over=g.scrollWidth-g.clientWidth>8;var end=over&&g.scrollLeft+g.clientWidth>=g.scrollWidth-8;w.classList.toggle('end',end);w.classList.toggle('moved',g.scrollLeft>8);};g.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);setTimeout(u,300);setTimeout(u,1500);u();}
+};
+</script>
+<script>
 (function(){
 var data=[
       { label: 'Ciągnie zimnem po nogach', cause: 'Zimne powietrze wchodzi dołem skrzydła przez zużytą uszczelkę', fix: 'Wymieniamy uszczelkę i ustawiamy docisk na całym obwodzie', price: 'uszczelka od 29 zł za metr' },
@@ -825,14 +954,15 @@ var data=[
       { label: 'Słychać ulicę bardziej niż kiedyś', cause: 'Uszczelka nie przylega już do ramy na całej długości', fix: 'Wymieniamy uszczelkę i poprawiamy docisk', price: 'uszczelka od 29 zł za metr' },
       { label: 'Okno ciężko się zamyka lub ociera', cause: 'Rozregulowane skrzydło lub suche okucia', fix: 'Regulujemy skrzydło, czyścimy i smarujemy okucia', price: 'od 59 zł za skrzydło' }
     ];
-var st={view:'before',sym:-1,modal:false,promo:false,promoDone:false,menu:false};
+var st={view:'before',sym:-1,modal:false,promo:false,promoDone:false,menu:false,dock:false};
 function show(k,v){document.querySelectorAll('[data-if="'+k+'"]').forEach(function(e){e.hidden=!v;});}
 function render(){
  show('before',st.view==='before');show('after',st.view==='after');
  document.querySelectorAll('[data-seg]').forEach(function(b){b.classList.toggle('on',b.dataset.seg===st.view);b.setAttribute('aria-pressed',b.dataset.seg===st.view);});
  show('menu',st.menu);show('menuClosed',!st.menu);
  var bg=document.getElementById('burg');if(bg)bg.setAttribute('aria-expanded',st.menu?'true':'false');
- show('modal',st.modal);show('promo',st.promo);
+ show('modal',st.modal);show('promo',st.promo);show('promoBlur',st.promo&&!st.dock);
+ document.querySelectorAll('.promo').forEach(function(p){p.classList.toggle('dock',!!st.dock);});
  show('hasRes',st.sym>=0);show('noRes',st.sym<0);
  var r=data[st.sym]||data[0];document.querySelectorAll('[data-res]').forEach(function(e){e.textContent=r[e.dataset.res];});
  document.querySelectorAll('.chips .chip').forEach(function(c,i){c.classList.toggle('on',i===st.sym);c.setAttribute('aria-pressed',i===st.sym);});
@@ -841,11 +971,13 @@ function set(p){for(var k in p)st[k]=p[k];render();}
 var chips=document.querySelector('.chips');
 data.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.className='chip';
  var q=document.createElement('span');q.className='ql';q.setAttribute('aria-hidden','true');q.textContent='ABCDEF'.charAt(i);var t=document.createElement('span');t.textContent=d.label;b.appendChild(q);b.appendChild(t);
- b.addEventListener('click',function(){set({sym:i});var r=document.querySelector('.res');if(r){r.style.animation='none';r.offsetHeight;r.style.animation='';}});chips.appendChild(b);});
+ b.addEventListener('click',function(){set({sym:i});var r=document.querySelector('.res');if(r){[r].concat([].slice.call(r.querySelectorAll('.qpick,.resg>div,.qcta'))).forEach(function(x){x.style.animation='none';x.offsetHeight;x.style.animation='';});if(innerWidth<=700){var bx=r.getBoundingClientRect();if(bx.bottom>innerHeight-80)window.scrollBy({top:bx.bottom-innerHeight+100,behavior:'smooth'});}}});chips.appendChild(b);});
 var acts={showBefore:function(){set({view:'before'});},showAfter:function(){set({view:'after'});},
  toggleMenu:function(){set({menu:!st.menu});},closeMenu:function(){set({menu:false});},
- openModal:function(){set({modal:true,promo:false,promoDone:true,menu:false});},closeModal:function(){set({modal:false});},
- closePromo:function(){set({promo:false,promoDone:true});},stop:function(){}};
+ openModal:function(){set({modal:true,promo:false,promoDone:true,menu:false,dock:false});},closeModal:function(){set({modal:false});},
+ closePromo:function(){set({promo:false,promoDone:true,dock:false});},
+ toggleDock:function(){var o=st.promo&&st.dock;set({promo:!o,dock:!o,promoDone:true});},
+ nextStep:function(){var g=document.querySelector('.pgal');var c=g&&g.querySelector('.pstep');if(g&&c)g.scrollBy({left:c.offsetWidth+12,behavior:'smooth'});},stop:function(){}};
 document.addEventListener('click',function(e){var t=e.target.closest('[data-act]');if(t&&acts[t.dataset.act])acts[t.dataset.act]();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(st.modal)set({modal:false});else if(st.menu)set({menu:false});}});
 setTimeout(function(){if(!st.modal&&!st.promoDone)set({promo:true});},20000);
@@ -853,6 +985,7 @@ document.querySelectorAll('form').forEach(function(f){f.addEventListener('submit
  var m=f.querySelector('.fmsg');if(!m){m=document.createElement('p');m.className='fmsg';m.setAttribute('role','status');m.style.cssText='font-weight:700;color:#A83C07';f.appendChild(m);}
  m.textContent='Formularz nie jest jeszcze podłączony. Zadzwoń: +48 579 289 539';});});
 render();
+if(window.oknoFx)window.oknoFx();
 })();
 </script>
 </body>
