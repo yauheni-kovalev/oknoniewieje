@@ -505,6 +505,193 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 .simg{align-self:stretch;width:100%}
 .simg .slot,.simg img{width:100%;box-sizing:border-box}
 @media (max-width:700px){.pstep{flex:0 0 min(80%,340px)}}
+@media (min-width:701px){.temp{font-size:clamp(28px,3.2vw,44px)}}
+
+/* v23: jak policzyć cenę */
+.howp{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px 36px;margin-top:28px;background:#FFFFFF;border:1px solid var(--line);border-left:6px solid var(--heat);border-radius:var(--r);padding:26px 28px}
+.howh{font-size:24px;margin:4px 0 12px}
+.howl{margin:0;padding-left:22px}
+.howl li{margin-top:8px;padding-left:4px}
+.howl li::marker{font-family:"Archivo Narrow",sans-serif;font-weight:700;color:var(--heat2)}
+.howx{background:var(--frost);border-radius:var(--r);padding:18px 20px}
+.howr{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line);font-size:15px}
+.howr span{color:var(--mut)}
+.howt{border-bottom:0;font-size:18px}
+.howt b{color:var(--heat2)}
+@media (max-width:860px){.howp{grid-template-columns:1fr}}
+@media (max-width:700px){.howp{padding:18px 16px;margin-top:18px}.howh{font-size:20px}.howl li{font-size:15px}.howx{padding:14px}.howr{font-size:14px}.howt{font-size:16px}}
+.bandcta{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:700px){.bandcta{display:grid;grid-template-columns:1fr 1fr;width:100%}.bandcta .btn{padding:0 8px;font-size:15px}}
+@media (max-width:700px){.bandcta .hm{display:none}}
+
+/* v25: zdjęcie mistrza w pierwszym ekranie */
+.mphoto{position:relative;margin:0;border-radius:16px;overflow:hidden;background:#FFFFFF;box-shadow:0 18px 40px rgba(14,26,34,.16);aspect-ratio:1/1;max-height:560px}
+.mphoto img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.mtag{position:absolute;left:16px;bottom:16px;display:flex;flex-direction:column;gap:2px;background:var(--ink);color:#FFFFFF;border-radius:10px;padding:10px 14px;font-size:14px;line-height:1.3}
+.mtk{font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.03em;color:#F2B27A}
+.thermo{margin:24px 0 8px;max-width:760px}
+.thermo .split{height:clamp(220px,30vw,380px)}
+@media (max-width:700px){
+.mphoto{aspect-ratio:4/3}
+.mphoto img{object-position:50% 18%}
+.mtag{left:10px;bottom:10px;padding:7px 10px;font-size:12px}
+.mtk{font-size:15px}
+.thermo{margin-top:16px}
+.thermo .split{height:220px}
+}
+
+/* v26: zdjęcie w tle pierwszego ekranu */
+.hero2{position:relative;isolation:isolate;background:var(--frost)}
+.hero2::before{content:"";position:absolute;inset:0;z-index:-2;background:url(img/tlo.jpg) 30% 60%/cover no-repeat}
+.hero2::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(232,238,240,.97) 0%,rgba(232,238,240,.93) 42%,rgba(232,238,240,.78) 70%,rgba(232,238,240,.7) 100%),linear-gradient(180deg,rgba(232,238,240,.6) 0%,rgba(232,238,240,0) 18%,rgba(232,238,240,0) 78%,rgba(232,238,240,1) 100%)}
+.hrow input{box-shadow:0 2px 10px rgba(14,26,34,.08)}
+.hact .ghost,.hact .sec2{background:rgba(255,255,255,.85)}
+@media (max-width:980px){
+.hero2::before{background-position:35% 55%}
+.hero2::after{background:linear-gradient(180deg,rgba(232,238,240,.9) 0%,rgba(232,238,240,.93) 40%,rgba(232,238,240,.96) 75%,rgba(232,238,240,1) 100%)}
+}
+
+/* v27: wycięta postać mistrza */
+.h2grid{grid-template-areas:"head photo" "lead photo" "act photo"}
+.hlead2{grid-area:lead}
+.hphoto{align-self:end;position:relative}
+.mcut{position:relative;margin:0 0 -34px;display:flex;justify-content:center}
+.mcut::before{content:"";position:absolute;left:12%;right:8%;bottom:4px;height:34px;border-radius:50%;background:radial-gradient(closest-side,rgba(14,26,34,.28),rgba(14,26,34,0));z-index:0}
+.mcut img{position:relative;z-index:1;display:block;width:100%;max-width:600px;height:auto;max-height:640px;object-fit:contain;object-position:bottom center}
+.mcut .mtag{z-index:2;left:0;bottom:56px}
+@media (max-width:980px){
+.h2grid{grid-template-columns:minmax(0,1fr) minmax(0,.9fr);grid-template-areas:"head head" "lead photo" "act act";gap:14px 16px}
+.mcut{margin:0}
+.mcut .mtag{bottom:10px}
+}
+@media (max-width:700px){
+.h2grid{grid-template-columns:minmax(0,1fr) 44%;gap:12px 8px}
+.hlead2 .hlead{font-size:14.5px;line-height:1.45}
+.hlead2 .hpts li{font-size:13.5px;padding-left:22px;line-height:1.35}
+.hlead2 .hpts li::before{width:14px;top:9px}
+.hphoto{margin-right:-14px}
+.mcut::before{bottom:0;height:18px}
+.mcut .mtag{left:auto;right:12px;bottom:4px;padding:5px 8px}
+.mcut .mtag span:last-child{display:none}
+.mcut .mtk{font-size:12px}
+}
+@media (max-width:700px){.mcut .mtag{display:none}.h2grid{grid-template-columns:minmax(0,1fr) 47%}.hphoto{margin-right:-14px;margin-left:-6px}}
+
+/* v28: postać skaluje się razem z tekstem */
+.hphoto{align-self:stretch;position:relative;min-height:0;margin:0}
+.mcut{position:absolute;inset:0;margin:0}
+.mcut img{position:absolute;left:0;right:0;bottom:0;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;object-position:bottom center}
+.mcut::before{left:18%;right:12%;bottom:-6px;height:30px}
+.mcut .mtag{bottom:12%;left:0}
+@media (min-width:981px){.h2grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}.hphoto{margin-bottom:-26px}}
+@media (min-width:701px) and (max-width:980px){
+.h2grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);grid-template-areas:"head photo" "lead photo" "act act";gap:14px 20px}
+.hphoto{margin-right:-20px}
+.mcut .mtag{display:none}
+}
+@media (max-width:700px){
+.hero2{padding-top:84px}
+.kick{display:none}
+h1{font-size:29px;line-height:1.08}
+.h2grid{grid-template-columns:minmax(0,1fr) 46%;grid-template-areas:"head head" "lead photo" "act act";gap:10px 6px}
+.hlead2 .hlead{font-size:14px;line-height:1.45;margin-top:2px}
+.hphoto{margin:0 -14px -2px -4px}
+.mcut::before{bottom:-4px;height:14px}
+.hform{margin-top:4px}
+.hform>p{font-size:15px;margin-bottom:8px}
+.hrow{grid-template-columns:minmax(0,1fr) auto;gap:8px}
+.hrow input,.hrow .btn{min-height:50px}
+.hrow .btn{font-size:14px;padding:0 16px}
+.hrow .hm{display:none}
+.hact .cta{margin-top:8px;gap:8px}
+.hact .cta .btn{min-height:46px;font-size:15px}
+.tiles{margin-top:16px}
+}
+@media (max-width:359px){h1{font-size:26px}.hlead2 .hlead{font-size:13px}}
+
+/* v29: postać od góry nagłówka do dołu przycisku Kontakt */
+.hero2{overflow-x:clip}
+@media (min-width:981px){
+.hphoto{margin:var(--kickh,54px) 0 0}
+.mcut img{left:50%;right:auto;width:auto;height:100%;transform:translateX(-50%);object-fit:fill}
+.mcut::before{left:14%;right:10%;bottom:-8px}
+.mcut .mtag{left:-6%;bottom:9%}
+}
+@media (min-width:981px) and (max-width:1199px){
+.mcut img{left:auto;right:-20px;transform:none;max-width:calc(100% + 20px);object-fit:contain;object-position:bottom right}
+.mcut .mtag{left:0}
+}
+@media (max-width:700px){
+.h2grid{grid-template-columns:minmax(0,1fr) 49%}
+.hphoto{margin:-6px -14px -4px 0;min-height:232px}
+.mcut img{left:auto;right:0;width:100%;height:100%;object-fit:contain;object-position:bottom right}
+}
+.hrow .btn{gap:0}
+
+/* v30: opływanie postaci tekstem, kompaktowe plusy */
+.mfloat{display:none}
+@media (min-width:981px){.h2grid{grid-template-areas:"head photo" "act photo"}}
+@media (max-width:980px){
+.h2grid{display:block}
+.hphoto{display:none}
+.hhead{display:flow-root}
+.mfloat{display:block;float:right;width:min(46%,380px);height:auto;margin:4px -14px 0 10px;shape-outside:polygon(36% 0,100% 0,100% 100%,0 100%,0 32%,8% 24%,30% 21%,33% 12%);shape-margin:8px;filter:drop-shadow(0 10px 14px rgba(14,26,34,.12))}
+.hact{margin-top:14px}
+}
+@media (min-width:701px) and (max-width:980px){.mfloat{width:min(44%,360px);margin-right:-20px}.hpts{clear:none}}
+@media (max-width:700px){
+.mfloat{width:54%;margin:2px -14px 0 4px}
+h1{font-size:27px}
+.hhead .hlead{font-size:14px;line-height:1.45;margin-top:8px}
+.hrow{grid-template-columns:minmax(0,1fr) auto;gap:8px}
+.hrow .btn{font-size:13px;padding:0 12px;letter-spacing:0}
+}
+@media (max-width:359px){.mfloat{width:50%}h1{font-size:24px}}
+/* kompaktowe plusy */
+.tiles{margin-top:28px;transform:translateY(28px)}
+.tile,.tile:first-child{display:grid;grid-template-columns:34px minmax(0,1fr);gap:2px 12px;align-items:center;padding:14px 18px}
+.tile .tic{grid-row:1 / span 2;width:28px;height:28px;margin:0;align-self:center}
+.tile strong{font-size:15.5px;line-height:1.2}
+.tile span{margin-top:0;font-size:13.5px;line-height:1.3}
+#diagnoza{padding-top:calc(clamp(56px,7vw,96px) + 28px)}
+@media (max-width:980px){.tile:nth-child(3){padding-left:18px}}
+@media (max-width:700px){
+.tiles{margin-top:14px;transform:translateY(18px)}
+.tile,.tile:first-child,.tile:nth-child(3){grid-template-columns:24px minmax(0,1fr);gap:1px 8px;padding:10px}
+.tile .tic{width:22px;height:22px}
+.tile strong{font-size:13px}
+.tile span{font-size:11.5px}
+#diagnoza{padding-top:58px}
+}
+
+@media (max-width:980px){#start h1{overflow-wrap:normal}}
+@media (max-width:700px){.mfloat{width:52%}h1{font-size:28px}}
+@media (max-width:400px){#start h1{font-size:25px;letter-spacing:-.03em}.mfloat{width:47%}}
+@media (max-width:359px){#start h1{font-size:23px}.mfloat{width:46%}}
+.tile,.tile:first-child{align-content:center}
+
+/* v31: kształt liczony bez marginesu, postać nie wychodzi poza przycisk */
+@media (max-width:980px){
+.mfloat{margin-right:0!important;shape-outside:polygon(36% 0,100% 0,100% 100%,16% 100%,4% 88%,0 60%,2% 38%,12% 25%,32% 21%,35% 11%) border-box;shape-margin:6px}
+}
+
+/* v33: zwijany kalkulator na mniejszych ekranach */
+.howtog{display:none}
+@media (max-width:980px){
+.howp{display:block;padding:0;border-left-width:6px}
+.howtog{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;padding:16px 16px 16px 18px;border:0;background:transparent;text-align:left;cursor:pointer;font:inherit;color:var(--ink)}
+.howtog>span:first-child{display:flex;flex-direction:column;gap:2px}
+.howtog .howh{display:block;margin:0;font-weight:800;font-size:18px;line-height:1.25}
+.howarr{flex:none;width:44px;height:44px;border-radius:50%;background:#BD570B;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(14,26,34,.22);transition:transform .3s ease;animation:nudgeY 1.6s ease-in-out infinite}
+@keyframes nudgeY{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+.howp.open .howarr{animation:none;transform:rotate(180deg)}
+.howa,.howb{display:none}
+.howp.open .howa,.howp.open .howb{display:block;animation:qitem .35s ease both}
+.howa{padding:0 18px 4px}
+.howa>.qpick,.howa>.howh{display:none}
+.howb{margin:14px 18px 18px}
+}
+@media (prefers-reduced-motion:reduce){.howarr{animation:none}}
 </style>
 </head>
 <body>
@@ -559,17 +746,13 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 <div class="h2grid">
 <div class="hhead">
 <p class="kick">Wymiana uszczelek i regulacja okien · Warszawa</p>
-<h1>Ciągnie zimnem od okna? Wymienimy uszczelki, nie okna.</h1>
+<img class="mfloat" src="img/mistrz.webp" alt="" aria-hidden="true">
+<h1>Ciągnie zimnem od okna? Wymienimy uszczelki, wyregulujemy okno i przestanie wiać.</h1>
 <p class="hlead">Chłód po nogach, zimno przy łóżku, firanka rusza się przy zamkniętym oknie. To zwykle nie wina ogrzewania, tylko zużytych uszczelek. Wymienimy je i ustawimy docisk, żeby w domu znów było ciepło.</p>
-<ul class="hpts"><li>Okna PCV i drewniane, także w mieszkaniach od dewelopera</li><li>Cenę znasz, zanim zaczniemy pracę</li></ul>
+<ul class="hpts"><li>Okna PCV i drewniane, uszczelkę dobieramy do profilu okna</li><li>Bez kucia i remontu, zwykle w jeden dzień</li></ul>
 </div>
 <div class="hphoto">
-<div class="split">
-<figure class="half cold"><img src="img/pred.jpg" alt="Okno przed uszczelnieniem, kamera termowizyjna: przy ramach skrzydeł widać zimne, niebieskie pasy"><span class="hlab">Przed</span><span class="temp">Wieje</span></figure>
-<figure class="half warm"><img src="img/po.jpg" alt="To samo okno po uszczelnieniu, kamera termowizyjna: ramy skrzydeł są ciepłe, bez niebieskich pasów"><span class="hlab">Po wymianie uszczelek</span><span class="temp">Nie wieje</span></figure>
-<span class="seam" aria-hidden="true"></span>
-</div>
-<p class="tcap">Kamera termowizyjna pokazuje to, czego nie widać. Niebieskie pasy przy ramie to zimne powietrze z zewnątrz. Po wymianie uszczelek znikają.</p>
+<figure class="mcut"><img src="img/mistrz.webp" alt="Mistrz OknoNieWieje z rolką nowej uszczelki do okien"></figure>
 </div>
 <div class="hact">
 <form class="hform" aria-label="Szybka wycena">
@@ -587,9 +770,9 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 </div>
 <div class="tiles">
 <div class="tile"><svg class="tic" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l2-5a2 2 0 0 1 2-1h10a2 2 0 0 1 2 1l2 5v5h-3v-2H6v2H3z"></path><path d="M3 13h18"></path><circle cx="7.500" cy="15.500" r="1"></circle><circle cx="16.500" cy="15.500" r="1"></circle></svg><strong>Dojazd w cenie zlecenia</strong><span>Na terenie Warszawy</span></div>
-<div class="tile"><svg class="tic" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg><strong>Gwarancja do 5 lat</strong><span>Na wykonaną pracę</span></div>
+<div class="tile"><svg class="tic" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M7.500 6v12M12 6v12M16.500 6v12"></path><path d="M5 21v-3M19 21v-3"></path></svg><strong>Niższe rachunki za ogrzewanie</strong><span>Kaloryfer i termostat pracują rzadziej</span></div>
 <div class="tile"><svg class="tic" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg><strong>Wizyta nawet w 24 h</strong><span>Także w soboty</span></div>
-<div class="tile"><svg class="tic" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"></rect><path d="M3 10h18"></path><path d="M14 15l1.500 1.500L18 14"></path></svg><strong>Płacisz po wykonaniu</strong><span>Bez zaliczek i ukrytych kosztów</span></div>
+<div class="tile"><svg class="tic" viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.600 4.400L18 9l-4.400 1.600L12 15l-1.600-4.400L6 9l4.400-1.600z"></path><path d="M19 15l.800 2.200L22 18l-2.200.800L19 21l-.800-2.200L16 18l2.200-.800z"></path></svg><strong>Bez bałaganu</strong><span>Stare uszczelki zabieramy, zostaje czysto</span></div>
 </div>
 </div>
 </section>
@@ -660,6 +843,29 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 <ul class="ticks"><li>nie wieje spod parapetu</li><li>równa, estetyczna fuga</li><li>robimy przy tej samej wizycie</li></ul>
 <p class="price"><small>Cena</small>65 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ mb</span></p>
 <button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
+</div>
+</div>
+<div class="howp">
+<button type="button" class="howtog" aria-expanded="false"><span><span class="qpick">Ile kosztuje Twoje okno?</span><span class="howh">Policz cenę uszczelki w 2 minuty</span></span><span class="howarr" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span></button>
+<div class="howa">
+<p class="qpick">Ile kosztuje Twoje okno?</p>
+<h3 class="howh">Policz cenę uszczelki w 2 minuty</h3>
+<ol class="howl">
+<li>Zmierz szerokość i wysokość skrzydła okna, w metrach.</li>
+<li>Policz obwód: 2 × (szerokość + wysokość).</li>
+<li><b>Okno PCV:</b> uszczelka jest na ościeżnicy i na skrzydle, więc obwód × 2. <b>Okno drewniane:</b> sam obwód skrzydła.</li>
+<li>Pomnóż metry przez 29 zł.</li>
+</ol>
+<p class="mut" style="font-size: 15px; margin-top: 10px">Okno dwuskrzydłowe? Policz każde skrzydło osobno i zsumuj.</p>
+</div>
+<div class="howx howb">
+<p class="lab" style="margin-top: 0">Przykład: okno PCV</p>
+<p class="howr"><span>Skrzydło</span><b>0,6 × 1,4 m</b></p>
+<p class="howr"><span>Obwód</span><b>2 × (0,6 + 1,4) = 4 m</b></p>
+<p class="howr"><span>Ościeżnica i skrzydło</span><b>4 × 2 = 8 mb</b></p>
+<p class="howr howt"><span>Uszczelka</span><b>8 × 29 zł = 232 zł</b></p>
+<a class="btn sec2" href="https://wa.me/48579289539" style="width: 100%; margin-top: 14px">Wyślij wymiary na WhatsApp</a>
+<p class="mut" style="font-size: 13px; margin-top: 8px; text-align: center">Policzymy za Ciebie. Dokładną ilość zmierzymy na miejscu.</p>
 </div>
 </div>
 <p class="mut" style="margin-top: 20px">Minimalna wartość zlecenia z dojazdem na terenie Warszawy: 250 zł. Ostateczną cenę podajemy po obejrzeniu okien, zanim zaczniemy pracę.</p>
@@ -739,17 +945,17 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 <h2>Sprawdź okno w 30 sekund</h2>
 <div class="grid g2 tests">
 <div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="14" width="26" height="92" rx="4" fill="#0E1A22"></rect><rect x="70" y="14" width="26" height="92" rx="4" fill="#C9D5DB"></rect><path d="M68 46l110-10 12 52-122 8z" fill="#FFFFFF" stroke="#7FA7BA" stroke-width="2"></path></svg>
-<h3>Test kartki</h3><p class="mut">Włóż kartkę między skrzydło a ramę i zamknij okno. Jeśli łatwo ją wyciągnąć, docisk jest za słaby.</p>
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="10" width="26" height="100" rx="4" fill="#0E1A22"></rect><rect x="70" y="10" width="26" height="100" rx="4" fill="#C9D5DB"></rect><path d="M120 44l-20 8M124 60l-22 0M120 76l-20-8" stroke="#7FA7BA" stroke-width="3" stroke-linecap="round"></path><path d="M132 40c6-4 12 0 12 6v10l6-16c2-6 10-5 10 2l-4 18 8-12c3-5 10-2 8 4l-8 16 6-6c4-4 10 1 7 6l-14 18c-6 8-14 12-24 10l-12-2c-6-1-8-6-6-11z" fill="#FFFFFF" stroke="#0E1A22" stroke-width="2.500" stroke-linejoin="round"></path></svg>
+<h3>Test dłoni</h3><p class="mut">Przy zamkniętym oknie przesuń palcami wzdłuż styku skrzydła z ościeżnicą. Tam, gdzie poczujesz chłodny powiew, uszczelka już nie trzyma, a okno potrzebuje regulacji.</p>
 </div>
 <div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="10" width="26" height="100" rx="4" fill="#0E1A22"></rect><path d="M150 54c-16-6-26-16-44-14 8 10 2 16 14 26 12 8 26 2 30-12z" fill="#D9701E"></path><rect x="142" y="62" width="18" height="46" rx="3" fill="#C9D5DB"></rect></svg>
-<h3>Test płomienia</h3><p class="mut">Zbliż świeczkę do styku skrzydła i ramy, z dala od firan. Jeśli płomień się odchyla, tamtędy wchodzi powietrze.</p>
+<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="14" width="26" height="92" rx="4" fill="#0E1A22"></rect><rect x="70" y="14" width="26" height="92" rx="4" fill="#C9D5DB"></rect><path d="M68 46l110-10 12 52-122 8z" fill="#FFFFFF" stroke="#7FA7BA" stroke-width="2"></path></svg>
+<h3>Test kartki</h3><p class="mut">Włóż kartkę między skrzydło a ościeżnicę i zamknij okno. Jeśli łatwo ją wyciągnąć, docisk jest za słaby.</p>
 </div>
 </div>
 <div class="band" style="margin-top: 24px">
-<p style="font-weight: 800; font-size: clamp(20px, 2.6vw, 26px); line-height: 1.2">Test wypadł źle? Wyślij nam zdjęcie okna.</p>
-<a class="btn sec2" href="https://wa.me/48579289539">Wyślij na WhatsApp</a>
+<p style="font-weight: 800; font-size: clamp(20px, 2.6vw, 26px); line-height: 1.2">Test wypadł źle? Napisz albo zadzwoń do nas.</p>
+<div class="bandcta"><a class="btn sec2" href="tel:+48579289539">Zadzwoń</a><a class="btn sec2" href="https://wa.me/48579289539"><span class="hm">Napisz na </span>WhatsApp</a></div>
 </div>
 </div>
 </section>
@@ -941,6 +1147,10 @@ window.oknoFx=function(){
  if(window.__oknoFx)return;window.__oknoFx=1;
  var red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
  var g=document.querySelector('.pgal'),w=g&&g.closest('.pgwrap');
+ document.querySelectorAll('.howtog').forEach(function(t){if(t.__b)return;t.__b=1;t.addEventListener('click',function(){var p=t.closest('.howp');var o=!p.classList.contains('open');p.classList.toggle('open',o);t.setAttribute('aria-expanded',o);});});
+ var fl=document.querySelector('.mfloat'),hh=document.querySelector('.hhead');
+ if(fl&&hh){var fit=function(){if(getComputedStyle(fl).display==='none'){fl.style.marginTop='';return;}fl.style.marginTop='0px';var last=[].slice.call(hh.querySelectorAll('.hlead,.hpts')).filter(function(e){return e.offsetParent!==null;}).pop();if(!last)return;var best=0,bd=1e9,top=hh.querySelector('h1').getBoundingClientRect().top;for(var m=0;m<=240;m+=6){fl.style.marginTop=m+'px';var d=Math.abs(last.getBoundingClientRect().bottom-fl.getBoundingClientRect().bottom);if(d<bd-1){bd=d;best=m;}}fl.style.marginTop=best+'px';};
+ if(fl.complete)fit();else fl.addEventListener('load',fit);window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);setTimeout(fit,400);}
  if(g&&w){var u=function(){var over=g.scrollWidth-g.clientWidth>8;var end=over&&g.scrollLeft+g.clientWidth>=g.scrollWidth-8;w.classList.toggle('end',end);w.classList.toggle('moved',g.scrollLeft>8);};g.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);setTimeout(u,300);setTimeout(u,1500);u();}
 };
 </script>
@@ -971,7 +1181,7 @@ function set(p){for(var k in p)st[k]=p[k];render();}
 var chips=document.querySelector('.chips');
 data.forEach(function(d,i){var b=document.createElement('button');b.type='button';b.className='chip';
  var q=document.createElement('span');q.className='ql';q.setAttribute('aria-hidden','true');q.textContent='ABCDEF'.charAt(i);var t=document.createElement('span');t.textContent=d.label;b.appendChild(q);b.appendChild(t);
- b.addEventListener('click',function(){set({sym:i});var r=document.querySelector('.res');if(r){[r].concat([].slice.call(r.querySelectorAll('.qpick,.resg>div,.qcta'))).forEach(function(x){x.style.animation='none';x.offsetHeight;x.style.animation='';});if(innerWidth<=700){var bx=r.getBoundingClientRect();if(bx.bottom>innerHeight-80)window.scrollBy({top:bx.bottom-innerHeight+100,behavior:'smooth'});}}});chips.appendChild(b);});
+ b.addEventListener('click',function(){var open=st.sym!==i;set({sym:open?i:-1});if(!open)return;var r=document.querySelector('.res');if(r){[r].concat([].slice.call(r.querySelectorAll('.qpick,.resg>div,.qcta'))).forEach(function(x){x.style.animation='none';x.offsetHeight;x.style.animation='';});setTimeout(function(){var hd=document.querySelector('.hdr');var off=(hd?hd.offsetHeight:0)+16;var bx=r.getBoundingClientRect();var bg=innerHeight-(innerWidth<=700?84:20);if(bx.top<off||bx.bottom>bg){var y=(bx.bottom>bg&&bx.height<bg-off)?bx.bottom-bg:bx.top-off;window.scrollBy({top:y,behavior:'smooth'});}},60);}});chips.appendChild(b);});
 var acts={showBefore:function(){set({view:'before'});},showAfter:function(){set({view:'after'});},
  toggleMenu:function(){set({menu:!st.menu});},closeMenu:function(){set({menu:false});},
  openModal:function(){set({modal:true,promo:false,promoDone:true,menu:false,dock:false});},closeModal:function(){set({modal:false});},
