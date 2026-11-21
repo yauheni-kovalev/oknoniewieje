@@ -692,6 +692,13 @@ h1{font-size:27px}
 .howb{margin:14px 18px 18px}
 }
 @media (prefers-reduced-motion:reduce){.howarr{animation:none}}
+
+/* v35: Safari – odstęp jako osobny float, kształt bez marginesu */
+.mspacer{display:none}
+@media (max-width:980px){
+.mspacer{display:block;float:right;width:0;height:0}
+.mfloat{clear:right;margin:0 0 0 6px!important;-webkit-shape-outside:polygon(36% 0,100% 0,100% 100%,16% 100%,4% 88%,0 60%,2% 38%,12% 25%,32% 21%,35% 11%);shape-outside:polygon(36% 0,100% 0,100% 100%,16% 100%,4% 88%,0 60%,2% 38%,12% 25%,32% 21%,35% 11%);-webkit-shape-margin:6px;shape-margin:6px}
+}
 </style>
 </head>
 <body>
@@ -746,6 +753,7 @@ h1{font-size:27px}
 <div class="h2grid">
 <div class="hhead">
 <p class="kick">Wymiana uszczelek i regulacja okien · Warszawa</p>
+<span class="mspacer" aria-hidden="true"></span>
 <img class="mfloat" src="img/mistrz.webp" alt="" aria-hidden="true">
 <h1>Ciągnie zimnem od okna? Wymienimy uszczelki, wyregulujemy okno i przestanie wiać.</h1>
 <p class="hlead">Chłód po nogach, zimno przy łóżku, firanka rusza się przy zamkniętym oknie. To zwykle nie wina ogrzewania, tylko zużytych uszczelek. Wymienimy je i ustawimy docisk, żeby w domu znów było ciepło.</p>
@@ -1148,9 +1156,9 @@ window.oknoFx=function(){
  var red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
  var g=document.querySelector('.pgal'),w=g&&g.closest('.pgwrap');
  document.querySelectorAll('.howtog').forEach(function(t){if(t.__b)return;t.__b=1;t.addEventListener('click',function(){var p=t.closest('.howp');var o=!p.classList.contains('open');p.classList.toggle('open',o);t.setAttribute('aria-expanded',o);});});
- var fl=document.querySelector('.mfloat'),hh=document.querySelector('.hhead');
- if(fl&&hh){var fit=function(){if(getComputedStyle(fl).display==='none'){fl.style.marginTop='';return;}fl.style.marginTop='0px';var last=[].slice.call(hh.querySelectorAll('.hlead,.hpts')).filter(function(e){return e.offsetParent!==null;}).pop();if(!last)return;var best=0,bd=1e9,top=hh.querySelector('h1').getBoundingClientRect().top;for(var m=0;m<=240;m+=6){fl.style.marginTop=m+'px';var d=Math.abs(last.getBoundingClientRect().bottom-fl.getBoundingClientRect().bottom);if(d<bd-1){bd=d;best=m;}}fl.style.marginTop=best+'px';};
- if(fl.complete)fit();else fl.addEventListener('load',fit);window.addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);setTimeout(fit,400);}
+ var fl=document.querySelector('.mfloat'),sp=document.querySelector('.mspacer'),hh=document.querySelector('.hhead');
+ if(fl&&sp&&hh){var fit=function(){if(getComputedStyle(fl).display==='none'){sp.style.height='0px';return;}var last=[].slice.call(hh.querySelectorAll('.hlead,.hpts')).filter(function(e){return e.offsetParent!==null;}).pop();if(!last)return;var best=0,bd=1e9;for(var m=0;m<=240;m+=6){sp.style.height=m+'px';var d=Math.abs(last.getBoundingClientRect().bottom-fl.getBoundingClientRect().bottom);if(d<bd-1){bd=d;best=m;}}sp.style.height=best+'px';};
+ if(fl.complete)fit();else fl.addEventListener('load',fit);window.addEventListener('resize',fit);window.addEventListener('orientationchange',function(){setTimeout(fit,300);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);setTimeout(fit,400);setTimeout(fit,1200);}
  if(g&&w){var u=function(){var over=g.scrollWidth-g.clientWidth>8;var end=over&&g.scrollLeft+g.clientWidth>=g.scrollWidth-8;w.classList.toggle('end',end);w.classList.toggle('moved',g.scrollLeft>8);};g.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);setTimeout(u,300);setTimeout(u,1500);u();}
 };
 </script>
