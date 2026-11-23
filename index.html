@@ -542,7 +542,7 @@ h1{font-size:clamp(32px,3.7vw,48px)}
 
 /* v26: zdjęcie w tle pierwszego ekranu */
 .hero2{position:relative;isolation:isolate;background:var(--frost)}
-.hero2::before{content:"";position:absolute;inset:0;z-index:-2;background:url(img/tlo.jpg) 30% 60%/cover no-repeat}
+.hero2::before{content:"";position:absolute;inset:0;z-index:-2;background:url(img/tlo-okno-uszczelka.jpg) 30% 60%/cover no-repeat}
 .hero2::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(232,238,240,.97) 0%,rgba(232,238,240,.93) 42%,rgba(232,238,240,.78) 70%,rgba(232,238,240,.7) 100%),linear-gradient(180deg,rgba(232,238,240,.6) 0%,rgba(232,238,240,0) 18%,rgba(232,238,240,0) 78%,rgba(232,238,240,1) 100%)}
 .hrow input{box-shadow:0 2px 10px rgba(14,26,34,.08)}
 .hact .ghost,.hact .sec2{background:rgba(255,255,255,.85)}
@@ -699,6 +699,58 @@ h1{font-size:27px}
 .mspacer{display:block;float:right;width:0;height:0}
 .mfloat{clear:right;margin:0 0 0 6px!important;-webkit-shape-outside:polygon(36% 0,100% 0,100% 100%,16% 100%,4% 88%,0 60%,2% 38%,12% 25%,32% 21%,35% 11%);shape-outside:polygon(36% 0,100% 0,100% 100%,16% 100%,4% 88%,0 60%,2% 38%,12% 25%,32% 21%,35% 11%);-webkit-shape-margin:6px;shape-margin:6px}
 }
+
+/* v36: zdjęcia usług */
+.simg img{display:block;width:100%;height:170px;object-fit:cover;border-radius:8px;background:var(--frost)}
+@media (max-width:700px){.simg img{height:120px}}
+
+/* v37: zdjęcia testów i karuzela kroków na komputerze */
+.timg{margin:-4px 0 16px}
+.timg img{display:block;width:100%;height:260px;object-fit:cover;border-radius:8px;background:var(--frost)}
+.pstep>img{display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;border-bottom:0}
+.pgprev{display:none}
+.pgal{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:18px;padding-bottom:8px;scrollbar-width:none}
+.pgal::-webkit-scrollbar{display:none}
+.pstep{flex:0 0 calc((100% - 36px)/3);scroll-snap-align:start}
+.pgnext,.pgprev{display:flex;position:absolute;top:calc(50% - 50px);z-index:3;width:48px;height:48px;border-radius:50%;border:0;background:#BD570B;color:#FFFFFF;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(14,26,34,.25);cursor:pointer;transition:opacity .25s ease,transform .18s ease}
+.pgnext{right:-24px;animation:nudge 1.6s ease-in-out infinite}
+.pgprev{left:-24px;opacity:0;pointer-events:none}
+.pgwrap.moved .pgprev{opacity:1;pointer-events:auto}
+.pgwrap::after{content:"";position:absolute;top:0;right:0;bottom:8px;width:90px;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.92));transition:opacity .25s ease}
+.pgwrap.end::after,.pgwrap.end .pgnext{opacity:0;pointer-events:none}
+.pgwrap.moved .pgnext{animation:none}
+@media (max-width:980px){.pstep{flex:0 0 calc((100% - 18px)/2)}}
+@media (max-width:1240px){.pgnext{right:-6px}.pgprev{left:-6px}}
+@media (max-width:700px){
+.timg{margin:0 0 10px}
+.timg img{height:120px}
+.pstep{flex:0 0 min(80%,340px)}
+.pgal{gap:12px}
+.pgprev,.pgnext{width:44px;height:44px;top:calc(50% - 46px)}
+.pgprev{left:-2px}.pgnext{right:-2px}
+.pgwrap::after{right:-14px;width:64px}
+}
+.bandcta .btn{gap:0}
+
+/* v38: zdjęcia uszczelek */
+.simg2{aspect-ratio:16/9;margin-bottom:16px;border-radius:8px;background:#FFFFFF;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:12px;overflow:hidden}
+.simg2 img{display:block;max-width:100%;max-height:100%;width:auto;height:100%;object-fit:contain}
+@media (max-width:700px){.simg2{aspect-ratio:1/1;margin-bottom:10px;padding:8px}}
+.seals .simg2 img{width:auto;height:100%;max-width:100%;aspect-ratio:auto;object-fit:contain;margin:0;border-radius:0}
+
+/* v40: objawy zużycia bez schematów, zdjęcia uszczelek wyrównane */
+.wear{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.wear li{display:flex;gap:14px;align-items:flex-start;background:#FFFFFF;border:1px solid var(--line);border-left:4px solid var(--heat);border-radius:var(--r);padding:18px 18px 18px 16px}
+.wn{flex:none;font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:26px;line-height:1;color:var(--heat2)}
+.wear h4{margin:0 0 6px;font-size:17px;line-height:1.25}
+.wear p{font-size:15px;line-height:1.45;margin:0}
+@media (max-width:980px){.wear{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.wear{gap:8px}.wear li{flex-direction:column;gap:6px;padding:12px}.wn{font-size:20px}.wear h4{font-size:15px;margin-bottom:2px}.wear p{font-size:13px}}
+.mimg{display:block;width:100%;height:auto;aspect-ratio:960/757;object-fit:cover;border-radius:var(--r);background:var(--frost)}
+
+/* v42: mniejsze zdjęcie uszczelki */
+.mimg{max-height:340px;width:100%;aspect-ratio:auto;object-fit:cover;object-position:50% 45%}
+@media (max-width:700px){.mimg{max-height:none;height:190px;object-position:40% 45%}}
 </style>
 </head>
 <body>
@@ -754,13 +806,13 @@ h1{font-size:27px}
 <div class="hhead">
 <p class="kick">Wymiana uszczelek i regulacja okien · Warszawa</p>
 <span class="mspacer" aria-hidden="true"></span>
-<img class="mfloat" src="img/mistrz.webp" alt="" aria-hidden="true">
+<img class="mfloat" src="img/mistrz-oknoniewieje.webp" alt="" aria-hidden="true">
 <h1>Ciągnie zimnem od okna? Wymienimy uszczelki, wyregulujemy okno i przestanie wiać.</h1>
 <p class="hlead">Chłód po nogach, zimno przy łóżku, firanka rusza się przy zamkniętym oknie. To zwykle nie wina ogrzewania, tylko zużytych uszczelek. Wymienimy je i ustawimy docisk, żeby w domu znów było ciepło.</p>
 <ul class="hpts"><li>Okna PCV i drewniane, uszczelkę dobieramy do profilu okna</li><li>Bez kucia i remontu, zwykle w jeden dzień</li></ul>
 </div>
 <div class="hphoto">
-<figure class="mcut"><img src="img/mistrz.webp" alt="Mistrz OknoNieWieje z rolką nowej uszczelki do okien"></figure>
+<figure class="mcut"><img src="img/mistrz-oknoniewieje.webp" alt="Mistrz OknoNieWieje z rolką nowej uszczelki do okien" title="Mistrz OknoNieWieje"></figure>
 </div>
 <div class="hact">
 <form class="hform" aria-label="Szybka wycena">
@@ -817,7 +869,7 @@ h1{font-size:27px}
 <p class="lead">Jasne ceny. Dokładnie wiesz, za co płacisz, zanim zaczniemy pracę.</p>
 <div class="grid g3 svc">
 <div class="card">
-<div class="simg"><div class="slot">[ZDJĘCIE: wymiana uszczelki]</div></div>
+<div class="simg"><img src="img/usluga-01-wymiana-uszczelek.webp" alt="Wymiana uszczelki w skrzydle okna PCV" title="Wymiana uszczelki w skrzydle okna PCV" width="800" height="600" loading="lazy" decoding="async"></div>
 <p class="no">01</p>
 <h3>Wymiana uszczelek</h3>
 <p class="mut">Zdejmujemy starą uszczelkę, czyścimy rowek i zakładamy nową, dobraną do profilu okna.</p>
@@ -826,7 +878,7 @@ h1{font-size:27px}
 <button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
 </div>
 <div class="card">
-<div class="simg"><div class="slot">[ZDJĘCIE: regulacja skrzydła]</div></div>
+<div class="simg"><img src="img/usluga-02-regulacja-docisku.webp" alt="Regulacja docisku skrzydła kluczem imbusowym" title="Regulacja docisku skrzydła kluczem imbusowym" width="800" height="600" loading="lazy" decoding="async"></div>
 <p class="no">02</p>
 <h3>Regulacja i docisk skrzydeł</h3>
 <p class="mut">Ustawiamy skrzydło, poprawiamy docisk i przełączamy okno na tryb zimowy, jeśli ma taką funkcję.</p>
@@ -835,7 +887,7 @@ h1{font-size:27px}
 <button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
 </div>
 <div class="card">
-<div class="simg"><div class="slot">[ZDJĘCIE: smarowanie okuć]</div></div>
+<div class="simg"><img src="img/usluga-03-smarowanie-i-przeglad.webp" alt="Smarowanie okuć okna" title="Smarowanie okuć okna" width="800" height="600" loading="lazy" decoding="async"></div>
 <p class="no">03</p>
 <h3>Smarowanie i przegląd</h3>
 <p class="mut">Czyścimy i smarujemy okucia, konserwujemy uszczelki i sprawdzamy każde okno.</p>
@@ -844,7 +896,7 @@ h1{font-size:27px}
 <button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
 </div>
 <div class="card">
-<div class="simg"><div class="slot">[ZDJĘCIE: uszczelnienie parapetu]</div></div>
+<div class="simg"><img src="img/usluga-04-uszczelnienie-parapetu.webp" alt="Uszczelnianie szczeliny między parapetem a oknem" title="Uszczelnianie szczeliny między parapetem a oknem" width="800" height="600" loading="lazy" decoding="async"></div>
 <p class="no">04</p>
 <h3>Uszczelnienie parapetu</h3>
 <p class="mut">Zimno często wchodzi dołem, przez szczelinę między parapetem a ramą okna. Czyścimy ją i uszczelniamy.</p>
@@ -884,25 +936,13 @@ h1{font-size:27px}
 <div class="wrap">
 <span class="eyebrow">Wszystko o uszczelkach</span>
 <h2>Mały element, który decyduje o cieple</h2>
-<div class="grid g2" style="align-items: center">
+<div class="grid g2" style="align-items: start">
 <div>
 <p class="mut">Uszczelka wypełnia szczelinę między skrzydłem a ramą. Gdy jest elastyczna, skrzydło dociska ją na całym obwodzie i powietrze nie ma którędy przejść.</p>
 <p class="mut" style="margin-top: 12px">Z czasem materiał twardnieje, a szczelina wraca. Dlatego okno może wiać, chociaż szyby i rama są w dobrym stanie.</p>
 <p class="mut" style="margin-top: 12px">O wymianie decyduje stan uszczelki, a nie sam wiek okna. Sprawdzamy ją na miejscu i dobieramy zamiennik do profilu.</p>
 </div>
-<svg viewBox="0 0 460 280" style="width: 100%; background: #E8EEF0" role="img" aria-label="Przekrój okna: rama, skrzydło, szyba i uszczelka" fill="none">
-<rect x="40" y="170" width="250" height="70" rx="1" fill="#C9D5DB"></rect>
-<rect x="40" y="96" width="60" height="110" rx="1" fill="#C9D5DB"></rect>
-<rect x="120" y="60" width="150" height="96" rx="1" fill="#0E1A22"></rect>
-<rect x="180" y="20" width="26" height="60" fill="#BFE0F2"></rect>
-<circle cx="110" cy="138" r="9" fill="#D9701E"></circle>
-<circle cx="150" cy="163" r="9" fill="#D9701E"></circle>
-<path d="M300 200h52" stroke="#0E1A22" stroke-width="1.500"></path><path d="M270 120h82" stroke="#0E1A22" stroke-width="1.500"></path><path d="M206 44h146" stroke="#0E1A22" stroke-width="1.500"></path><path d="M159 163c60 66 130 66 193 52" stroke="#D9701E" stroke-width="1.500"></path>
-<text x="358" y="49" fill="#0E1A22" font-family="Archivo, sans-serif" font-size="16" font-weight="700">Szyba</text>
-<text x="358" y="125" fill="#0E1A22" font-family="Archivo, sans-serif" font-size="16" font-weight="700">Skrzydło</text>
-<text x="358" y="205" fill="#0E1A22" font-family="Archivo, sans-serif" font-size="16" font-weight="700">Rama</text>
-<text x="358" y="240" fill="#A9530F" font-family="Archivo, sans-serif" font-size="16" font-weight="700">Uszczelki</text>
-</svg>
+<img class="mimg" src="img/uszczelka-w-oknie.webp" alt="Uszczelka między skrzydłem a ramą okna PCV" title="Uszczelka między skrzydłem a ramą okna PCV" width="960" height="757" loading="lazy" decoding="async">
 </div>
 
 <h3 style="margin-top: 44px; font-size: 24px">Kiedy uszczelki przestają działać</h3>
@@ -915,29 +955,17 @@ h1{font-size:27px}
 </div>
 
 <h3 style="margin-top: 44px; font-size: 24px">Po czym poznać zużytą uszczelkę</h3>
-<div class="grid g4" style="margin-top: 18px">
-<div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="48" width="180" height="26" rx="2" fill="#0E1A22"></rect><path d="M112 40l10 14-8 10 12 16" stroke="#E8EEF0" stroke-width="6"></path></svg>
-<h3>Pęknięcia</h3><p class="mut">Widoczne szczeliny w materiale, zwykle w narożnikach.</p>
-</div>
-<div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="56" width="180" height="10" rx="5" fill="#0E1A22"></rect><path d="M120 20v26M108 36l12 12 12-12" stroke="#D9701E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-<h3>Spłaszczenie</h3><p class="mut">Uszczelka nie wraca do kształtu po otwarciu okna.</p>
-</div>
-<div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="30" y="48" width="180" height="26" rx="4" fill="#0E1A22"></rect><path d="M58 48v26M92 48v26M126 48v26M160 48v26M190 48v26" stroke="#E8EEF0" stroke-width="3"></path></svg>
-<h3>Twardość</h3><p class="mut">Guma nie ugina się pod palcem i kruszy się.</p>
-</div>
-<div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><path d="M30 80h60v-10h60v10h60" stroke="#7FA7BA" stroke-width="6"></path><path d="M60 60c40 0 60-34 120-30" stroke="#0E1A22" stroke-width="14" stroke-linecap="round"></path></svg>
-<h3>Wypadanie z rowka</h3><p class="mut">Uszczelka odstaje lub wysuwa się przy zamykaniu.</p>
-</div>
-</div>
+<ol class="wear">
+<li><span class="wn">01</span><div><h4>Pęknięcia</h4><p class="mut">Widoczne szczeliny w materiale, zwykle w narożnikach.</p></div></li>
+<li><span class="wn">02</span><div><h4>Spłaszczenie</h4><p class="mut">Uszczelka nie wraca do kształtu po otwarciu okna.</p></div></li>
+<li><span class="wn">03</span><div><h4>Twardość</h4><p class="mut">Guma nie ugina się pod palcem i kruszy się.</p></div></li>
+<li><span class="wn">04</span><div><h4>Wypadanie z rowka</h4><p class="mut">Uszczelka odstaje lub wysuwa się przy zamykaniu.</p></div></li>
+</ol>
 
 <h3 style="margin-top: 44px; font-size: 24px">Jakich uszczelek używamy</h3>
 <div class="grid g2 seals" style="margin-top: 18px">
-<div class="card"><div class="slot">[ZDJĘCIE: uszczelka EPDM, przekrój lub zbliżenie]</div><h3>EPDM</h3><p class="mut">Guma do okien PCV i aluminiowych. Odporna na mróz, wilgoć i słońce. Zwykle służy kilkanaście lat.</p></div>
-<div class="card"><div class="slot">[ZDJĘCIE: uszczelka z pianki poliuretanowej, zbliżenie]</div><h3>Pianka poliuretanowa</h3><p class="mut">Miękka uszczelka, która dobrze wraca do kształtu. Sprawdza się także w oknach drewnianych.</p></div>
+<div class="card"><div class="simg2"><img src="img/uszczelka-epdm.webp" alt="Uszczelka EPDM – przekrój profilu" title="Uszczelka EPDM – przekrój profilu" loading="lazy" decoding="async"></div><h3>EPDM</h3><p class="mut">Guma do okien PCV i aluminiowych. Odporna na mróz, wilgoć i słońce. Zwykle służy kilkanaście lat.</p></div>
+<div class="card"><div class="simg2"><img src="img/uszczelka-pianka-poliuretanowa.webp" alt="Uszczelka z pianki poliuretanowej – przekrój" title="Uszczelka z pianki poliuretanowej – przekrój" loading="lazy" decoding="async"></div><h3>Pianka poliuretanowa</h3><p class="mut">Miękka uszczelka, która dobrze wraca do kształtu. Sprawdza się także w oknach drewnianych.</p></div>
 </div>
 
 <div class="res" style="margin-top: 32px">
@@ -953,17 +981,17 @@ h1{font-size:27px}
 <h2>Sprawdź okno w 30 sekund</h2>
 <div class="grid g2 tests">
 <div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="10" width="26" height="100" rx="4" fill="#0E1A22"></rect><rect x="70" y="10" width="26" height="100" rx="4" fill="#C9D5DB"></rect><path d="M120 44l-20 8M124 60l-22 0M120 76l-20-8" stroke="#7FA7BA" stroke-width="3" stroke-linecap="round"></path><path d="M132 40c6-4 12 0 12 6v10l6-16c2-6 10-5 10 2l-4 18 8-12c3-5 10-2 8 4l-8 16 6-6c4-4 10 1 7 6l-14 18c-6 8-14 12-24 10l-12-2c-6-1-8-6-6-11z" fill="#FFFFFF" stroke="#0E1A22" stroke-width="2.500" stroke-linejoin="round"></path></svg>
+<div class="timg"><img src="img/test-dloni.webp" alt="Test dłoni – szukanie przeciągu przy oknie" title="Test dłoni – szukanie przeciągu przy oknie" width="800" height="600" loading="lazy" decoding="async"></div>
 <h3>Test dłoni</h3><p class="mut">Przy zamkniętym oknie przesuń palcami wzdłuż styku skrzydła z ościeżnicą. Tam, gdzie poczujesz chłodny powiew, uszczelka już nie trzyma, a okno potrzebuje regulacji.</p>
 </div>
 <div class="card">
-<svg class="art" viewBox="0 0 240 120" aria-hidden="true" fill="none"><rect x="40" y="14" width="26" height="92" rx="4" fill="#0E1A22"></rect><rect x="70" y="14" width="26" height="92" rx="4" fill="#C9D5DB"></rect><path d="M68 46l110-10 12 52-122 8z" fill="#FFFFFF" stroke="#7FA7BA" stroke-width="2"></path></svg>
+<div class="timg"><img src="img/test-kartki.webp" alt="Test kartki – sprawdzanie docisku skrzydła" title="Test kartki – sprawdzanie docisku skrzydła" width="800" height="600" loading="lazy" decoding="async"></div>
 <h3>Test kartki</h3><p class="mut">Włóż kartkę między skrzydło a ościeżnicę i zamknij okno. Jeśli łatwo ją wyciągnąć, docisk jest za słaby.</p>
 </div>
 </div>
 <div class="band" style="margin-top: 24px">
 <p style="font-weight: 800; font-size: clamp(20px, 2.6vw, 26px); line-height: 1.2">Test wypadł źle? Napisz albo zadzwoń do nas.</p>
-<div class="bandcta"><a class="btn sec2" href="tel:+48579289539">Zadzwoń</a><a class="btn sec2" href="https://wa.me/48579289539"><span class="hm">Napisz na </span>WhatsApp</a></div>
+<div class="bandcta"><a class="btn sec2" href="tel:+48579289539">Zadzwoń</a><a class="btn sec2" href="https://wa.me/48579289539"><span class="hm">Napisz na&nbsp;</span>WhatsApp</a></div>
 </div>
 </div>
 </section>
@@ -990,16 +1018,17 @@ h1{font-size:27px}
 <p class="lead">Zobacz, jak wygląda nasza praca przy oknie, od oględzin do kontroli końcowej.</p>
 <div class="pgwrap">
 <ol class="pgal">
-<li class="pstep"><div class="slot">[ZDJĘCIE 1: okno i dłoń sprawdzająca uszczelkę]</div><div class="ptxt"><span class="snum">01</span><div><h3>Oględziny okna</h3><p class="mut">Sprawdzamy, skąd wieje, i oceniamy stan uszczelek.</p></div></div></li>
-<li class="pstep"><div class="slot">[ZDJĘCIE 2: wyjmowanie starej uszczelki]</div><div class="ptxt"><span class="snum">02</span><div><h3>Stara uszczelka i czyszczenie</h3><p class="mut">Wyjmujemy zużytą uszczelkę i czyścimy rowki.</p></div></div></li>
-<li class="pstep"><div class="slot">[ZDJĘCIE 3: wciskanie nowej uszczelki w rowek]</div><div class="ptxt"><span class="snum">03</span><div><h3>Nowa uszczelka</h3><p class="mut">Zakładamy nową uszczelkę, dobraną do profilu okna.</p></div></div></li>
-<li class="pstep"><div class="slot">[ZDJĘCIE 4: smarowanie okuć]</div><div class="ptxt"><span class="snum">04</span><div><h3>Czyszczenie i smarowanie okuć</h3><p class="mut">Usuwamy brud i stary smar, smarujemy okucia.</p></div></div></li>
-<li class="pstep"><div class="slot">[ZDJĘCIE 5: klamka i smar]</div><div class="ptxt"><span class="snum">05</span><div><h3>Smarowanie klamki</h3><p class="mut">Klamka znowu chodzi lekko i płynnie.</p></div></div></li>
-<li class="pstep"><div class="slot">[ZDJĘCIE 6: klucz imbusowy przy zawiasie]</div><div class="ptxt"><span class="snum">06</span><div><h3>Regulacja okna</h3><p class="mut">Ustawiamy skrzydło, żeby nie ocierało i łatwo się domykało.</p></div></div></li>
-<li class="pstep"><div class="slot">[ZDJĘCIE 7: regulacja czopa docisku]</div><div class="ptxt"><span class="snum">07</span><div><h3>Regulacja docisku</h3><p class="mut">Ustawiamy docisk tak, by skrzydło szczelnie przylegało do ramy.</p></div></div></li>
-<li class="pstep"><div class="slot">[ZDJĘCIE 8: szczelina przy parapecie]</div><div class="ptxt"><span class="snum">08</span><div><h3>Uszczelnienie parapetu</h3><p class="mut">Jeśli trzeba, uszczelniamy szczelinę przy parapecie.</p></div></div></li>
-<li class="pstep"><div class="slot">[ZDJĘCIE 9: test kartki lub zamykanie okna]</div><div class="ptxt"><span class="snum">09</span><div><h3>Kontrola końcowa</h3><p class="mut">Sprawdzamy razem z Tobą zamykanie i szczelność każdego okna.</p></div></div></li>
+<li class="pstep"><img src="img/krok-01-ogledziny-okna.webp" alt="Krok 1 – oględziny okna" title="Krok 1 – oględziny okna" width="800" height="600" loading="lazy" decoding="async"><div class="ptxt"><span class="snum">01</span><div><h3>Oględziny okna</h3><p class="mut">Sprawdzamy, skąd wieje, i oceniamy stan uszczelek.</p></div></div></li>
+<li class="pstep"><img src="img/krok-02-wyjmowanie-starej-uszczelki.webp" alt="Krok 2 – wyjmowanie starej uszczelki" title="Krok 2 – wyjmowanie starej uszczelki" width="800" height="600" loading="lazy" decoding="async"><div class="ptxt"><span class="snum">02</span><div><h3>Stara uszczelka i czyszczenie</h3><p class="mut">Wyjmujemy zużytą uszczelkę i czyścimy rowki.</p></div></div></li>
+<li class="pstep"><img src="img/krok-03-zakladanie-nowej-uszczelki.webp" alt="Krok 3 – zakładanie nowej uszczelki" title="Krok 3 – zakładanie nowej uszczelki" width="800" height="600" loading="lazy" decoding="async"><div class="ptxt"><span class="snum">03</span><div><h3>Nowa uszczelka</h3><p class="mut">Zakładamy nową uszczelkę, dobraną do profilu okna.</p></div></div></li>
+<li class="pstep"><img src="img/krok-04-smarowanie-okuc.webp" alt="Krok 4 – czyszczenie i smarowanie okuć" title="Krok 4 – czyszczenie i smarowanie okuć" width="800" height="600" loading="lazy" decoding="async"><div class="ptxt"><span class="snum">04</span><div><h3>Czyszczenie i smarowanie okuć</h3><p class="mut">Usuwamy brud i stary smar, smarujemy okucia.</p></div></div></li>
+<li class="pstep"><img src="img/krok-05-smarowanie-klamki.webp" alt="Krok 5 – smarowanie klamki" title="Krok 5 – smarowanie klamki" width="800" height="600" loading="lazy" decoding="async"><div class="ptxt"><span class="snum">05</span><div><h3>Smarowanie klamki</h3><p class="mut">Klamka znowu chodzi lekko i płynnie.</p></div></div></li>
+<li class="pstep"><img src="img/krok-06-regulacja-okna.webp" alt="Krok 6 – regulacja okna" title="Krok 6 – regulacja okna" width="800" height="600" loading="lazy" decoding="async"><div class="ptxt"><span class="snum">06</span><div><h3>Regulacja okna</h3><p class="mut">Ustawiamy skrzydło, żeby nie ocierało i łatwo się domykało.</p></div></div></li>
+<li class="pstep"><img src="img/krok-07-regulacja-docisku.webp" alt="Krok 7 – regulacja docisku" title="Krok 7 – regulacja docisku" width="800" height="600" loading="lazy" decoding="async"><div class="ptxt"><span class="snum">07</span><div><h3>Regulacja docisku</h3><p class="mut">Ustawiamy docisk tak, by skrzydło szczelnie przylegało do ramy.</p></div></div></li>
+<li class="pstep"><img src="img/krok-08-uszczelnienie-parapetu.webp" alt="Krok 8 – uszczelnienie parapetu" title="Krok 8 – uszczelnienie parapetu" width="800" height="600" loading="lazy" decoding="async"><div class="ptxt"><span class="snum">08</span><div><h3>Uszczelnienie parapetu</h3><p class="mut">Jeśli trzeba, uszczelniamy szczelinę przy parapecie.</p></div></div></li>
+<li class="pstep"><img src="img/krok-09-kontrola-koncowa.webp" alt="Krok 9 – kontrola końcowa" title="Krok 9 – kontrola końcowa" width="800" height="600" loading="lazy" decoding="async"><div class="ptxt"><span class="snum">09</span><div><h3>Kontrola końcowa</h3><p class="mut">Sprawdzamy razem z Tobą zamykanie i szczelność każdego okna.</p></div></div></li>
 </ol>
+<button type="button" class="pgprev" aria-label="Poprzedni krok"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button>
 <button type="button" class="pgnext" aria-label="Następny krok" data-act="nextStep"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
 </div>
 <p class="pghint">Przesuń w bok, aby zobaczyć kolejne kroki →</p>
@@ -1066,7 +1095,6 @@ h1{font-size:27px}
 <details><summary>Ile trwa praca?</summary><p>Zwykle od 30 minut do godziny na okno. Dokładny czas zależy od liczby okien i ich stanu.</p></details>
 <details><summary>Czy można to zrobić zimą?</summary><p>Tak. Okno otwieramy tylko na czas pracy przy danym skrzydle, a mieszkanie pozostaje ogrzewane.</p></details>
 <details><summary>Czy każde okno ma tryb zimowy?</summary><p>Nie każde. Tryb zimowy zależy od okuć. Sprawdzimy to na miejscu i ustawimy docisk tak, jak pozwala Twoje okno.</p></details>
-<details><summary>Czy szczelne okno nie pogorszy wentylacji?</summary><p>Szczelne okno wpuszcza mniej powietrza, dlatego trzeba pamiętać o regularnym wietrzeniu. Podpowiemy, jak to pogodzić w Twoim mieszkaniu.</p></details>
 <details><summary>Jak często regulować okna?</summary><p>Najlepiej raz w roku, zwłaszcza przed sezonem grzewczym. Dzięki temu okucia i uszczelki pracują dłużej.</p></details>
 <details><summary>Skąd mam wiedzieć, czy wystarczy regulacja?</summary><p>Jeśli uszczelka jest miękka i cała, zwykle wystarczy regulacja. Gdy jest twarda lub popękana, trzeba ją wymienić.</p></details>
 <details><summary>Czy pomożecie, jeśli wieje spod parapetu lub przy murze?</summary><p>Tak. Uszczelniamy szczelinę między parapetem a ramą okna, 65 zł za metr bieżący. Jeśli problem leży głębiej, w montażu okna, powiemy to wprost.</p></details>
@@ -1155,6 +1183,7 @@ window.oknoFx=function(){
  if(window.__oknoFx)return;window.__oknoFx=1;
  var red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
  var g=document.querySelector('.pgal'),w=g&&g.closest('.pgwrap');
+ var pv=document.querySelector('.pgprev');if(g&&pv&&!pv.__b){pv.__b=1;pv.addEventListener('click',function(){var c=g.querySelector('.pstep');g.scrollBy({left:-(c?c.offsetWidth+18:300),behavior:'smooth'});});}
  document.querySelectorAll('.howtog').forEach(function(t){if(t.__b)return;t.__b=1;t.addEventListener('click',function(){var p=t.closest('.howp');var o=!p.classList.contains('open');p.classList.toggle('open',o);t.setAttribute('aria-expanded',o);});});
  var fl=document.querySelector('.mfloat'),sp=document.querySelector('.mspacer'),hh=document.querySelector('.hhead');
  if(fl&&sp&&hh){var fit=function(){if(getComputedStyle(fl).display==='none'){sp.style.height='0px';return;}var last=[].slice.call(hh.querySelectorAll('.hlead,.hpts')).filter(function(e){return e.offsetParent!==null;}).pop();if(!last)return;var best=0,bd=1e9;for(var m=0;m<=240;m+=6){sp.style.height=m+'px';var d=Math.abs(last.getBoundingClientRect().bottom-fl.getBoundingClientRect().bottom);if(d<bd-1){bd=d;best=m;}}sp.style.height=best+'px';};
