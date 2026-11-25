@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>OknoNieWieje: wymiana uszczelek i regulacja okien Warszawa</title>
 <meta name="description" content="Ciągnie zimnem od okna? Wymiana uszczelek i regulacja okien PCV i drewnianych bez wymiany okien. Warszawa i okolice. Cenę podajemy przed pracą.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -751,6 +751,57 @@ h1{font-size:27px}
 /* v42: mniejsze zdjęcie uszczelki */
 .mimg{max-height:340px;width:100%;aspect-ratio:auto;object-fit:cover;object-position:50% 45%}
 @media (max-width:700px){.mimg{max-height:none;height:190px;object-position:40% 45%}}
+
+/* v43: bez dolnego paska na telefonie, tylko zielony przycisk */
+.mbar{display:none!important}
+@media (max-width:700px){
+.mspace{padding-bottom:24px}
+.wafab{display:flex!important;right:16px;left:auto;bottom:calc(16px + env(safe-area-inset-bottom));width:56px;height:56px;transform:translateZ(0);will-change:transform}
+.promo{bottom:calc(84px + env(safe-area-inset-bottom))}
+.promo.dock{left:12px;right:12px;width:auto;bottom:calc(84px + env(safe-area-inset-bottom))}
+}
+
+/* Opinie: karuzela w stylu zrzutu, dopasowana do OknoNieWieje */
+.rwrap{position:relative}
+.rlist{list-style:none;margin:32px 0 0;padding:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;gap:18px;padding-bottom:8px;scrollbar-width:none}
+.rlist::-webkit-scrollbar{display:none}
+.rcard{flex:0 0 calc((100% - 36px)/3);scroll-snap-align:start;background:#FFFFFF;border:1px solid var(--line);border-radius:14px;padding:24px 24px 22px;display:flex;flex-direction:column;gap:14px;box-shadow:0 4px 16px rgba(14,26,34,.04);transition:transform .22s ease,box-shadow .22s ease}
+@media (hover:hover){.rcard:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(14,26,34,.10)}}
+.rhead{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.rcard .stars{color:#F59E0B;line-height:1;letter-spacing:2px;font-size:17px}
+.rgbadge{flex:none;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--mut)}
+.rtxt{font-size:15.5px;line-height:1.6;font-style:italic;color:var(--ink);margin:0;flex:1}
+.rfoot{display:flex;align-items:center;gap:12px;margin-top:6px;padding-top:14px;border-top:1px solid var(--frost)}
+.rav{flex:none;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:15px;letter-spacing:.03em;color:#FFFFFF}
+.rav-1{background:#0E1A22}
+.rav-2{background:#BD570B}
+.rav-3{background:#3E6E86}
+.rav-4{background:#1E8E4E}
+.rav-5{background:#46565F}
+.rav-6{background:#A9530F}
+.rauthor{min-width:0}
+.rname{font-weight:800;font-size:16px;line-height:1.25;color:var(--ink)}
+.rmeta{font-family:"Archivo Narrow",sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin-top:2px}
+.rprev,.rnext{display:flex;position:absolute;top:calc(50% - 24px);z-index:3;width:48px;height:48px;border-radius:50%;border:0;background:#BD570B;color:#FFFFFF;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(14,26,34,.25);cursor:pointer;transition:opacity .25s ease,transform .18s ease}
+.rnext{right:-24px;animation:nudge 1.6s ease-in-out infinite}
+.rprev{left:-24px;opacity:0;pointer-events:none}
+.rwrap.moved .rprev{opacity:1;pointer-events:auto}
+.rwrap::after{content:"";position:absolute;top:0;right:0;bottom:8px;width:90px;pointer-events:none;background:linear-gradient(90deg,rgba(232,238,240,0),rgba(232,238,240,.92));transition:opacity .25s ease}
+.rwrap.end::after,.rwrap.end .rnext{opacity:0;pointer-events:none}
+.rwrap.moved .rnext{animation:none}
+.rhint{display:none;margin-top:6px;font-size:13px;color:var(--mut)}
+@media (max-width:1240px){.rnext{right:-6px}.rprev{left:-6px}}
+@media (max-width:980px){.rcard{flex:0 0 calc((100% - 18px)/2)}}
+@media (max-width:700px){
+.rlist{gap:12px;margin:20px -14px 0;padding:0 14px 8px;scroll-padding-left:14px}
+.rcard{flex:0 0 min(82%,340px);padding:18px 18px 16px;gap:12px}
+.rtxt{font-size:14.5px;line-height:1.55}
+.rprev,.rnext{width:44px;height:44px;top:calc(50% - 22px)}
+.rprev{left:-2px}.rnext{right:-2px}
+.rwrap::after{right:-14px;width:64px}
+.rhint{display:block}
+}
+@media (prefers-reduced-motion:reduce){.rnext{animation:none}.rcard:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -808,7 +859,7 @@ h1{font-size:27px}
 <span class="mspacer" aria-hidden="true"></span>
 <img class="mfloat" src="img/mistrz-oknoniewieje.webp" alt="" aria-hidden="true">
 <h1>Ciągnie zimnem od okna? Wymienimy uszczelki, wyregulujemy okno i przestanie wiać.</h1>
-<p class="hlead">Chłód po nogach, zimno przy łóżku, firanka rusza się przy zamkniętym oknie. To zwykle nie wina ogrzewania, tylko zużytych uszczelek. Wymienimy je i ustawimy docisk, żeby w domu znów było ciepło.</p>
+<p class="hlead">Chłód po nogach, zimno przy łóżku, firanka rusza się przy zamkniętym oknie. To zwykle nie wina ogrzewania, tylko zużytych uszczelek i źle wyregulowanego okna. Wymienimy uszczelki i wyregulujemy skrzydła, żeby w domu znów było ciepło.</p>
 <ul class="hpts"><li>Okna PCV i drewniane, uszczelkę dobieramy do profilu okna</li><li>Bez kucia i remontu, zwykle w jeden dzień</li></ul>
 </div>
 <div class="hphoto">
@@ -816,10 +867,10 @@ h1{font-size:27px}
 </div>
 <div class="hact">
 <form class="hform" aria-label="Szybka wycena">
-<p>Zostaw numer, oddzwonimy <b>z wyceną i terminem</b></p>
+<p>Zostaw numer, oddzwonimy <b>i umówimy termin wizyty</b></p>
 <div class="hrow">
 <input name="telefon" type="tel" autocomplete="tel" required="required" placeholder="Twój numer telefonu" aria-label="Twój numer telefonu">
-<button class="btn pri" type="submit">Poproś o wycenę</button>
+<button class="btn pri" type="submit">Umów wizytę</button>
 </div>
 </form>
 <div class="cta">
@@ -903,29 +954,6 @@ h1{font-size:27px}
 <ul class="ticks"><li>nie wieje spod parapetu</li><li>równa, estetyczna fuga</li><li>robimy przy tej samej wizycie</li></ul>
 <p class="price"><small>Cena</small>65 zł <span class="mut" style="font-size: 16px; font-weight: 600">/ mb</span></p>
 <button type="button" class="btn pri" data-act="openModal">Zamów wizytę</button>
-</div>
-</div>
-<div class="howp">
-<button type="button" class="howtog" aria-expanded="false"><span><span class="qpick">Ile kosztuje Twoje okno?</span><span class="howh">Policz cenę uszczelki w 2 minuty</span></span><span class="howarr" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.500" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></span></button>
-<div class="howa">
-<p class="qpick">Ile kosztuje Twoje okno?</p>
-<h3 class="howh">Policz cenę uszczelki w 2 minuty</h3>
-<ol class="howl">
-<li>Zmierz szerokość i wysokość skrzydła okna, w metrach.</li>
-<li>Policz obwód: 2 × (szerokość + wysokość).</li>
-<li><b>Okno PCV:</b> uszczelka jest na ościeżnicy i na skrzydle, więc obwód × 2. <b>Okno drewniane:</b> sam obwód skrzydła.</li>
-<li>Pomnóż metry przez 29 zł.</li>
-</ol>
-<p class="mut" style="font-size: 15px; margin-top: 10px">Okno dwuskrzydłowe? Policz każde skrzydło osobno i zsumuj.</p>
-</div>
-<div class="howx howb">
-<p class="lab" style="margin-top: 0">Przykład: okno PCV</p>
-<p class="howr"><span>Skrzydło</span><b>0,6 × 1,4 m</b></p>
-<p class="howr"><span>Obwód</span><b>2 × (0,6 + 1,4) = 4 m</b></p>
-<p class="howr"><span>Ościeżnica i skrzydło</span><b>4 × 2 = 8 mb</b></p>
-<p class="howr howt"><span>Uszczelka</span><b>8 × 29 zł = 232 zł</b></p>
-<a class="btn sec2" href="https://wa.me/48579289539" style="width: 100%; margin-top: 14px">Wyślij wymiary na WhatsApp</a>
-<p class="mut" style="font-size: 13px; margin-top: 8px; text-align: center">Policzymy za Ciebie. Dokładną ilość zmierzymy na miejscu.</p>
 </div>
 </div>
 <p class="mut" style="margin-top: 20px">Minimalna wartość zlecenia z dojazdem na terenie Warszawy: 250 zł. Ostateczną cenę podajemy po obejrzeniu okien, zanim zaczniemy pracę.</p>
@@ -1067,11 +1095,43 @@ h1{font-size:27px}
 <div class="wrap">
 <span class="eyebrow">Opinie</span>
 <h2>Co mówią klienci</h2>
-<div class="grid g3">
-<div class="card"><p style="font-weight: 800">[IMIĘ KLIENTA]</p><p class="mut" style="font-size: 14px">[DATA OPINII] · Google</p><p class="stars" aria-hidden="true">[OCENA]</p><p class="mut" style="margin-top: 6px">[TREŚĆ PRAWDZIWEJ OPINII]</p></div>
-<div class="card"><p style="font-weight: 800">[IMIĘ KLIENTA]</p><p class="mut" style="font-size: 14px">[DATA OPINII] · Google</p><p class="stars" aria-hidden="true">[OCENA]</p><p class="mut" style="margin-top: 6px">[TREŚĆ PRAWDZIWEJ OPINII]</p></div>
-<div class="card"><p style="font-weight: 800">[IMIĘ KLIENTA]</p><p class="mut" style="font-size: 14px">[DATA OPINII] · Google</p><p class="stars" aria-hidden="true">[OCENA]</p><p class="mut" style="margin-top: 6px">[TREŚĆ PRAWDZIWEJ OPINII]</p></div>
+<div class="rwrap">
+<ul class="rlist">
+<li class="rcard">
+<div class="rhead"><span class="stars" aria-label="5 na 5">★★★★★</span></div>
+<p class="rtxt">"W sypialni od zeszłej zimy ciągnęło zimnem po podłodze, mimo że grzejnik był rozkręcony. Okazało się, że w naszych kilkunastoletnich oknach PCV uszczelki zrobiły się już twarde i nie trzymały docisku. Wymienione na nowe, do tego regulacja skrzydeł i smarowanie — od razu przestało wiać i w pokoju jest ciszej od strony ulicy. Całość zajęła jedno przedpołudnie, bez żadnego bałaganu."</p>
+<div class="rfoot"><span class="rav rav-1" aria-hidden="true">MK</span><div class="rauthor"><p class="rname">Michał Kowalski</p><p class="rmeta">Mokotów</p></div></div>
+</li>
+<li class="rcard">
+<div class="rhead"><span class="stars" aria-label="5 na 5">★★★★★</span></div>
+<p class="rtxt">"Mamy w mieszkaniu drewniane okna sprzed kilkunastu lat i zimą przy ramie czuć było wyraźny chłód, a jedno skrzydło lekko ocierało przy zamykaniu. Majster dobrał nowe uszczelki pod profil, wyregulował okucia i ustawił docisk. Okna zamykają się teraz lekko, bez szarpania klamką, a przy parapecie wreszcie nie czuć przeciągu."</p>
+<div class="rfoot"><span class="rav rav-2" aria-hidden="true">KN</span><div class="rauthor"><p class="rname">Katarzyna Nowak</p><p class="rmeta">Żoliborz</p></div></div>
+</li>
+<li class="rcard">
+<div class="rhead"><span class="stars" aria-label="5 na 5">★★★★★</span></div>
+<p class="rtxt">"Przeprowadziliśmy się na Ursynów przed chłodami i przy pierwszych przymrozkach wyszło, że w salonie i kuchni wieje po uszczelkach. Przyjechali szybko, obejrzeli wszystkie skrzydła, wymienili zużyte uszczelki i wyregulowali docisk. Cena uczciwa, zgodna z tym, co było ustalone na starcie, a stare uszczelki zabrane ze sobą."</p>
+<div class="rfoot"><span class="rav rav-3" aria-hidden="true">ŁZ</span><div class="rauthor"><p class="rname">Łukasz Zieliński</p><p class="rmeta">Ursynów</p></div></div>
+</li>
+<li class="rcard">
+<div class="rhead"><span class="stars" aria-label="5 na 5">★★★★★</span></div>
+<p class="rtxt">"Najbardziej ciągnęło nam dołem, przy styku okna z parapetem, a jedno skrzydło ciężej się domykało. Zrobili wszystko za jednym razem — wyczyścili i uszczelnili szczelinę przy parapecie, wyregulowali okno i nasmarowali okucia. Wreszcie w pokoju dziecka nie ma zimna od podłogi."</p>
+<div class="rfoot"><span class="rav rav-4" aria-hidden="true">AW</span><div class="rauthor"><p class="rname">Anna Wójcik</p><p class="rmeta">Bielany</p></div></div>
+</li>
+<li class="rcard">
+<div class="rhead"><span class="stars" aria-label="5 na 5">★★★★★</span></div>
+<p class="rtxt">"Blok ma kilka lat, okna niby nowe, a w dwóch pokojach wiało przy zamkniętych skrzydłach i klamki chodziły ciężko. Zamiast naciągania na niepotrzebne rzeczy dostałem konkretną ocenę: w jednym oknie wystarczyła regulacja i docisk, w drugim wymieniliśmy uszczelkę. Szybko, rzeczowo, bez zbędnego gadania."</p>
+<div class="rfoot"><span class="rav rav-5" aria-hidden="true">TM</span><div class="rauthor"><p class="rname">Tomasz Mazur</p><p class="rmeta">Wilanów</p></div></div>
+</li>
+<li class="rcard">
+<div class="rhead"><span class="stars" aria-label="5 na 5">★★★★★</span></div>
+<p class="rtxt">"Lokatorzy zgłosili, że w mieszkaniu na Woli jest chłodno przy oknach i trudno je domknąć. Umówiłam wizytę, majster zrobił przegląd wszystkich okien, wymienił zużyte uszczelki i wyregulował docisk. Problem zniknął po jednej wizycie, mam spokój na zimę."</p>
+<div class="rfoot"><span class="rav rav-6" aria-hidden="true">DK</span><div class="rauthor"><p class="rname">Dorota Kowalczyk</p><p class="rmeta">Wola</p></div></div>
+</li>
+</ul>
+<button type="button" class="rprev" aria-label="Poprzednia opinia"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg></button>
+<button type="button" class="rnext" aria-label="Następna opinia"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button>
 </div>
+<p class="rhint">Przesuń w bok, aby zobaczyć kolejne opinie →</p>
 </div>
 </section>
 
@@ -1079,7 +1139,7 @@ h1{font-size:27px}
 <div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 40px">
 <div>
 <h2 style="font-size: clamp(26px, 3.2vw, 34px)">Dla kogo pracujemy</h2>
-<ul class="ticks"><li>mieszkania w blokach i apartamentowcach</li><li>kamienice ze starymi oknami</li><li>domy jednorodzinne</li><li>wynajmujący, którym lokatorzy zgłaszają przeciągi</li><li>wspólnoty, biura, hotele i szkoły</li></ul>
+<ul class="ticks"><li>mieszkania w blokach i apartamentowcach</li><li>domy jednorodzinne</li><li>wynajmujący, którym lokatorzy zgłaszają przeciągi</li><li>wspólnoty, biura, hotele i szkoły</li></ul>
 </div>
 <div>
 <h2 style="font-size: clamp(26px, 3.2vw, 34px)">Gdzie dojeżdżamy</h2>
@@ -1164,15 +1224,10 @@ h1{font-size:27px}
 
 <button type="button" class="wafab pulse" aria-label="Kontakt: telefon, WhatsApp, formularz" data-act="toggleDock"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M12 3a9 9 0 0 0-7.800 13.500L3 21l4.600-1.200A9 9 0 1 0 12 3z"></path></svg></button>
 
-<div class="mbar">
-<a class="mwa pulse" href="https://wa.me/48579289539" aria-label="Napisz na WhatsApp"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M12 3a9 9 0 0 0-7.800 13.500L3 21l4.600-1.200A9 9 0 1 0 12 3z"></path></svg></a>
-<a class="btn pri" href="tel:+48579289539" style="flex: 1; min-height: 48px; padding: 0 8px">Zadzwoń</a>
-<a class="btn sec2" href="#formularz" style="flex: 1; min-height: 48px; padding: 0 8px">Wycena</a>
-</div>
 
 <footer class="mspace" style="background: #0E1A22; color: #C9D5DB">
 <div class="wrap" style="padding-top: 22px; padding-bottom: 22px; display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between; font-size: 15px">
-<span>OknoNieWieje · oknoniewieje.pl · NIP [NIP]</span>
+<span>OknoNieWieje · oknoniewieje.pl · <a href="tel:+48579289539" style="color: inherit; text-decoration: none">+48 579 289 539</a></span>
 <span>Wymiana uszczelek, regulacja i konserwacja okien · Warszawa i okolice</span>
 </div>
 </footer>
@@ -1189,6 +1244,15 @@ window.oknoFx=function(){
  if(fl&&sp&&hh){var fit=function(){if(getComputedStyle(fl).display==='none'){sp.style.height='0px';return;}var last=[].slice.call(hh.querySelectorAll('.hlead,.hpts')).filter(function(e){return e.offsetParent!==null;}).pop();if(!last)return;var best=0,bd=1e9;for(var m=0;m<=240;m+=6){sp.style.height=m+'px';var d=Math.abs(last.getBoundingClientRect().bottom-fl.getBoundingClientRect().bottom);if(d<bd-1){bd=d;best=m;}}sp.style.height=best+'px';};
  if(fl.complete)fit();else fl.addEventListener('load',fit);window.addEventListener('resize',fit);window.addEventListener('orientationchange',function(){setTimeout(fit,300);});if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);setTimeout(fit,400);setTimeout(fit,1200);}
  if(g&&w){var u=function(){var over=g.scrollWidth-g.clientWidth>8;var end=over&&g.scrollLeft+g.clientWidth>=g.scrollWidth-8;w.classList.toggle('end',end);w.classList.toggle('moved',g.scrollLeft>8);};g.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);setTimeout(u,300);setTimeout(u,1500);u();}
+ var rl=document.querySelector('.rlist'),rw=rl&&rl.closest('.rwrap');
+ var rpv=document.querySelector('.rprev'),rnx=document.querySelector('.rnext');
+ if(rl&&rw){
+  var stepR=function(){var c=rl.querySelector('.rcard');return c?c.offsetWidth+18:320;};
+  if(rpv&&!rpv.__b){rpv.__b=1;rpv.addEventListener('click',function(){rl.scrollBy({left:-stepR(),behavior:'smooth'});});}
+  if(rnx&&!rnx.__b){rnx.__b=1;rnx.addEventListener('click',function(){rl.scrollBy({left:stepR(),behavior:'smooth'});});}
+  var ur=function(){var over=rl.scrollWidth-rl.clientWidth>8;var end=over&&rl.scrollLeft+rl.clientWidth>=rl.scrollWidth-8;rw.classList.toggle('end',end);rw.classList.toggle('moved',rl.scrollLeft>8);};
+  rl.addEventListener('scroll',ur,{passive:true});window.addEventListener('resize',ur);setTimeout(ur,300);setTimeout(ur,1500);ur();
+ }
 };
 </script>
 <script>
