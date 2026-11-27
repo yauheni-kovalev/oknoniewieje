@@ -15,7 +15,7 @@
 <meta property="og:url" content="https://oknoniewieje.pl/">
 <meta property="og:image" content="https://oknoniewieje.pl/img/mistrz-oknoniewieje.webp">
 <meta name="theme-color" content="#0E1A22">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"HomeAndConstructionBusiness","@id":"https://oknoniewieje.pl/#firma","name":"OknoNieWieje","url":"https://oknoniewieje.pl/","telephone":"+48579289539","image":"https://oknoniewieje.pl/img/mistrz-oknoniewieje.webp","description":"Wymiana uszczelek, regulacja i konserwacja okien PCV i drewnianych w Warszawie i okolicach.","priceRange":"od 29 zł","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}],"areaServed":[{"@type":"City","name":"Warszawa"},{"@type":"Place","name":"Piaseczno"},{"@type":"Place","name":"Konstancin-Jeziorna"},{"@type":"Place","name":"Pruszków"},{"@type":"Place","name":"Piastów"},{"@type":"Place","name":"Łomianki"},{"@type":"Place","name":"Legionowo"},{"@type":"Place","name":"Marki"},{"@type":"Place","name":"Ząbki"},{"@type":"Place","name":"Otwock"}],"address":{"@type":"PostalAddress","addressLocality":"Warszawa","addressCountry":"PL"},"sameAs":["https://wa.me/48579289539"]},{"@type":"WebSite","@id":"https://oknoniewieje.pl/#www","url":"https://oknoniewieje.pl/","name":"OknoNieWieje","inLanguage":"pl"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"HomeAndConstructionBusiness","@id":"https://oknoniewieje.pl/#firma","name":"OknoNieWieje","url":"https://oknoniewieje.pl/","telephone":"+48579289539","image":"https://oknoniewieje.pl/img/mistrz-oknoniewieje.webp","description":"Wymiana uszczelek, regulacja i konserwacja okien PCV i drewnianych w Warszawie i okolicach.","priceRange":"od 29 zł","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}],"areaServed":[{"@type":"City","name":"Warszawa"},{"@type":"Place","name":"Piaseczno"},{"@type":"Place","name":"Konstancin-Jeziorna"},{"@type":"Place","name":"Pruszków"},{"@type":"Place","name":"Piastów"},{"@type":"Place","name":"Łomianki"},{"@type":"Place","name":"Legionowo"},{"@type":"Place","name":"Marki"},{"@type":"Place","name":"Ząbki"},{"@type":"Place","name":"Otwock"}],"address":{"@type":"PostalAddress","addressLocality":"Warszawa","addressCountry":"PL"},"email":"oknoniewieje@gmail.com","sameAs":["https://wa.me/48579289539"]},{"@type":"WebSite","@id":"https://oknoniewieje.pl/#www","url":"https://oknoniewieje.pl/","name":"OknoNieWieje","inLanguage":"pl"}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800&family=Archivo+Narrow:wght@600;700&display=swap" rel="stylesheet">
 <style>
@@ -917,6 +917,7 @@ html{overflow-anchor:none}
 </div>
 <div class="hact">
 <form class="hform" aria-label="Szybka wycena">
+<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
 <p>Zostaw numer, oddzwonimy <b>i umówimy termin wizyty</b></p>
 <div class="hrow">
 <input name="telefon" type="tel" autocomplete="tel" required="required" placeholder="Twój numer telefonu" aria-label="Twój numer telefonu">
@@ -1225,7 +1226,8 @@ html{overflow-anchor:none}
 <p class="mut" style="margin: 14px 0 22px">Napisz, ile masz okien, a oddzwonimy z wyceną i terminem. Wolisz porozmawiać? Zadzwoń.</p>
 <a class="btn pri" href="tel:+48579289539">Zadzwoń: +48 579 289 539</a>
 </div>
-<form class="bigform">
+<form class="bigform" aria-label="Formularz wyceny">
+<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
 <label>Imię<input name="imie" type="text" autocomplete="given-name"></label>
 <label>Telefon<input name="telefon" type="tel" autocomplete="tel" required="required"></label>
 <label>Dzielnica lub miejscowość<input name="lokalizacja" type="text"></label>
@@ -1243,7 +1245,7 @@ html{overflow-anchor:none}
 <h2 id="kontakt-tytul" style="font-size: 28px; padding-right: 52px">Skontaktuj się z nami</h2>
 <p class="mut" style="margin-top: 8px; margin-bottom: 8px">Wybierz najwygodniejszy sposób kontaktu. Odpowiadamy szybko.</p>
 <a class="copt" href="tel:+48579289539"><span class="cico" style="background: #D9701E; color: #0E1A22"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span><span><span class="ckind" style="display: block">Zadzwoń teraz</span><span class="cval">+48 579 289 539</span></span></a>
-<a class="copt" href="mailto:[E-MAIL]"><span class="cico" style="background: #0E1A22; color: #FFFFFF"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M4 5h16a2 2 0 0 1 2 2v.6l-10 6-10-6V7a2 2 0 0 1 2-2zm-2 4.9 10 6 10-6V17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"></path></svg></span><span><span class="ckind" style="display: block">Napisz e-mail</span><span class="cval">[E-MAIL]</span></span></a>
+<a class="copt" href="mailto:oknoniewieje@gmail.com"><span class="cico" style="background: #0E1A22; color: #FFFFFF"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="currentColor"><path d="M4 5h16a2 2 0 0 1 2 2v.6l-10 6-10-6V7a2 2 0 0 1 2-2zm-2 4.9 10 6 10-6V17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"></path></svg></span><span><span class="ckind" style="display: block">Napisz e-mail</span><span class="cval">oknoniewieje@gmail.com</span></span></a>
 <div class="ctwo">
 <a class="ctile" href="https://wa.me/48579289539"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="currentColor" style="color: #1E8E4E"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"></path></svg>WhatsApp</a>
 <a class="ctile" href="#formularz" data-act="closeModal"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="currentColor" style="color: #0E1A22"><path fill-rule="evenodd" d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm2 5v2h8V7zm0 4v2h8v-2zm0 4v2h5v-2z"></path></svg>Formularz</a>
@@ -1284,7 +1286,7 @@ html{overflow-anchor:none}
 <div><h3>Usługi</h3><ul><li><a href="wymiana-uszczelek-w-oknach-warszawa/">Wymiana uszczelek w oknach</a></li><li><a href="regulacja-okien-warszawa/">Regulacja okien</a></li><li><a href="regulacja-drzwi-balkonowych-warszawa/">Regulacja drzwi balkonowych</a></li><li><a href="konserwacja-okien-warszawa/">Konserwacja i smarowanie okuć</a></li><li><a href="uszczelnienie-parapetu-warszawa/">Uszczelnienie parapetu</a></li><li><a href="wymiana-uszczelek-okna-drewniane-warszawa/">Uszczelki w oknach drewnianych</a></li></ul></div>
 <div><h3>Problemy z oknami</h3><ul><li><a href="okno-wieje-przeciag/">Wieje z okna – co zrobić</a></li><li><a href="okno-nie-domyka-sie/">Okno nie domyka się</a></li><li><a href="skrzydlo-ociera-okno-opadlo/">Skrzydło ociera, okno opadło</a></li><li><a href="klamka-ciezko-chodzi/">Klamka ciężko chodzi</a></li><li><a href="przygotowanie-okien-do-zimy/">Jak przygotować okna do zimy</a></li></ul></div>
 <div><h3>Informacje</h3><ul><li><a href="./">Strona główna</a></li><li><a href="cennik/">Cennik</a></li><li><a href="#pytania">Częste pytania</a></li><li><a href="#formularz">Umów wizytę</a></li></ul></div>
-<div><h3>Kontakt</h3><ul><li><a href="tel:+48579289539">+48 579 289 539</a></li><li><a href="https://wa.me/48579289539">WhatsApp</a></li><li>pon.–sob. 9:00–19:00</li><li>Warszawa i okolice</li></ul></div>
+<div><h3>Kontakt</h3><ul><li><a href="tel:+48579289539">+48 579 289 539</a></li><li><a href="https://wa.me/48579289539">WhatsApp</a></li><li><a href="mailto:oknoniewieje@gmail.com">oknoniewieje@gmail.com</a></li><li>pon.–sob. 9:00–19:00</li><li>Warszawa i okolice</li></ul></div>
 </div>
 <div class="fbot"><div class="wrap" style="padding-top: 18px; padding-bottom: 22px; display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between; font-size: 15px">
 <span>OknoNieWieje · oknoniewieje.pl · <a href="tel:+48579289539" style="color: inherit; text-decoration: none">+48 579 289 539</a></span>
@@ -1352,9 +1354,24 @@ var acts={showBefore:function(){set({view:'before'});},showAfter:function(){set(
 document.addEventListener('click',function(e){var t=e.target.closest('[data-act]');if(t&&acts[t.dataset.act])acts[t.dataset.act]();});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(st.modal)set({modal:false});else if(st.menu)set({menu:false});}});
 setTimeout(function(){if(!st.modal&&!st.promoDone)set({promo:true});},20000);
-document.querySelectorAll('form').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();
- var m=f.querySelector('.fmsg');if(!m){m=document.createElement('p');m.className='fmsg';m.setAttribute('role','status');m.style.cssText='font-weight:700;color:#A83C07';f.appendChild(m);}
- m.textContent='Formularz nie jest jeszcze podłączony. Zadzwoń: +48 579 289 539';});});
+var W3F_KEY='e99cd7e8-fc5a-4640-8383-4827ec2f04c8';
+document.querySelectorAll('form.hform,form.bigform').forEach(function(f){f.addEventListener('submit',function(e){e.preventDefault();
+ var m=f.querySelector('.fmsg');if(!m){m=document.createElement('p');m.className='fmsg';m.setAttribute('role','status');m.setAttribute('aria-live','polite');m.style.cssText='font-weight:700;margin-top:10px';f.appendChild(m);}
+ var b=f.querySelector('button[type="submit"]'),bt=b?b.textContent:'';
+ var fd=new FormData(f);
+ fd.append('access_key',W3F_KEY);
+ fd.append('subject',f.classList.contains('hform')?'Nowa prośba o oddzwonienie – OknoNieWieje':'Nowe zapytanie o wycenę – OknoNieWieje');
+ fd.append('from_name','Strona OknoNieWieje');
+ fd.append('strona',location.href);
+ if(b){b.disabled=true;b.textContent='Wysyłanie…';}
+ m.style.color='inherit';m.textContent='';
+ fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:fd})
+  .then(function(r){return r.json();})
+  .then(function(j){if(!j||!j.success)throw new Error(j&&j.message);
+   f.reset();m.style.color='#1E8E4E';m.textContent='Dziękujemy! Zgłoszenie wysłane – oddzwonimy najszybciej, jak to możliwe.';})
+  .catch(function(){m.style.color='#A83C07';m.textContent='Nie udało się wysłać formularza. Zadzwoń: +48 579 289 539';})
+  .then(function(){if(b){b.disabled=false;b.textContent=bt;}});
+});});
 render();
 if(window.oknoFx)window.oknoFx();
 })();
