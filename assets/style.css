@@ -799,6 +799,9 @@ h1{font-size:27px}
 .wafab{-webkit-backface-visibility:hidden;backface-visibility:hidden}
 html{overflow-anchor:none}
 
+/* iOS: no auto-zoom on input focus */
+input,select,textarea{font-size:16px!important}
+
 .crumbs{font-size:14px;color:var(--mut);margin:0 0 18px;display:flex;flex-wrap:wrap;gap:4px 8px}
 .crumbs a{color:inherit}.crumbs span[aria-hidden]{opacity:.6}
 .shero{padding-top:clamp(32px,5vw,64px);padding-bottom:clamp(40px,5vw,72px)}
